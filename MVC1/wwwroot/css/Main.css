@@ -1,0 +1,35 @@
+﻿html {
+    font-size: 14px;
+    background-color: darkgray;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        background-color: darkgray;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    background-color: darkgray;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: darkgray;
+}
+
+.bannerimage {
+    height: 50%;
+    width: 50%;
+}
+
+.navbar-brand {
+    margin-right: -50px;
+}
+
+.edit {
+    background-color: black;
+}

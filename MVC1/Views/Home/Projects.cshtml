@@ -1,0 +1,1606 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+        Layout = "~/Views/Shared/master.cshtml";
+}
+<div data-view-component="true" class="Layout-main">      <div class="UnderlineNav user-profile-nav d-block d-md-none position-sticky top-0 pl-3 ml-n3
+          mr-n3 pr-3 color-bg-default" style="z-index:3;">
+        <nav class="UnderlineNav-body width-full p-responsive" data-pjax="" aria-label="User profile">
+  <a class="UnderlineNav-item js-responsive-underlinenav-item" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:9781315,&quot;target&quot;:&quot;TAB_OVERVIEW&quot;,&quot;user_id&quot;:9781315,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;}}" data-hydro-click-hmac="5d107f42ec46a2447f20010a5157e23bbd75ac69a1fd324f7e985bc9f068f5c5" data-tab-item="overview" href="/damsaz">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-book UnderlineNav-octicon hide-sm">
+    <path fill-rule="evenodd" d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z"></path>
+</svg>
+    Overview
+</a>
+  <a aria-current="page" class="UnderlineNav-item js-responsive-underlinenav-item selected" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:9781315,&quot;target&quot;:&quot;TAB_REPOSITORIES&quot;,&quot;user_id&quot;:9781315,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;}}" data-hydro-click-hmac="756c559c22ffd972dc8ab0df69c2007eef16b979e1464fd83680811feda73973" data-tab-item="repositories" href="/damsaz?tab=repositories">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-repo UnderlineNav-octicon hide-sm">
+    <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+</svg>
+    Repositories
+    <span title="10" data-view-component="true" class="Counter">10</span>
+</a>
+  <a class="UnderlineNav-item js-responsive-underlinenav-item" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:9781315,&quot;target&quot;:&quot;TAB_PROJECTS&quot;,&quot;user_id&quot;:9781315,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;}}" data-hydro-click-hmac="191b222546c4da9fbad2ea00b0d8e713136a3a5e118772efdbcc2855fa052df8" data-tab-item="projects" href="/damsaz?tab=projects&amp;type=new">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-table UnderlineNav-octicon hide-sm">
+    <path fill-rule="evenodd" d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0114.25 16H1.75A1.75 1.75 0 010 14.25V1.75zM1.5 6.5v7.75c0 .138.112.25.25.25H5v-8H1.5zM5 5H1.5V1.75a.25.25 0 01.25-.25H5V5zm1.5 1.5v8h7.75a.25.25 0 00.25-.25V6.5h-8zm8-1.5h-8V1.5h7.75a.25.25 0 01.25.25V5z"></path>
+</svg>
+    Projects
+    <span title="0" hidden="hidden" data-view-component="true" class="Counter">0</span>
+</a>
+    <a class="UnderlineNav-item js-responsive-underlinenav-item" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:9781315,&quot;target&quot;:&quot;TAB_PACKAGES&quot;,&quot;user_id&quot;:9781315,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;}}" data-hydro-click-hmac="2b044d78d3333309d92d7e43869acce1e4f8eb655a559bbe45e23199f78df88d" data-tab-item="packages" href="/damsaz?tab=packages">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-package UnderlineNav-octicon hide-sm">
+    <path fill-rule="evenodd" d="M8.878.392a1.75 1.75 0 00-1.756 0l-5.25 3.045A1.75 1.75 0 001 4.951v6.098c0 .624.332 1.2.872 1.514l5.25 3.045a1.75 1.75 0 001.756 0l5.25-3.045c.54-.313.872-.89.872-1.514V4.951c0-.624-.332-1.2-.872-1.514L8.878.392zM7.875 1.69a.25.25 0 01.25 0l4.63 2.685L8 7.133 3.245 4.375l4.63-2.685zM2.5 5.677v5.372c0 .09.047.171.125.216l4.625 2.683V8.432L2.5 5.677zm6.25 8.271l4.625-2.683a.25.25 0 00.125-.216V5.677L8.75 8.432v5.516z"></path>
+</svg>
+      Packages
+      <span title="0" hidden="hidden" data-view-component="true" class="Counter">0</span>
+</a>
+  <a class="UnderlineNav-item js-responsive-underlinenav-item" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:9781315,&quot;target&quot;:&quot;TAB_STARS&quot;,&quot;user_id&quot;:9781315,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;}}" data-hydro-click-hmac="c6224e5d2c4dee77ac73656b3b0836e2f3eac0e44eabf499191467074409463e" data-tab-item="stars" href="/damsaz?tab=stars">
+    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star UnderlineNav-octicon hide-sm">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg>
+    Stars
+    <span title="0" hidden="hidden" data-view-component="true" class="Counter">0</span>
+</a>
+
+</nav>
+
+<div class="position-absolute pr-3 pr-md-4 pr-lg-5 right-0 js-responsive-underlinenav-overflow" style="visibility: hidden">
+  <details data-view-component="true" class="details-overlay details-reset position-relative">
+  <summary role="button" data-view-component="true">      <div class="UnderlineNav-item mr-0 border-0">
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-kebab-horizontal">
+    <path d="M8 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm13 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+</svg>
+        <span class="sr-only">More</span>
+      </div>
+</summary>
+  <div data-view-component="true">      <details-menu role="menu" class="dropdown-menu dropdown-menu-sw">
+        <ul>
+          <li data-menu-item="overview" hidden="">
+            <a role="menuitem" class="js-selected-navigation-item selected dropdown-item" aria-current="page" data-selected-links=" /damsaz" href="/damsaz">Overview</a>
+          </li>
+          <li data-menu-item="repositories" hidden="">
+            <a role="menuitem" class="js-selected-navigation-item selected dropdown-item" aria-current="page" data-selected-links=" /damsaz?tab=repositories" href="/damsaz?tab=repositories">Repositories</a>
+          </li>
+          <li data-menu-item="projects" hidden="">
+            <a role="menuitem" class="js-selected-navigation-item dropdown-item" data-selected-links=" /damsaz?tab=projects&amp;type=new" href="/damsaz?tab=projects&amp;type=new">Projects</a>
+          </li>
+            <li data-menu-item="packages" hidden="">
+              <a role="menuitem" class="js-selected-navigation-item dropdown-item" data-selected-links=" /damsaz?tab=packages" href="/damsaz?tab=packages">Packages</a>
+            </li>
+          <li data-menu-item="stars" hidden="">
+            <a role="menuitem" class="js-selected-navigation-item dropdown-item" data-selected-links=" /damsaz?tab=stars" href="/damsaz?tab=stars">Stars</a>
+          </li>
+        </ul>
+      </details-menu>
+</div>
+</details></div>
+
+      </div>
+      <div>
+
+        <div class="position-relative">
+          
+  
+
+    
+<div class="border-bottom color-border-muted py-3">
+    <a href="/new" class="d-md-none btn btn-primary d-flex flex-items-center flex-justify-center width-full mb-4">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-repo mr-1">
+    <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+</svg>
+      New
+    </a>
+
+  <div class="d-flex flex-items-start">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="width-full" data-autosearch-results-container="user-repositories-list" aria-label="Repositories" role="search" data-turbo="false" action="/damsaz" accept-charset="UTF-8" method="get">
+      <div class="d-flex flex-column flex-lg-row flex-auto">
+        <div class="mb-1 mb-md-0 mr-md-3 flex-auto">
+          <input type="hidden" name="tab" value="repositories">
+          <input type="search" id="your-repos-filter" name="q" class="form-control width-full" placeholder="Find a repository…" autocomplete="off" aria-label="Find a repository…" value="" data-throttled-autosubmit="">
+        </div>
+
+        <div class="d-flex flex-wrap">
+          <details class="details-reset details-overlay position-relative mt-1 mt-lg-0 mr-1" id="type-options">
+              <summary aria-haspopup="menu" data-view-component="true" class="btn" role="button">    <span>Type</span>
+              <span class="d-none" data-menu-button="">
+                All
+              </span>
+              <span class="dropdown-caret"></span>
+</summary>
+            <details-menu class="SelectMenu right-lg-0" role="menu">
+              <div class="SelectMenu-modal">
+                <header class="SelectMenu-header">
+                  <span class="SelectMenu-title">Select type</span>
+                  <button class="SelectMenu-closeButton" type="button" data-toggle-for="type-options"><svg aria-label="Close menu" aria-hidden="false" role="img" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg></button>
+                </header>
+                <div class="SelectMenu-list">
+                    <label class="SelectMenu-item" role="menuitemradio" aria-checked="true" tabindex="0">
+                      <input type="radio" name="type" id="type_" value="" hidden="hidden" data-autosubmit="true" checked="checked">
+                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                      <span class="text-normal" data-menu-button-text="">All</span>
+                    </label>
+                    <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                      <input type="radio" name="type" id="type_public" value="public" hidden="hidden" data-autosubmit="true">
+                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                      <span class="text-normal" data-menu-button-text="">Public</span>
+                    </label>
+                    <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                      <input type="radio" name="type" id="type_private" value="private" hidden="hidden" data-autosubmit="true">
+                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                      <span class="text-normal" data-menu-button-text="">Private</span>
+                    </label>
+                    <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                      <input type="radio" name="type" id="type_source" value="source" hidden="hidden" data-autosubmit="true">
+                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                      <span class="text-normal" data-menu-button-text="">Sources</span>
+                    </label>
+                    <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                      <input type="radio" name="type" id="type_fork" value="fork" hidden="hidden" data-autosubmit="true">
+                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                      <span class="text-normal" data-menu-button-text="">Forks</span>
+                    </label>
+                    <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                      <input type="radio" name="type" id="type_archived" value="archived" hidden="hidden" data-autosubmit="true">
+                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                      <span class="text-normal" data-menu-button-text="">Archived</span>
+                    </label>
+                    <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                      <input type="radio" name="type" id="type_mirror" value="mirror" hidden="hidden" data-autosubmit="true">
+                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                      <span class="text-normal" data-menu-button-text="">Mirrors</span>
+                    </label>
+                    <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                      <input type="radio" name="type" id="type_template" value="template" hidden="hidden" data-autosubmit="true">
+                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                      <span class="text-normal" data-menu-button-text="">Templates</span>
+                    </label>
+                </div>
+              </div>
+            </details-menu>
+          </details>
+
+            <details class="details-reset details-overlay position-relative mt-1 mt-lg-0" id="language-options">
+                <summary aria-haspopup="menu" data-view-component="true" class="btn" role="button">    <span>Language</span>
+                <span class="d-none" data-menu-button="">
+                  All
+                </span>
+                <span class="dropdown-caret"></span>
+</summary>
+              <details-menu class="SelectMenu mt-1 mt-lg-0 mr-md-2 ml-md-2 right-lg-0" role="menu">
+                <div class="SelectMenu-modal">
+                  <header class="SelectMenu-header">
+                    <span class="SelectMenu-title">Select language</span>
+                    <button class="SelectMenu-closeButton" type="button" data-toggle-for="language-options"><svg aria-label="Close menu" aria-hidden="false" role="img" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg></button>
+                  </header>
+                  <div class="SelectMenu-list">
+                    <label class="SelectMenu-item" role="menuitemradio" aria-checked="true" tabindex="0">
+                      <input type="radio" name="language" id="language_" value="" hidden="hidden" data-autosubmit="true" checked="checked">
+                      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                      <span class="text-normal" data-menu-button-text="">All</span>
+                    </label>
+                      <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                        <input type="radio" name="language" id="language_javascript" value="javascript" hidden="hidden" data-autosubmit="true">
+                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                        <span class="text-normal" data-menu-button-text="">JavaScript</span>
+                      </label>
+                      <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                        <input type="radio" name="language" id="language_css" value="css" hidden="hidden" data-autosubmit="true">
+                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                        <span class="text-normal" data-menu-button-text="">CSS</span>
+                      </label>
+                      <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                        <input type="radio" name="language" id="language_c_" value="c#" hidden="hidden" data-autosubmit="true">
+                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                        <span class="text-normal" data-menu-button-text="">C#</span>
+                      </label>
+                      <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                        <input type="radio" name="language" id="language_python" value="python" hidden="hidden" data-autosubmit="true">
+                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                        <span class="text-normal" data-menu-button-text="">Python</span>
+                      </label>
+                      <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                        <input type="radio" name="language" id="language_java" value="java" hidden="hidden" data-autosubmit="true">
+                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                        <span class="text-normal" data-menu-button-text="">Java</span>
+                      </label>
+                  </div>
+                </div>
+              </details-menu>
+            </details>
+
+          <details class="details-reset details-overlay position-relative mt-1 mt-lg-0 ml-1" id="sort-options">
+              <summary aria-haspopup="menu" data-view-component="true" class="btn" role="button">    <span>Sort</span>
+              <span class="d-none" data-menu-button="">
+                Last updated
+              </span>
+              <span class="dropdown-caret"></span>
+</summary>            <details-menu class="SelectMenu right-lg-0" role="menu">
+              <div class="SelectMenu-modal">
+                <header class="SelectMenu-header">
+                  <span class="SelectMenu-title">Select order</span>
+                  <button class="SelectMenu-closeButton" type="button" data-toggle-for="sort-options"><svg aria-label="Close menu" aria-hidden="false" role="img" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg></button>
+                </header>
+                <div class="SelectMenu-list">
+                  <label class="SelectMenu-item" role="menuitemradio" aria-checked="true" tabindex="0">
+                    <input type="radio" name="sort" id="sort_" value="" hidden="hidden" data-autosubmit="true" checked="checked">
+                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                    <span class="text-normal" data-menu-button-text="">Last updated</span>
+                  </label>
+                  <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                    <input type="radio" name="sort" id="sort_name" value="name" hidden="hidden" data-autosubmit="true">
+                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                    <span class="text-normal" data-menu-button-text="">Name</span>
+                  </label>
+                  <label class="SelectMenu-item" role="menuitemradio" aria-checked="false" tabindex="0">
+                    <input type="radio" name="sort" id="sort_stargazers" value="stargazers" hidden="hidden" data-autosubmit="true">
+                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check">
+    <path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path>
+</svg>
+                    <span class="text-normal" data-menu-button-text="">Stars</span>
+                  </label>
+                </div>
+              </div>
+            </details-menu>
+          </details>
+        </div>
+      </div>
+</form>
+    <div class="d-none d-md-flex flex-md-items-center flex-md-justify-end">
+        <a href="/new" class="text-center btn btn-primary ml-3">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-repo">
+    <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path>
+</svg>
+          New
+        </a>
+    </div>
+  </div>
+</div>
+
+    
+<div id="user-repositories-list">
+
+    
+    <ul data-filterable-for="your-repos-filter" data-filterable-type="substring">
+        
+<li class="col-12 d-flex flex-justify-between width-full py-4 border-bottom color-border-muted public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
+  <div class="col-10 col-lg-9 d-inline-block">
+    <div class="d-inline-block mb-1">
+      <h3 class="wb-break-all">
+        <a href="/damsaz/sokoban" itemprop="name codeRepository">
+        sokoban</a>
+        <span></span><span class="Label Label--secondary v-align-middle ml-1 mb-1">Public</span>
+      </h3>
+
+
+    </div>
+
+    <div>
+    </div>
+
+
+    <div class="f6 color-fg-muted mt-2">
+
+        <span class="ml-0 mr-3">
+  <span class="repo-language-color" style="background-color: #f1e05a"></span>
+  <span itemprop="programmingLanguage">JavaScript</span>
+</span>
+
+
+
+
+        Updated <relative-time datetime="2022-08-10T09:44:38Z" class="no-wrap" title="10 aug. 2022 11:44 CEST">5 days ago</relative-time>
+    </div>
+  </div>
+  <div class="col-2 d-flex flex-column flex-justify-around flex-items-end ml-3">
+        <template class="js-unstar-confirmation-dialog-template">
+  <div class="Box-header">
+    <h2 class="Box-title">Unstar this repository?</h2>
+  </div>
+  <div class="Box-body">
+    <p class="mb-3">
+      This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    </p>
+    <div class="form-actions">
+      <form class="js-social-confirmation-form" data-turbo="false" action="{{ confirmUrl }}" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="authenticity_token" value="{{ confirmCsrfToken }}">
+        <input type="hidden" name="confirm" value="true">
+          <button data-close-dialog="true" type="submit" data-view-component="true" class="btn-danger btn width-full">    Unstar
+</button>
+</form>    </div>
+  </div>
+</template>
+
+  <div data-view-component="true" class="js-toggler-container js-social-container starring-container BtnGroup d-flex">
+    <form class="starred js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/damsaz/sokoban/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="_NxZZ-TG7EyrHzOrnY2QqEWtyt0NnDzwvG_YoSG8Bi4T6vPsWhRT9XZ8IcSvzmmaKuALqQD7tXn-oKKE_q6HRA" autocomplete="off">
+        <input type="hidden" value="iWOnQcbgTqgMTGbBLkwCYJF5G5O7sxSORkJT8z6ukUxmVQ3KeDLxEdEvdK4cD_tS_jTa57bUnQcEjSnW4bwQJg" data-csrf="true" class="js-confirm-csrf-token">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:523269112,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="5dc1bc6e86856bb214a40360954763196780afad678b7c10b33bab0ff8b769c7" data-ga-click="Repository, click unstar button, action:profiles/repositories#index; text:Unstar" aria-label="Unstar this repository" type="submit" data-view-component="true" class="rounded-left-2 border-right-0 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Starred
+</span>
+</button></form>
+    <form class="unstarred js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/damsaz/sokoban/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="symshELt0ACGjcQ_DvN_jSwxRf0Fkok9yQ_l0L6iyShqAoEnsoJI66uci6qzOZATPJJGDQ22TNtigwXVPvKw8g" autocomplete="off">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:523269112,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="43bf34ccb6d320e4e43851057c96df9fb2dac97fb8b8123d0eaf73861e156c29" data-ga-click="Repository, click star button, action:profiles/repositories#index; text:Star" aria-label="Star this repository" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Star
+</span>
+</button></form>
+      <details id="details-user-list-523269112" data-view-component="true" class="details-reset details-overlay BtnGroup-parent js-user-list-menu d-inline-block position-relative">
+        <summary aria-label="Add this repository to a list" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none" aria-haspopup="menu" role="button">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+</svg>
+</summary>
+  <details-menu class="SelectMenu right-0" src="/damsaz/sokoban/lists" role="menu">
+    <div class="SelectMenu-modal">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-263b43">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+        </button>
+      <div id="filter-menu-263b43" class="d-flex flex-column flex-1 overflow-hidden">
+        <div class="SelectMenu-list">
+
+            <include-fragment class="SelectMenu-loading" aria-label="Loading">
+              <svg style="box-sizing: content-box; color: var(--color-icon-primary);" width="32" height="32" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">
+  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+            </include-fragment>
+        </div>
+        
+      </div>
+    </div>
+  </details-menu>
+</details>
+</div>
+
+    <div class="text-right hide-lg hide-md hide-sm hide-xs flex-self-end mt-2">
+      
+
+
+
+  <span class="tooltipped tooltipped-s" aria-label="Past year of activity">
+    <svg width="155" height="30">
+      <defs>
+        <linearGradient id="gradient-523269112" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="var(--color-calendar-graph-day-L1-bg)"></stop>
+          <stop offset="10%" stop-color="var(--color-calendar-graph-day-L2-bg)"></stop>
+          <stop offset="25%" stop-color="var(--color-calendar-graph-day-L3-bg)"></stop>
+          <stop offset="50%" stop-color="var(--color-calendar-graph-day-L4-bg)"></stop>
+        </linearGradient>
+        <mask id="sparkline-523269112" x="0" y="0" width="155" height="28">
+          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,5 " fill="transparent" stroke="#8cc665" stroke-width="2">
+        </polyline></mask>
+      </defs>
+
+      <g transform="translate(0, -10)">
+        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-523269112); mask: url(#sparkline-523269112)"></rect>
+      </g>
+    </svg>
+  </span>
+
+    </div>
+  </div>
+</li>
+
+        
+<li class="col-12 d-flex flex-justify-between width-full py-4 border-bottom color-border-muted public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
+  <div class="col-10 col-lg-9 d-inline-block">
+    <div class="d-inline-block mb-1">
+      <h3 class="wb-break-all">
+        <a href="/damsaz/html_lexicon" itemprop="name codeRepository">
+        html_lexicon</a>
+        <span></span><span class="Label Label--secondary v-align-middle ml-1 mb-1">Public</span>
+      </h3>
+
+
+    </div>
+
+    <div>
+    </div>
+
+
+    <div class="f6 color-fg-muted mt-2">
+
+        <span class="ml-0 mr-3">
+  <span class="repo-language-color" style="background-color: #563d7c"></span>
+  <span itemprop="programmingLanguage">CSS</span>
+</span>
+
+
+
+
+        Updated <relative-time datetime="2022-08-03T12:08:12Z" class="no-wrap" title="3 aug. 2022 14:08 CEST">12 days ago</relative-time>
+    </div>
+  </div>
+  <div class="col-2 d-flex flex-column flex-justify-around flex-items-end ml-3">
+        <template class="js-unstar-confirmation-dialog-template">
+  <div class="Box-header">
+    <h2 class="Box-title">Unstar this repository?</h2>
+  </div>
+  <div class="Box-body">
+    <p class="mb-3">
+      This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    </p>
+    <div class="form-actions">
+      <form class="js-social-confirmation-form" data-turbo="false" action="{{ confirmUrl }}" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="authenticity_token" value="{{ confirmCsrfToken }}">
+        <input type="hidden" name="confirm" value="true">
+          <button data-close-dialog="true" type="submit" data-view-component="true" class="btn-danger btn width-full">    Unstar
+</button>
+</form>    </div>
+  </div>
+</template>
+
+  <div data-view-component="true" class="js-toggler-container js-social-container starring-container BtnGroup d-flex">
+    <form class="starred js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/damsaz/html_lexicon/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="pQs_-DIpUpX7ZabDplvoadVU8an6GrKC4R4ASTX4KjrtLVssSO7oH47NjVFGpeWr2e3d8gOx87vCsKUfiPzEkw" autocomplete="off">
+        <input type="hidden" value="MxiCIqJDgPrENZvsathq1Xw0O748b-qDQy9sw0rfonB7Pub22IQ6cLGdsH6KJmcXcI0X5cXEq7pggcmV99tM2Q" data-csrf="true" class="js-confirm-csrf-token">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:520483605,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="b08746ad2d66f649419398ef619875fd367090cfce3e33a9d51c000d04119aec" data-ga-click="Repository, click unstar button, action:profiles/repositories#index; text:Unstar" aria-label="Unstar this repository" type="submit" data-view-component="true" class="rounded-left-2 border-right-0 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Starred
+</span>
+</button></form>
+    <form class="unstarred js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/damsaz/html_lexicon/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="-BESKPziKcVg2JzZox3_kF045HtaKnZDk5wByr80j1FJqJk4EToVCLEmOCiy3xuWCWTQOr5q0u38gxr5byzcew" autocomplete="off">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:520483605,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="0d792e17f923121455a3dc5731004122bee1e75bcdf6d87ec35da2c579664183" data-ga-click="Repository, click star button, action:profiles/repositories#index; text:Star" aria-label="Star this repository" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Star
+</span>
+</button></form>
+      <details id="details-user-list-520483605" data-view-component="true" class="details-reset details-overlay BtnGroup-parent js-user-list-menu d-inline-block position-relative">
+        <summary aria-label="Add this repository to a list" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none" aria-haspopup="menu" role="button">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+</svg>
+</summary>
+  <details-menu class="SelectMenu right-0" src="/damsaz/html_lexicon/lists" role="menu">
+    <div class="SelectMenu-modal">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-0a7ca0">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+        </button>
+      <div id="filter-menu-0a7ca0" class="d-flex flex-column flex-1 overflow-hidden">
+        <div class="SelectMenu-list">
+
+            <include-fragment class="SelectMenu-loading" aria-label="Loading">
+              <svg style="box-sizing: content-box; color: var(--color-icon-primary);" width="32" height="32" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">
+  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+            </include-fragment>
+        </div>
+        
+      </div>
+    </div>
+  </details-menu>
+</details>
+</div>
+
+    <div class="text-right hide-lg hide-md hide-sm hide-xs flex-self-end mt-2">
+      
+
+
+
+  <span class="tooltipped tooltipped-s" aria-label="Past year of activity">
+    <svg width="155" height="30">
+      <defs>
+        <linearGradient id="gradient-520483605" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="var(--color-calendar-graph-day-L1-bg)"></stop>
+          <stop offset="10%" stop-color="var(--color-calendar-graph-day-L2-bg)"></stop>
+          <stop offset="25%" stop-color="var(--color-calendar-graph-day-L3-bg)"></stop>
+          <stop offset="50%" stop-color="var(--color-calendar-graph-day-L4-bg)"></stop>
+        </linearGradient>
+        <mask id="sparkline-520483605" x="0" y="0" width="155" height="28">
+          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,5 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
+        </polyline></mask>
+      </defs>
+
+      <g transform="translate(0, -10)">
+        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-520483605); mask: url(#sparkline-520483605)"></rect>
+      </g>
+    </svg>
+  </span>
+
+    </div>
+  </div>
+</li>
+
+        
+<li class="col-12 d-flex flex-justify-between width-full py-4 border-bottom color-border-muted public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
+  <div class="col-10 col-lg-9 d-inline-block">
+    <div class="d-inline-block mb-1">
+      <h3 class="wb-break-all">
+        <a href="/damsaz/Lexicon-new" itemprop="name codeRepository">
+        Lexicon-new</a>
+        <span></span><span class="Label Label--secondary v-align-middle ml-1 mb-1">Public</span>
+      </h3>
+
+
+    </div>
+
+    <div>
+    </div>
+
+
+    <div class="f6 color-fg-muted mt-2">
+
+        <span class="ml-0 mr-3">
+  <span class="repo-language-color" style="background-color: #178600"></span>
+  <span itemprop="programmingLanguage">C#</span>
+</span>
+
+
+
+
+        Updated <relative-time datetime="2022-07-14T07:37:41Z" class="no-wrap" title="14 juli 2022 09:37 CEST">on 14 Jul</relative-time>
+    </div>
+  </div>
+  <div class="col-2 d-flex flex-column flex-justify-around flex-items-end ml-3">
+        <template class="js-unstar-confirmation-dialog-template">
+  <div class="Box-header">
+    <h2 class="Box-title">Unstar this repository?</h2>
+  </div>
+  <div class="Box-body">
+    <p class="mb-3">
+      This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    </p>
+    <div class="form-actions">
+      <form class="js-social-confirmation-form" data-turbo="false" action="{{ confirmUrl }}" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="authenticity_token" value="{{ confirmCsrfToken }}">
+        <input type="hidden" name="confirm" value="true">
+          <button data-close-dialog="true" type="submit" data-view-component="true" class="btn-danger btn width-full">    Unstar
+</button>
+</form>    </div>
+  </div>
+</template>
+
+  <div data-view-component="true" class="js-toggler-container js-social-container starring-container BtnGroup d-flex">
+    <form class="starred js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/damsaz/Lexicon-new/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="PEFWcmG9YLB8eocmZ1pakvfwADQ7p8a6SuL0SZfjM5CLcuZQ0S9fZsn_5sYBPHvWXqFyMdCp9uo8MoG4OWo8oQ" autocomplete="off">
+        <input type="hidden" value="oQu65nrmS2CMqMqGlx-h8zEUpPptIx9j34Me2MxaGxAWOArEynR0tjktq2bxeYC3mEXW_4YtLzOpU2spYtMUIQ" data-csrf="true" class="js-confirm-csrf-token">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:508239506,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="ec06e9e640e239d48f8d470b03e83391c99adf1f9045e4e3a4066eb5e9a4493e" data-ga-click="Repository, click unstar button, action:profiles/repositories#index; text:Unstar" aria-label="Unstar this repository" type="submit" data-view-component="true" class="rounded-left-2 border-right-0 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Starred
+</span>
+</button></form>
+    <form class="unstarred js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/damsaz/Lexicon-new/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="qUmimVzKpC2P8cCgdymriLY4XLxzhL1CpEY9fi7_wu7aSoSCA37w8WElkGnfQWqHe-EyVsB0uj_8D3gWPS29hg" autocomplete="off">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:508239506,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="70df7187ec7f42ce41f56743ddfbba2d57300d2cd9472e05c4835cf3a67f2ec1" data-ga-click="Repository, click star button, action:profiles/repositories#index; text:Star" aria-label="Star this repository" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Star
+</span>
+</button></form>
+      <details id="details-user-list-508239506" data-view-component="true" class="details-reset details-overlay BtnGroup-parent js-user-list-menu d-inline-block position-relative">
+        <summary aria-label="Add this repository to a list" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none" aria-haspopup="menu" role="button">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+</svg>
+</summary>
+  <details-menu class="SelectMenu right-0" src="/damsaz/Lexicon-new/lists" role="menu">
+    <div class="SelectMenu-modal">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-ce09df">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+        </button>
+      <div id="filter-menu-ce09df" class="d-flex flex-column flex-1 overflow-hidden">
+        <div class="SelectMenu-list">
+
+            <include-fragment class="SelectMenu-loading" aria-label="Loading">
+              <svg style="box-sizing: content-box; color: var(--color-icon-primary);" width="32" height="32" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">
+  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+            </include-fragment>
+        </div>
+        
+      </div>
+    </div>
+  </details-menu>
+</details>
+</div>
+
+    <div class="text-right hide-lg hide-md hide-sm hide-xs flex-self-end mt-2">
+      
+
+
+
+  <span class="tooltipped tooltipped-s" aria-label="Past year of activity">
+    <svg width="155" height="30">
+      <defs>
+        <linearGradient id="gradient-508239506" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="var(--color-calendar-graph-day-L1-bg)"></stop>
+          <stop offset="10%" stop-color="var(--color-calendar-graph-day-L2-bg)"></stop>
+          <stop offset="25%" stop-color="var(--color-calendar-graph-day-L3-bg)"></stop>
+          <stop offset="50%" stop-color="var(--color-calendar-graph-day-L4-bg)"></stop>
+        </linearGradient>
+        <mask id="sparkline-508239506" x="0" y="0" width="155" height="28">
+          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,3 138,2 141,4 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
+        </polyline></mask>
+      </defs>
+
+      <g transform="translate(0, -11)">
+        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-508239506); mask: url(#sparkline-508239506)"></rect>
+      </g>
+    </svg>
+  </span>
+
+    </div>
+  </div>
+</li>
+
+        
+<li class="col-12 d-flex flex-justify-between width-full py-4 border-bottom color-border-muted private source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
+  <div class="col-10 col-lg-9 d-inline-block">
+    <div class="d-inline-block mb-1">
+      <h3 class="wb-break-all">
+        <a href="/damsaz/Hangman" itemprop="name codeRepository">
+        Hangman</a>
+        <span></span><span class="Label Label--secondary v-align-middle ml-1 mb-1">Private</span>
+      </h3>
+
+
+    </div>
+
+    <div>
+    </div>
+
+
+    <div class="f6 color-fg-muted mt-2">
+
+        <span class="ml-0 mr-3">
+  <span class="repo-language-color" style="background-color: #178600"></span>
+  <span itemprop="programmingLanguage">C#</span>
+</span>
+
+
+
+
+        Updated <relative-time datetime="2022-06-28T07:34:20Z" class="no-wrap" title="28 juni 2022 09:34 CEST">on 28 Jun</relative-time>
+    </div>
+  </div>
+  <div class="col-2 d-flex flex-column flex-justify-around flex-items-end ml-3">
+        <template class="js-unstar-confirmation-dialog-template">
+  <div class="Box-header">
+    <h2 class="Box-title">Unstar this repository?</h2>
+  </div>
+  <div class="Box-body">
+    <p class="mb-3">
+      This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    </p>
+    <div class="form-actions">
+      <form class="js-social-confirmation-form" data-turbo="false" action="{{ confirmUrl }}" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="authenticity_token" value="{{ confirmCsrfToken }}">
+        <input type="hidden" name="confirm" value="true">
+          <button data-close-dialog="true" type="submit" data-view-component="true" class="btn-danger btn width-full">    Unstar
+</button>
+</form>    </div>
+  </div>
+</template>
+
+  <div data-view-component="true" class="js-toggler-container js-social-container starring-container BtnGroup d-flex">
+    <form class="starred js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/damsaz/Hangman/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="uQBDFVYunF23lp3-ZTJ1TKzurfNEHqgyyRIqmiJAPszdSABzvjNEOpKd-S_L78LxMepBRJbsYXXDfCjcJgPp9Q" autocomplete="off">
+        <input type="hidden" value="o4AMdA11BMxpNXz4MrhAHxMZ9jsGiIvXO_ZdNjg3IS7HyE8S5Wjcq0w-GCmcZfeijh0ajNR6QpAxmF9wPHT2Fw" data-csrf="true" class="js-confirm-csrf-token">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:507931022,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="f9c1c40c03467bfbb45afc39823317ba63702a2d807814cad115eeba81327356" data-ga-click="Repository, click unstar button, action:profiles/repositories#index; text:Unstar" aria-label="Unstar this repository" type="submit" data-view-component="true" class="rounded-left-2 border-right-0 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Starred
+</span>
+</button></form>
+    <form class="unstarred js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/damsaz/Hangman/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="_KYBJuIyuDdPPf9ijxWP-rA0uJqL_TzKD5MSqpw_elNxw5AkWR3iNY19oC46Xe_-w8K3RQPxPQDK2-TdjX0TdQ" autocomplete="off">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:507931022,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="54636ea68b684abcfb3ddb55e4ccf118b33a019f882ab73b22131a5b4aa50c56" data-ga-click="Repository, click star button, action:profiles/repositories#index; text:Star" aria-label="Star this repository" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Star
+</span>
+</button></form>
+      <details id="details-user-list-507931022" data-view-component="true" class="details-reset details-overlay BtnGroup-parent js-user-list-menu d-inline-block position-relative">
+        <summary aria-label="Add this repository to a list" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none" aria-haspopup="menu" role="button">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+</svg>
+</summary>
+  <details-menu class="SelectMenu right-0" src="/damsaz/Hangman/lists" role="menu">
+    <div class="SelectMenu-modal">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-2dad00">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+        </button>
+      <div id="filter-menu-2dad00" class="d-flex flex-column flex-1 overflow-hidden">
+        <div class="SelectMenu-list">
+
+            <include-fragment class="SelectMenu-loading" aria-label="Loading">
+              <svg style="box-sizing: content-box; color: var(--color-icon-primary);" width="32" height="32" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">
+  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+            </include-fragment>
+        </div>
+        
+      </div>
+    </div>
+  </details-menu>
+</details>
+</div>
+
+    <div class="text-right hide-lg hide-md hide-sm hide-xs flex-self-end mt-2">
+      
+
+
+
+  <span class="tooltipped tooltipped-s" aria-label="Past year of activity">
+    <svg width="155" height="30">
+      <defs>
+        <linearGradient id="gradient-507931022" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="var(--color-calendar-graph-day-L1-bg)"></stop>
+          <stop offset="10%" stop-color="var(--color-calendar-graph-day-L2-bg)"></stop>
+          <stop offset="25%" stop-color="var(--color-calendar-graph-day-L3-bg)"></stop>
+          <stop offset="50%" stop-color="var(--color-calendar-graph-day-L4-bg)"></stop>
+        </linearGradient>
+        <mask id="sparkline-507931022" x="0" y="0" width="155" height="28">
+          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,4 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
+        </polyline></mask>
+      </defs>
+
+      <g transform="translate(0, -11)">
+        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-507931022); mask: url(#sparkline-507931022)"></rect>
+      </g>
+    </svg>
+  </span>
+
+    </div>
+  </div>
+</li>
+
+        
+<li class="col-12 d-flex flex-justify-between width-full py-4 border-bottom color-border-muted public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
+  <div class="col-10 col-lg-9 d-inline-block">
+    <div class="d-inline-block mb-1">
+      <h3 class="wb-break-all">
+        <a href="/damsaz/Lexicon" itemprop="name codeRepository">
+        Lexicon</a>
+        <span></span><span class="Label Label--secondary v-align-middle ml-1 mb-1">Public</span>
+      </h3>
+
+
+    </div>
+
+    <div>
+    </div>
+
+
+    <div class="f6 color-fg-muted mt-2">
+
+        <span class="ml-0 mr-3">
+  <span class="repo-language-color" style="background-color: #178600"></span>
+  <span itemprop="programmingLanguage">C#</span>
+</span>
+
+
+
+
+        Updated <relative-time datetime="2022-06-21T23:11:10Z" class="no-wrap" title="22 juni 2022 01:11 CEST">on 22 Jun</relative-time>
+    </div>
+  </div>
+  <div class="col-2 d-flex flex-column flex-justify-around flex-items-end ml-3">
+        <template class="js-unstar-confirmation-dialog-template">
+  <div class="Box-header">
+    <h2 class="Box-title">Unstar this repository?</h2>
+  </div>
+  <div class="Box-body">
+    <p class="mb-3">
+      This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    </p>
+    <div class="form-actions">
+      <form class="js-social-confirmation-form" data-turbo="false" action="{{ confirmUrl }}" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="authenticity_token" value="{{ confirmCsrfToken }}">
+        <input type="hidden" name="confirm" value="true">
+          <button data-close-dialog="true" type="submit" data-view-component="true" class="btn-danger btn width-full">    Unstar
+</button>
+</form>    </div>
+  </div>
+</template>
+
+  <div data-view-component="true" class="js-toggler-container js-social-container starring-container BtnGroup d-flex">
+    <form class="starred js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/damsaz/Lexicon/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="PEb8O_7MNjyZFXppE7EIvZpWIblK1s8j1jkig-Bn_SuG9xu8Tb5wVEauntk3AmsVCbFyKvEsGbjXOqFKXpeLvg" autocomplete="off">
+        <input type="hidden" value="mH-XeIEawhThGz4BeZvO15dAUhYOc3VTPBEPIqMYRnwiznD_MmiEfD6g2rFdKK1_BKcBhbWJo8g9EozrHegw6Q" data-csrf="true" class="js-confirm-csrf-token">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:494608424,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="2a0d0d78822b5567c20314faf1239d2dbf5d3348fafcfb62c7ce747d348e0754" data-ga-click="Repository, click unstar button, action:profiles/repositories#index; text:Unstar" aria-label="Unstar this repository" type="submit" data-view-component="true" class="rounded-left-2 border-right-0 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Starred
+</span>
+</button></form>
+    <form class="unstarred js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/damsaz/Lexicon/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="5ktbV33ls51UAvTbMfqK8JtT3I5lOqD6gnsqqk5DotFk3lqnIGBJfYFse8oK6AF24cFgr1juJek8RtHcL1UTRA" autocomplete="off">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:494608424,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="e4858bd4fece186e1ef608878779841ac4aa068bf0216f9f0373876061489aa2" data-ga-click="Repository, click star button, action:profiles/repositories#index; text:Star" aria-label="Star this repository" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Star
+</span>
+</button></form>
+      <details id="details-user-list-494608424" data-view-component="true" class="details-reset details-overlay BtnGroup-parent js-user-list-menu d-inline-block position-relative">
+        <summary aria-label="Add this repository to a list" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none" aria-haspopup="menu" role="button">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+</svg>
+</summary>
+  <details-menu class="SelectMenu right-0" src="/damsaz/Lexicon/lists" role="menu">
+    <div class="SelectMenu-modal">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-04e9ed">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+        </button>
+      <div id="filter-menu-04e9ed" class="d-flex flex-column flex-1 overflow-hidden">
+        <div class="SelectMenu-list">
+
+            <include-fragment class="SelectMenu-loading" aria-label="Loading">
+              <svg style="box-sizing: content-box; color: var(--color-icon-primary);" width="32" height="32" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">
+  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+            </include-fragment>
+        </div>
+        
+      </div>
+    </div>
+  </details-menu>
+</details>
+</div>
+
+    <div class="text-right hide-lg hide-md hide-sm hide-xs flex-self-end mt-2">
+      
+
+
+
+  <span class="tooltipped tooltipped-s" aria-label="Past year of activity">
+    <svg width="155" height="30">
+      <defs>
+        <linearGradient id="gradient-494608424" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="var(--color-calendar-graph-day-L1-bg)"></stop>
+          <stop offset="10%" stop-color="var(--color-calendar-graph-day-L2-bg)"></stop>
+          <stop offset="25%" stop-color="var(--color-calendar-graph-day-L3-bg)"></stop>
+          <stop offset="50%" stop-color="var(--color-calendar-graph-day-L4-bg)"></stop>
+        </linearGradient>
+        <mask id="sparkline-494608424" x="0" y="0" width="155" height="28">
+          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,6 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
+        </polyline></mask>
+      </defs>
+
+      <g transform="translate(0, -10)">
+        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-494608424); mask: url(#sparkline-494608424)"></rect>
+      </g>
+    </svg>
+  </span>
+
+    </div>
+  </div>
+</li>
+
+        
+<li class="col-12 d-flex flex-justify-between width-full py-4 border-bottom color-border-muted public fork" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
+  <div class="col-10 col-lg-9 d-inline-block">
+    <div class="d-inline-block mb-1">
+      <h3 class="wb-break-all">
+        <a href="/damsaz/theZoo" itemprop="name codeRepository">
+        theZoo</a>
+        <span></span><span class="Label Label--secondary v-align-middle ml-1 mb-1">Public</span>
+      </h3>
+
+        <span class="f6 color-fg-muted mb-1">
+          Forked from <a class="Link--muted" href="/ytisf/theZoo">ytisf/theZoo</a>
+        </span>
+
+    </div>
+
+    <div>
+        <p class="col-9 d-inline-block color-fg-muted mb-2 pr-4" itemprop="description">
+          A repository of LIVE malwares for your own joy and pleasure. theZoo is a project created to make the possibility of malware analysis open and available to the public.
+        </p>
+    </div>
+
+
+    <div class="f6 color-fg-muted mt-2">
+
+        <span class="ml-0 mr-3">
+  <span class="repo-language-color" style="background-color: #3572A5"></span>
+  <span itemprop="programmingLanguage">Python</span>
+</span>
+
+        <a class="Link--muted mr-3" href="/damsaz/theZoo/network/members">
+          <svg aria-label="fork" role="img" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-repo-forked">
+    <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path>
+</svg>
+          2,220
+        </a>
+
+        <span class="mr-3">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-law mr-1">
+    <path fill-rule="evenodd" d="M8.75.75a.75.75 0 00-1.5 0V2h-.984c-.305 0-.604.08-.869.23l-1.288.737A.25.25 0 013.984 3H1.75a.75.75 0 000 1.5h.428L.066 9.192a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.514 3.514 0 00.686.45A4.492 4.492 0 003 11c.88 0 1.556-.22 2.023-.454a3.515 3.515 0 00.686-.45l.045-.04.016-.015.006-.006.002-.002.001-.002L5.25 9.5l.53.53a.75.75 0 00.154-.838L3.822 4.5h.162c.305 0 .604-.08.869-.23l1.289-.737a.25.25 0 01.124-.033h.984V13h-2.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-2.5V3.5h.984a.25.25 0 01.124.033l1.29.736c.264.152.563.231.868.231h.162l-2.112 4.692a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.517 3.517 0 00.686.45A4.492 4.492 0 0013 11c.88 0 1.556-.22 2.023-.454a3.512 3.512 0 00.686-.45l.045-.04.01-.01.006-.005.006-.006.002-.002.001-.002-.529-.531.53.53a.75.75 0 00.154-.838L13.823 4.5h.427a.75.75 0 000-1.5h-2.234a.25.25 0 01-.124-.033l-1.29-.736A1.75 1.75 0 009.735 2H8.75V.75zM1.695 9.227c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L3 6.327l-1.305 2.9zm10 0c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L13 6.327l-1.305 2.9z"></path>
+</svg>Other
+        </span>
+
+
+        Updated <relative-time datetime="2019-03-19T04:42:28Z" class="no-wrap" title="19 mars 2019 05:42 CET">on 19 Mar 2019</relative-time>
+    </div>
+  </div>
+  <div class="col-2 d-flex flex-column flex-justify-around flex-items-end ml-3">
+        <template class="js-unstar-confirmation-dialog-template">
+  <div class="Box-header">
+    <h2 class="Box-title">Unstar this repository?</h2>
+  </div>
+  <div class="Box-body">
+    <p class="mb-3">
+      This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    </p>
+    <div class="form-actions">
+      <form class="js-social-confirmation-form" data-turbo="false" action="{{ confirmUrl }}" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="authenticity_token" value="{{ confirmCsrfToken }}">
+        <input type="hidden" name="confirm" value="true">
+          <button data-close-dialog="true" type="submit" data-view-component="true" class="btn-danger btn width-full">    Unstar
+</button>
+</form>    </div>
+  </div>
+</template>
+
+  <div data-view-component="true" class="js-toggler-container js-social-container starring-container BtnGroup d-flex">
+    <form class="starred js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/damsaz/theZoo/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="yX1PJoaBOAEkFzq2BeH44rcLWdKHVgrsfB1w544Ap04z9pWHNZwSLCooCWzLK-ZsYea8YbIwW9l3o5rpfqHL6g" autocomplete="off">
+        <input type="hidden" value="0StOkORrZLSF0-dx_Ui7QKUx8mLuTUA6Y1Ix1YkXjgAroJQxV3ZOmYvs1KszgqXOc9wX0dsrEQ9o7NvbebbipA" data-csrf="true" class="js-confirm-csrf-token">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:177386651,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="7cf5790ba1b6c50fef03ef1818ec0a45f37e1695afba1774497bff50e6f3560a" data-ga-click="Repository, click unstar button, action:profiles/repositories#index; text:Unstar" aria-label="Unstar this repository" type="submit" data-view-component="true" class="rounded-left-2 border-right-0 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Starred
+</span>
+</button></form>
+    <form class="unstarred js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/damsaz/theZoo/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="jmRk8Qj2YbMEFEE3hlArm-fHGea8hYt0A87gVI2TGWUCSY91NvA483zKMz-qaz8tQOpVRGuz_YE90HTjqlULeA" autocomplete="off">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:177386651,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="a3414d9099a78f198f9d7829c8299f3d0a89234a58b42fcebd44ebe65b3e4236" data-ga-click="Repository, click star button, action:profiles/repositories#index; text:Star" aria-label="Star this repository" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Star
+</span>
+</button></form>
+      <details id="details-user-list-177386651" data-view-component="true" class="details-reset details-overlay BtnGroup-parent js-user-list-menu d-inline-block position-relative">
+        <summary aria-label="Add this repository to a list" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none" aria-haspopup="menu" role="button">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+</svg>
+</summary>
+  <details-menu class="SelectMenu right-0" src="/damsaz/theZoo/lists" role="menu">
+    <div class="SelectMenu-modal">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-9b5063">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+        </button>
+      <div id="filter-menu-9b5063" class="d-flex flex-column flex-1 overflow-hidden">
+        <div class="SelectMenu-list">
+
+            <include-fragment class="SelectMenu-loading" aria-label="Loading">
+              <svg style="box-sizing: content-box; color: var(--color-icon-primary);" width="32" height="32" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">
+  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+            </include-fragment>
+        </div>
+        
+      </div>
+    </div>
+  </details-menu>
+</details>
+</div>
+
+    <div class="text-right hide-lg hide-md hide-sm hide-xs flex-self-end ">
+      
+
+
+
+  <span class="tooltipped tooltipped-s" aria-label="Past year of activity">
+    <svg width="155" height="30">
+      <defs>
+        <linearGradient id="gradient-177386651" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="var(--color-calendar-graph-day-L1-bg)"></stop>
+          <stop offset="10%" stop-color="var(--color-calendar-graph-day-L2-bg)"></stop>
+          <stop offset="25%" stop-color="var(--color-calendar-graph-day-L3-bg)"></stop>
+          <stop offset="50%" stop-color="var(--color-calendar-graph-day-L4-bg)"></stop>
+        </linearGradient>
+        <mask id="sparkline-177386651" x="0" y="0" width="155" height="28">
+          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
+        </polyline></mask>
+      </defs>
+
+      <g transform="translate(0, -12)">
+        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-177386651); mask: url(#sparkline-177386651)"></rect>
+      </g>
+    </svg>
+  </span>
+
+    </div>
+  </div>
+</li>
+
+        
+<li class="col-12 d-flex flex-justify-between width-full py-4 border-bottom color-border-muted public source" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
+  <div class="col-10 col-lg-9 d-inline-block">
+    <div class="d-inline-block mb-1">
+      <h3 class="wb-break-all">
+        <a href="/damsaz/VT" itemprop="name codeRepository">
+        VT</a>
+        <span></span><span class="Label Label--secondary v-align-middle ml-1 mb-1">Public</span>
+      </h3>
+
+
+    </div>
+
+    <div>
+    </div>
+
+
+    <div class="f6 color-fg-muted mt-2">
+
+
+
+
+        Updated <relative-time datetime="2018-01-21T16:48:03Z" class="no-wrap" title="21 jan. 2018 17:48 CET">on 21 Jan 2018</relative-time>
+    </div>
+  </div>
+  <div class="col-2 d-flex flex-column flex-justify-around flex-items-end ml-3">
+        <template class="js-unstar-confirmation-dialog-template">
+  <div class="Box-header">
+    <h2 class="Box-title">Unstar this repository?</h2>
+  </div>
+  <div class="Box-body">
+    <p class="mb-3">
+      This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    </p>
+    <div class="form-actions">
+      <form class="js-social-confirmation-form" data-turbo="false" action="{{ confirmUrl }}" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="authenticity_token" value="{{ confirmCsrfToken }}">
+        <input type="hidden" name="confirm" value="true">
+          <button data-close-dialog="true" type="submit" data-view-component="true" class="btn-danger btn width-full">    Unstar
+</button>
+</form>    </div>
+  </div>
+</template>
+
+  <div data-view-component="true" class="js-toggler-container js-social-container starring-container BtnGroup d-flex">
+    <form class="starred js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/damsaz/VT/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="hZqcjHbRBHEMJOcrDs3sraT_2MRsKAUKh6S6s3ZZWKJ36VEmfMwSdaY6OlRwNXy2yQdpknxC9qxMWnenBWXsMA" autocomplete="off">
+        <input type="hidden" value="jiqiu2Fi5A3HtHVIyAqShdZPypw6mgpo_j61ZBjKPOx8WW8Ra3_yCW2qqDe28gKeu7d7yirw-c41wHhwa_aIfg" data-csrf="true" class="js-confirm-csrf-token">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:118353817,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="ebab7cfa334f2eecb9b73402a1e046b1d79330cc3f4268e9199e33f1159096f1" data-ga-click="Repository, click unstar button, action:profiles/repositories#index; text:Unstar" aria-label="Unstar this repository" type="submit" data-view-component="true" class="rounded-left-2 border-right-0 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Starred
+</span>
+</button></form>
+    <form class="unstarred js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/damsaz/VT/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="sB7PLU3nc-DR8F_RvN2iHbxy1FahGpVDJCdqLy8vLZJtAQfIe89iZOx3oWfwMOdLsHT_E7DIS6Q8S4RyXkRhHw" autocomplete="off">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:118353817,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="20f0eb4cc337138251ef66e2f499ea7e38157abe9ae1074a53a22e548923f4d1" data-ga-click="Repository, click star button, action:profiles/repositories#index; text:Star" aria-label="Star this repository" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Star
+</span>
+</button></form>
+      <details id="details-user-list-118353817" data-view-component="true" class="details-reset details-overlay BtnGroup-parent js-user-list-menu d-inline-block position-relative">
+        <summary aria-label="Add this repository to a list" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none" aria-haspopup="menu" role="button">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+</svg>
+</summary>
+  <details-menu class="SelectMenu right-0" src="/damsaz/VT/lists" role="menu">
+    <div class="SelectMenu-modal">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-cb878f">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+        </button>
+      <div id="filter-menu-cb878f" class="d-flex flex-column flex-1 overflow-hidden">
+        <div class="SelectMenu-list">
+
+            <include-fragment class="SelectMenu-loading" aria-label="Loading">
+              <svg style="box-sizing: content-box; color: var(--color-icon-primary);" width="32" height="32" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">
+  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+            </include-fragment>
+        </div>
+        
+      </div>
+    </div>
+  </details-menu>
+</details>
+</div>
+
+    <div class="text-right hide-lg hide-md hide-sm hide-xs flex-self-end mt-2">
+      
+
+
+
+  <span class="tooltipped tooltipped-s" aria-label="Past year of activity">
+    <svg width="155" height="30">
+      <defs>
+        <linearGradient id="gradient-118353817" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="var(--color-calendar-graph-day-L1-bg)"></stop>
+          <stop offset="10%" stop-color="var(--color-calendar-graph-day-L2-bg)"></stop>
+          <stop offset="25%" stop-color="var(--color-calendar-graph-day-L3-bg)"></stop>
+          <stop offset="50%" stop-color="var(--color-calendar-graph-day-L4-bg)"></stop>
+        </linearGradient>
+        <mask id="sparkline-118353817" x="0" y="0" width="155" height="28">
+          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
+        </polyline></mask>
+      </defs>
+
+      <g transform="translate(0, -12)">
+        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-118353817); mask: url(#sparkline-118353817)"></rect>
+      </g>
+    </svg>
+  </span>
+
+    </div>
+  </div>
+</li>
+
+        
+<li class="col-12 d-flex flex-justify-between width-full py-4 border-bottom color-border-muted public fork" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
+  <div class="col-10 col-lg-9 d-inline-block">
+    <div class="d-inline-block mb-1">
+      <h3 class="wb-break-all">
+        <a href="/damsaz/nfc-reader" itemprop="name codeRepository">
+        nfc-reader</a>
+        <span></span><span class="Label Label--secondary v-align-middle ml-1 mb-1">Public</span>
+      </h3>
+
+        <span class="f6 color-fg-muted mb-1">
+          Forked from <a class="Link--muted" href="/nadam/nfc-reader">nadam/nfc-reader</a>
+        </span>
+
+    </div>
+
+    <div>
+        <p class="col-9 d-inline-block color-fg-muted mb-2 pr-4" itemprop="description">
+          Simple NFC Reader for Android
+        </p>
+    </div>
+
+
+    <div class="f6 color-fg-muted mt-2">
+
+        <span class="ml-0 mr-3">
+  <span class="repo-language-color" style="background-color: #b07219"></span>
+  <span itemprop="programmingLanguage">Java</span>
+</span>
+
+        <a class="Link--muted mr-3" href="/damsaz/nfc-reader/network/members">
+          <svg aria-label="fork" role="img" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-repo-forked">
+    <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path>
+</svg>
+          356
+        </a>
+
+
+
+        Updated <relative-time datetime="2017-06-04T19:30:04Z" class="no-wrap" title="4 juni 2017 21:30 CEST">on 4 Jun 2017</relative-time>
+    </div>
+  </div>
+  <div class="col-2 d-flex flex-column flex-justify-around flex-items-end ml-3">
+        <template class="js-unstar-confirmation-dialog-template">
+  <div class="Box-header">
+    <h2 class="Box-title">Unstar this repository?</h2>
+  </div>
+  <div class="Box-body">
+    <p class="mb-3">
+      This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    </p>
+    <div class="form-actions">
+      <form class="js-social-confirmation-form" data-turbo="false" action="{{ confirmUrl }}" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="authenticity_token" value="{{ confirmCsrfToken }}">
+        <input type="hidden" name="confirm" value="true">
+          <button data-close-dialog="true" type="submit" data-view-component="true" class="btn-danger btn width-full">    Unstar
+</button>
+</form>    </div>
+  </div>
+</template>
+
+  <div data-view-component="true" class="js-toggler-container js-social-container starring-container BtnGroup d-flex">
+    <form class="starred js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/damsaz/nfc-reader/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="hKuYi0gSeXISn_9KuDRFhwlCZpZVXR2ArW-1Gir43ev8bGHijc34mnROf2-63tth5Z3dzh6D7VcRsngtLXgkDg" autocomplete="off">
+        <input type="hidden" value="XewQNZXBLBQmdgOWnz180trpQP7nc24vVgDFyFPhFi0lK-lcUB6t_ECng7Od1-I0Njb7pqytnvjq3Qj_VGHvyA" data-csrf="true" class="js-confirm-csrf-token">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:118353981,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="5dbf2118e31b415efd6009ca9c9b116be41bfd59c220726c2932932de6bdf83e" data-ga-click="Repository, click unstar button, action:profiles/repositories#index; text:Unstar" aria-label="Unstar this repository" type="submit" data-view-component="true" class="rounded-left-2 border-right-0 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Starred
+</span>
+</button></form>
+    <form class="unstarred js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/damsaz/nfc-reader/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="eOvvJH2RgFayQ0GdkEeav7D-z1fzHaMiEt4Xm5mMCsrOWi5IC6Fhb2V37ovDT_BAmqYqjx8UdsdqEpaAvQBCuQ" autocomplete="off">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:118353981,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="31e660562b10e1ac2d3e286774eb7c67f0b45faa1f24ab71ee03601b0ce192fb" data-ga-click="Repository, click star button, action:profiles/repositories#index; text:Star" aria-label="Star this repository" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Star
+</span>
+</button></form>
+      <details id="details-user-list-118353981" data-view-component="true" class="details-reset details-overlay BtnGroup-parent js-user-list-menu d-inline-block position-relative">
+        <summary aria-label="Add this repository to a list" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none" aria-haspopup="menu" role="button">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+</svg>
+</summary>
+  <details-menu class="SelectMenu right-0" src="/damsaz/nfc-reader/lists" role="menu">
+    <div class="SelectMenu-modal">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-7d34dc">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+        </button>
+      <div id="filter-menu-7d34dc" class="d-flex flex-column flex-1 overflow-hidden">
+        <div class="SelectMenu-list">
+
+            <include-fragment class="SelectMenu-loading" aria-label="Loading">
+              <svg style="box-sizing: content-box; color: var(--color-icon-primary);" width="32" height="32" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">
+  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+            </include-fragment>
+        </div>
+        
+      </div>
+    </div>
+  </details-menu>
+</details>
+</div>
+
+    <div class="text-right hide-lg hide-md hide-sm hide-xs flex-self-end ">
+      
+
+
+
+  <span class="tooltipped tooltipped-s" aria-label="Past year of activity">
+    <svg width="155" height="30">
+      <defs>
+        <linearGradient id="gradient-118353981" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="var(--color-calendar-graph-day-L1-bg)"></stop>
+          <stop offset="10%" stop-color="var(--color-calendar-graph-day-L2-bg)"></stop>
+          <stop offset="25%" stop-color="var(--color-calendar-graph-day-L3-bg)"></stop>
+          <stop offset="50%" stop-color="var(--color-calendar-graph-day-L4-bg)"></stop>
+        </linearGradient>
+        <mask id="sparkline-118353981" x="0" y="0" width="155" height="28">
+          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
+        </polyline></mask>
+      </defs>
+
+      <g transform="translate(0, -12)">
+        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-118353981); mask: url(#sparkline-118353981)"></rect>
+      </g>
+    </svg>
+  </span>
+
+    </div>
+  </div>
+</li>
+
+        
+<li class="col-12 d-flex flex-justify-between width-full py-4 border-bottom color-border-muted public fork" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
+  <div class="col-10 col-lg-9 d-inline-block">
+    <div class="d-inline-block mb-1">
+      <h3 class="wb-break-all">
+        <a href="/damsaz/PESTT" itemprop="name codeRepository">
+        PESTT</a>
+        <span></span><span class="Label Label--secondary v-align-middle ml-1 mb-1">Public</span>
+      </h3>
+
+        <span class="f6 color-fg-muted mb-1">
+          Forked from <a class="Link--muted" href="/pestt/PESTT">pestt/PESTT</a>
+        </span>
+
+    </div>
+
+    <div>
+        <p class="col-9 d-inline-block color-fg-muted mb-2 pr-4" itemprop="description">
+          PESTT: PESTT EDUCATIONAL SOFTWARE TESTING TOOL
+        </p>
+    </div>
+
+
+    <div class="f6 color-fg-muted mt-2">
+
+        <span class="ml-0 mr-3">
+  <span class="repo-language-color" style="background-color: #b07219"></span>
+  <span itemprop="programmingLanguage">Java</span>
+</span>
+
+        <a class="Link--muted mr-3" href="/damsaz/PESTT/network/members">
+          <svg aria-label="fork" role="img" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-repo-forked">
+    <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path>
+</svg>
+          11
+        </a>
+
+
+
+        Updated <relative-time datetime="2014-03-12T19:55:26Z" class="no-wrap" title="12 mars 2014 20:55 CET">on 12 Mar 2014</relative-time>
+    </div>
+  </div>
+  <div class="col-2 d-flex flex-column flex-justify-around flex-items-end ml-3">
+        <template class="js-unstar-confirmation-dialog-template">
+  <div class="Box-header">
+    <h2 class="Box-title">Unstar this repository?</h2>
+  </div>
+  <div class="Box-body">
+    <p class="mb-3">
+      This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    </p>
+    <div class="form-actions">
+      <form class="js-social-confirmation-form" data-turbo="false" action="{{ confirmUrl }}" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="authenticity_token" value="{{ confirmCsrfToken }}">
+        <input type="hidden" name="confirm" value="true">
+          <button data-close-dialog="true" type="submit" data-view-component="true" class="btn-danger btn width-full">    Unstar
+</button>
+</form>    </div>
+  </div>
+</template>
+
+  <div data-view-component="true" class="js-toggler-container js-social-container starring-container BtnGroup d-flex">
+    <form class="starred js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/damsaz/PESTT/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="Hb-2ytJBwE9agXqykkskSsiJ8QykPTPlyYNA_cd2mrbUp5nBy71-euLkUnvYPCCQSPzsqA8TYEOd51JXl8n0qg" autocomplete="off">
+        <input type="hidden" value="_XBpMedF7Kb3wCw27bnFIEs9SmCvv9QkYlQcXVxMSpY0aEY6_rlSk0-lBP-nzsH6y0hXxASRh4I2MA73DPMkig" data-csrf="true" class="js-confirm-csrf-token">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:27683172,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="775806766e4bcc80ab53d0a34781f9dedc84a51f5be2e00d3cbaf0e00fddd667" data-ga-click="Repository, click unstar button, action:profiles/repositories#index; text:Unstar" aria-label="Unstar this repository" type="submit" data-view-component="true" class="rounded-left-2 border-right-0 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Starred
+</span>
+</button></form>
+    <form class="unstarred js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/damsaz/PESTT/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="sC6fNNCZvlBc3uTb-26lQ3F2tXiwkCYTPaLAC6NVUIpCM28cN4_qp0sAT9j0I33WQ5Wb4S1OXh8WDCwNB368Lw" autocomplete="off">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:27683172,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="d888742a454a90864a7a310d8f2298d71f197ac52b42856fbd688e76726d61dd" data-ga-click="Repository, click star button, action:profiles/repositories#index; text:Star" aria-label="Star this repository" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Star
+</span>
+</button></form>
+      <details id="details-user-list-27683172" data-view-component="true" class="details-reset details-overlay BtnGroup-parent js-user-list-menu d-inline-block position-relative">
+        <summary aria-label="Add this repository to a list" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none" aria-haspopup="menu" role="button">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+</svg>
+</summary>
+  <details-menu class="SelectMenu right-0" src="/damsaz/PESTT/lists" role="menu">
+    <div class="SelectMenu-modal">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-357fa4">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+        </button>
+      <div id="filter-menu-357fa4" class="d-flex flex-column flex-1 overflow-hidden">
+        <div class="SelectMenu-list">
+
+            <include-fragment class="SelectMenu-loading" aria-label="Loading">
+              <svg style="box-sizing: content-box; color: var(--color-icon-primary);" width="32" height="32" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">
+  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+            </include-fragment>
+        </div>
+        
+      </div>
+    </div>
+  </details-menu>
+</details>
+</div>
+
+    <div class="text-right hide-lg hide-md hide-sm hide-xs flex-self-end ">
+      
+
+
+
+  <span class="tooltipped tooltipped-s" aria-label="Past year of activity">
+    <svg width="155" height="30">
+      <defs>
+        <linearGradient id="gradient-27683172" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="var(--color-calendar-graph-day-L1-bg)"></stop>
+          <stop offset="10%" stop-color="var(--color-calendar-graph-day-L2-bg)"></stop>
+          <stop offset="25%" stop-color="var(--color-calendar-graph-day-L3-bg)"></stop>
+          <stop offset="50%" stop-color="var(--color-calendar-graph-day-L4-bg)"></stop>
+        </linearGradient>
+        <mask id="sparkline-27683172" x="0" y="0" width="155" height="28">
+          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
+        </polyline></mask>
+      </defs>
+
+      <g transform="translate(0, -12)">
+        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-27683172); mask: url(#sparkline-27683172)"></rect>
+      </g>
+    </svg>
+  </span>
+
+    </div>
+  </div>
+</li>
+
+        
+<li class="col-12 d-flex flex-justify-between width-full py-4 border-bottom color-border-muted public fork" itemprop="owns" itemscope="" itemtype="http://schema.org/Code">
+  <div class="col-10 col-lg-9 d-inline-block">
+    <div class="d-inline-block mb-1">
+      <h3 class="wb-break-all">
+        <a href="/damsaz/pestt.github.com" itemprop="name codeRepository">
+        pestt.github.com</a>
+        <span></span><span class="Label Label--secondary v-align-middle ml-1 mb-1">Public</span>
+      </h3>
+
+        <span class="f6 color-fg-muted mb-1">
+          Forked from <a class="Link--muted" href="/pestt/pestt.github.com">pestt/pestt.github.com</a>
+        </span>
+
+    </div>
+
+    <div>
+    </div>
+
+
+    <div class="f6 color-fg-muted mt-2">
+
+        <span class="ml-0 mr-3">
+  <span class="repo-language-color" style="background-color: #563d7c"></span>
+  <span itemprop="programmingLanguage">CSS</span>
+</span>
+
+        <a class="Link--muted mr-3" href="/damsaz/pestt.github.com/network/members">
+          <svg aria-label="fork" role="img" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-repo-forked">
+    <path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path>
+</svg>
+          1
+        </a>
+
+
+
+        Updated <relative-time datetime="2013-02-25T16:40:21Z" class="no-wrap" title="25 feb. 2013 17:40 CET">on 25 Feb 2013</relative-time>
+    </div>
+  </div>
+  <div class="col-2 d-flex flex-column flex-justify-around flex-items-end ml-3">
+        <template class="js-unstar-confirmation-dialog-template">
+  <div class="Box-header">
+    <h2 class="Box-title">Unstar this repository?</h2>
+  </div>
+  <div class="Box-body">
+    <p class="mb-3">
+      This will remove {{ repoNameWithOwner }} from the {{ listsWithCount }} that it's been added to.
+    </p>
+    <div class="form-actions">
+      <form class="js-social-confirmation-form" data-turbo="false" action="{{ confirmUrl }}" accept-charset="UTF-8" method="post">
+        <input type="hidden" name="authenticity_token" value="{{ confirmCsrfToken }}">
+        <input type="hidden" name="confirm" value="true">
+          <button data-close-dialog="true" type="submit" data-view-component="true" class="btn-danger btn width-full">    Unstar
+</button>
+</form>    </div>
+  </div>
+</template>
+
+  <div data-view-component="true" class="js-toggler-container js-social-container starring-container BtnGroup d-flex">
+    <form class="starred js-social-form BtnGroup-parent flex-auto js-deferred-toggler-target" data-turbo="false" action="/damsaz/pestt.github.com/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="u3SlaKA38N8Gwb6M1Q9QwuwDEPvNMs6twZcbIwPqwtyNdaVpa_1hUSw5mvwgolWelY_dOnpGapBjgam3RmigtQ" autocomplete="off">
+        <input type="hidden" value="8k9Bqk11CB2b-UKd95F_1aEY6DDy1oCkevojU5xusAPETkGrhr-Zk7EBZu0CPHqJ2JQl8UWiJJnY7JHH2ezSag" data-csrf="true" class="js-confirm-csrf-token">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:27684940,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="7529f44ee58ea754f78bcc9ebaacc0e29acef4d5b852625a3f5185222b92893f" data-ga-click="Repository, click unstar button, action:profiles/repositories#index; text:Unstar" aria-label="Unstar this repository" type="submit" data-view-component="true" class="rounded-left-2 border-right-0 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star-fill starred-button-icon d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Starred
+</span>
+</button></form>
+    <form class="unstarred js-social-form BtnGroup-parent flex-auto" data-turbo="false" action="/damsaz/pestt.github.com/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="i6x_Tqp3y_BvdRqFGwh2JRi-4SfQp1nkPW7vj6S3_fBOO99hlRGwGJ216hCOls7KLbRR_iHz6EYcNXyHoYGbig" autocomplete="off">
+      <input type="hidden" name="context" value="other">
+        <button data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:27684940,&quot;originating_url&quot;:&quot;https://github.com/damsaz?tab=repositories&quot;,&quot;user_id&quot;:9781315}}" data-hydro-click-hmac="d14302eaf92d2d715f01ea6ebf7bc727dbe289ae5e77a61e7ab00d044a33955f" data-ga-click="Repository, click star button, action:profiles/repositories#index; text:Star" aria-label="Star this repository" type="submit" data-view-component="true" class="js-toggler-target rounded-left-2 btn-sm btn BtnGroup-item">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-star d-inline-block mr-2">
+    <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path>
+</svg><span data-view-component="true" class="d-inline">
+          Star
+</span>
+</button></form>
+      <details id="details-user-list-27684940" data-view-component="true" class="details-reset details-overlay BtnGroup-parent js-user-list-menu d-inline-block position-relative">
+        <summary aria-label="Add this repository to a list" data-view-component="true" class="btn-sm btn BtnGroup-item px-2 float-none" aria-haspopup="menu" role="button">    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-triangle-down">
+    <path d="M4.427 7.427l3.396 3.396a.25.25 0 00.354 0l3.396-3.396A.25.25 0 0011.396 7H4.604a.25.25 0 00-.177.427z"></path>
+</svg>
+</summary>
+  <details-menu class="SelectMenu right-0" src="/damsaz/pestt.github.com/lists" role="menu">
+    <div class="SelectMenu-modal">
+        <button class="SelectMenu-closeButton position-absolute right-0 m-2" type="button" aria-label="Close menu" data-toggle-for="details-87ed1c">
+          <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-x">
+    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path>
+</svg>
+        </button>
+      <div id="filter-menu-87ed1c" class="d-flex flex-column flex-1 overflow-hidden">
+        <div class="SelectMenu-list">
+
+            <include-fragment class="SelectMenu-loading" aria-label="Loading">
+              <svg style="box-sizing: content-box; color: var(--color-icon-primary);" width="32" height="32" viewBox="0 0 16 16" fill="none" data-view-component="true" class="anim-rotate">
+  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke"></circle>
+  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+</svg>
+            </include-fragment>
+        </div>
+        
+      </div>
+    </div>
+  </details-menu>
+</details>
+</div>
+
+    <div class="text-right hide-lg hide-md hide-sm hide-xs flex-self-end mt-2">
+      
+
+
+
+  <span class="tooltipped tooltipped-s" aria-label="Past year of activity">
+    <svg width="155" height="30">
+      <defs>
+        <linearGradient id="gradient-27684940" x1="0" x2="0" y1="1" y2="0">
+          <stop offset="0%" stop-color="var(--color-calendar-graph-day-L1-bg)"></stop>
+          <stop offset="10%" stop-color="var(--color-calendar-graph-day-L2-bg)"></stop>
+          <stop offset="25%" stop-color="var(--color-calendar-graph-day-L3-bg)"></stop>
+          <stop offset="50%" stop-color="var(--color-calendar-graph-day-L4-bg)"></stop>
+        </linearGradient>
+        <mask id="sparkline-27684940" x="0" y="0" width="155" height="28">
+          <polyline transform="translate(0, 28) scale(1,-1)" points="0,1 3,1 6,1 9,1 12,1 15,1 18,1 21,1 24,1 27,1 30,1 33,1 36,1 39,1 42,1 45,1 48,1 51,1 54,1 57,1 60,1 63,1 66,1 69,1 72,1 75,1 78,1 81,1 84,1 87,1 90,1 93,1 96,1 99,1 102,1 105,1 108,1 111,1 114,1 117,1 120,1 123,1 126,1 129,1 132,1 135,1 138,1 141,1 144,1 147,1 150,1 153,1 " fill="transparent" stroke="#8cc665" stroke-width="2">
+        </polyline></mask>
+      </defs>
+
+      <g transform="translate(0, -12)">
+        <rect x="0" y="-2" width="155" height="30" style="stroke: none; fill: url(#gradient-27684940); mask: url(#sparkline-27684940)"></rect>
+      </g>
+    </svg>
+  </span>
+
+    </div>
+  </div>
+</li>
+
+    </ul>
+    <div class="paginate-container">
+      
+    </div>
+</div>
+
+
+        </div>
+      </div>
+</div>
