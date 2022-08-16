@@ -10,27 +10,25 @@ namespace MVC1.Controllers
         public string grad { get; set; }
         public IActionResult fever()
             {
-            if (!String.IsNullOrEmpty(grad)) {
-                ViewBag.grad = grad;
-                return View("fever");
-                }
-            else
-                return View();
+            return View();
             }
         [HttpPost]
         public IActionResult fever(string grad)
             {
+
             if (!String.IsNullOrEmpty(grad))
                 {
                 ViewBag.grad = grad;
-                return View("fever");
+                Fevermodel.Degrees = grad;
+                ViewBag.Mess = Fevermodel.Check();
+
                 }
-            else
-                return View("fever");
-            
+
+            return View("fever");
+
             }
 
-        
 
-    }
+
+        }
     }
