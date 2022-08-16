@@ -6,12 +6,19 @@
         public static string Degrees { get; set; }
         public static string Check()
             {
+            string message="";
+            switch (int.Parse(Degrees))
+                {
+                case <37:
+                    message= $"You do,t have fever, your temperature is {Degrees}";
+                    break;
+                case > 37:
+                    message = $"You have fever, your temperature is {Degrees}";
+                    break;
 
-            if (int.Parse(Degrees) >= 37)
-                return $"Welcome to paradise, you will die and your fever is {Degrees}";
-            else
-                return $"You will survive, your feveris {Degrees}";
 
+                }
+            return message; 
             }
 
         }
