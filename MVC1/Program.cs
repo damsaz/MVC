@@ -15,7 +15,9 @@ app.UseRouting();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapControllerRoute(
+    name: "Doctor",
+    pattern: "{controller=Doctor}/{action=fever}/{id?}");
 
 
 app.Run();
