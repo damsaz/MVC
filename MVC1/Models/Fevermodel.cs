@@ -3,14 +3,14 @@
     public class Fevermodel
         {
        
-        public static string grad { get; set; }
+        public static string Degrees { get; set; }
         public static string Check()
             {
 
-            if(int.Parse(grad)>=37)
-                    return $"Welcome to paradise, you will die and your fever is {grad}";
+            if(int.Parse(Degrees)>=37)
+                    return $"Welcome to paradise, you will die and your fever is {Degrees}";
             else
-                return $"You will survive, your feveris {grad}";
+                return $"You will survive, your feveris {Degrees}";
 
         }
     

@@ -2,11 +2,7 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/Doctor.css" />
-           @{
-            
-            Fevermodel.grad = ViewBag.grad;
 
-        }
      <link rel="stylesheet" href="~/css/Main.css" asp-append-version="true" />
 <div class="text-center">
     <h1 class="display-4">Enter your fever level</h1>
@@ -14,19 +10,19 @@
  
      
   
-   @using(@Html.BeginForm("fever","Doctor",FormMethod.Post)){
-  <input type="text" class="form-control inputtext " name="grad"  placeholder="Enter your fever level" style="width:auto">
+   @using(@Html.BeginForm("fever","Doctor")){
+  <input type="text" class="form-control inputtext " name="grad" value=@ViewBag.grad placeholder="Enter your fever level"  style="width:auto">
   <input class="btn btn-primary" id="submit" type="submit" value="Will I survive?">
  }
- @if (!String.IsNullOrEmpty(ViewBag.grad))
-    {
+ 
        
         <h3>
-          @Fevermodel.Check()
+            @ViewBag.Mess
+          
         </h3>
        
   
-    }
+    
 
 </div>
 

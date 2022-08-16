@@ -20,9 +20,12 @@ namespace MVC1.Controllers
         [HttpPost]
         public IActionResult fever(string grad)
             {
+           
             if (!String.IsNullOrEmpty(grad))
                 {
                 ViewBag.grad = grad;
+                Fevermodel.Degrees = grad;
+                ViewBag.Mess = Fevermodel.Check();
                 return View("fever");
                 }
             else
