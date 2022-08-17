@@ -2,14 +2,25 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
+
+
+
+
+
+builder.Services.AddDistributedMemoryCache();
+
+
+builder.Services.AddSession(options =>
+{
+    options.Cookie.Name = ".AdventureWorks.Session";
+    options.IdleTimeout = TimeSpan.FromMinutes(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 var app = builder.Build();
-
-
+app.UseRouting();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
-app.UseRouting();
-
 
 
 app.MapControllerRoute(
@@ -18,6 +29,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "Doctor",
     pattern: "{controller=Doctor}/{action=fever}/{id?}");
-
-
+app.MapControllerRoute(
+    name: "GuessingGame",
+    pattern: "{controller=GuessingGame}/{action=Game}/{id?}");
+app.UseSession();
 app.Run();

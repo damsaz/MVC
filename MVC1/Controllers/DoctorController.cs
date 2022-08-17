@@ -3,7 +3,7 @@ using MVC1.Models;
 
 namespace MVC1.Controllers
     {
-    public class Doctor : Controller
+    public class DoctorController : Controller
         {
 
 

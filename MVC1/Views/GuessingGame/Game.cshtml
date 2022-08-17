@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Doctor.css" />
+
+     <link rel="stylesheet" href="~/css/Main.css" asp-append-version="true" />
+<div class="text-center">
+    <h1 class="display-4">Enter your guess between 1 and 100 </h1>
+
+ 
+     
+  
+   @using(@Html.BeginForm("Game","GuessingGame")){
+  <input type="text" class="form-control inputtext " name="playerGuess" value=@ViewBag.PlayerGuess placeholder="Enter your Guess"  style="width:auto">
+  <input class="btn btn-primary" id="submit" type="submit" value="Play">
+ }
+        <h3>
+            @ViewBag.Message 
+        </h3>
+           <h3>
+            @ViewBag.Best 
+        </h3>
+        </div>
+        

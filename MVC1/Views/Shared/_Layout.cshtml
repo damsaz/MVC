@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -23,21 +24,25 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="/Home/index">Home</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="/Home/About">About</a> 
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="About">About</a>
                         </li>
                          <li class="nav-item">
-                            <a class="nav-link text-white" href="/Home/Contact" >Contact</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="/Home/Projects">Projects</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Projects">Projects</a>
                         </li>
                          <li class="nav-item">
-                            <a class="nav-link text-white" href="/Doctor/fever">Doctor</a>
+                           
+                            <a class="nav-link text-white" asp-area="" asp-controller="Doctor" asp-action="fever">Doctor</a>
                         </li>
-
+                        <li class="nav-item">
+                          
+                             <a class="nav-link text-white" asp-area="" asp-controller="GuessingGame" asp-action="Game">GuessingGame</a>
+                        </li>
                     </ul>
                 </div>
             </div>
