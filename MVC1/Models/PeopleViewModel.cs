@@ -6,12 +6,12 @@ namespace MVC1.Models
         {
     
         public static string[] ?filePaths;
-        private static People people;
+        public static People people;
 
         internal static People GetPeople()
             {
    
-
+            
                 using (StreamReader sr = new StreamReader(filePaths[0]))
                     {
                      people = JsonConvert.DeserializeObject<People>(sr.ReadToEnd());
@@ -19,5 +19,10 @@ namespace MVC1.Models
 
             return people;
             }
+        internal static People GetPeopleList()
+        {
+
+            return people;
         }
+    }
     }

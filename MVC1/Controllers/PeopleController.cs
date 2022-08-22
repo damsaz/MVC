@@ -5,6 +5,7 @@ using MVC1.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using MVC1.Controllers;
+using System;
 
 namespace MVC1.Controllers
     {
@@ -35,20 +36,23 @@ public class PeopleController : Controller
         [HttpPost]
         public IActionResult Search(String SearchName)
             {
-
             People p2 = new People();
-            People people = PeopleViewModel.GetPeople();
-            List<Person> people2 = (List<Person>)people.people;
-            p2.people = people2.Where(people => people.First_name == SearchName).ToList();
-             
-           
-           return View("Index",p2);
+            if (!String.IsNullOrEmpty(SearchName))
+            {
+
+                People people = PeopleViewModel.GetPeopleList();
+                List<Person> people2 = (List<Person>)people.people;
+                p2.people = people2.Where(people => people.First_name.ToLower() == SearchName.ToLower()).ToList();
+            }
+            else
+                p2 = PeopleViewModel.people;
+            return View("Index",p2);
             }
         public IActionResult Add(String Tel,String First_name,String Last_name,String Country)
             {
 
             People p2 = new People();
-            People people = PeopleViewModel.GetPeople();
+            People people = PeopleViewModel.GetPeopleList();
             List<Person> people2 = (List<Person>)people.people;
             int id = people2.Count+1;
             Person person = new(id ,First_name,Last_name,Country,Tel);
@@ -64,12 +68,12 @@ public class PeopleController : Controller
             {
 
             People p2 = new People();
-            People people = PeopleViewModel.GetPeople();
+            People people = PeopleViewModel.GetPeopleList();
             List<Person> people2 = (List<Person>)people.people;
 
-            people2 = people2.Where(people => people.Id == int.Parse(Id)).ToList();
-          
+            p2.people = people2.Where(people => people.Id != int.Parse(Id)).ToList();
            
+
 
 
 
