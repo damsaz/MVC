@@ -10,4 +10,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4jsonfile_4peoplemock_1json__JsonSchema="https://github.com/fbecart/zinoma/releases/latest/download/zinoma-schema.json" /></VisualStudio></ProjectExtensions>
+
 </Project>
