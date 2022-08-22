@@ -36,48 +36,20 @@ public class PeopleController : Controller
         [HttpPost]
         public IActionResult Search(String SearchName)
             {
-            People p2 = new People();
-            if (!String.IsNullOrEmpty(SearchName))
-            {
-
-                People people = PeopleViewModel.GetPeopleList();
-                List<Person> people2 = (List<Person>)people.people;
-                p2.people = people2.Where(people => people.First_name.ToLower() == SearchName.ToLower()).ToList();
-            }
-            else
-                p2 = PeopleViewModel.people;
-            return View("Index",p2);
+            return View("Index", PeopleViewModel.Search(SearchName));
             }
         public IActionResult Add(String Tel,String First_name,String Last_name,String Country)
             {
-
-            People p2 = new People();
-            People people = PeopleViewModel.GetPeopleList();
-            List<Person> people2 = (List<Person>)people.people;
-            int id = people2.Count+1;
-            Person person = new(id ,First_name,Last_name,Country,Tel);
-            people2.Add(person);  
-            p2.people = people2;
-
-
-
-            return View("Index", p2);
+           
+            if (ModelState.IsValid) {
+                CreatePersonViewModel.Create(Tel, First_name, Last_name, Country);
+            }
+            return View("Index", PeopleViewModel.people);
             }
       
         public IActionResult Delete(String Id)
             {
-
-            People p2 = new People();
-            People people = PeopleViewModel.GetPeopleList();
-            List<Person> people2 = (List<Person>)people.people;
-
-            p2.people = people2.Where(people => people.Id != int.Parse(Id)).ToList();
-           
-
-
-
-
-            return View("Index", p2);
+            return View("Index", PeopleViewModel.Delete(Id));
             }
         }
     }

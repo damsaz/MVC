@@ -1,18 +1,22 @@
 ﻿using MVC1.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace MVC1.Models
     {
     public class Person
         {
-       public int Id;
-       public string First_name;
-       public string Last_name;
+        [Required]
+        public string First_name;
+        [Required]
+        public string Last_name;
+        [Required]
         public string Country;
-       public string Tel;
+        [Required]
+        public string Tel;
 
-        public Person(int id, string first_name, string last_name, string country, string tel)
+        public Person( string first_name, string last_name, string country, string tel)
             {
-            Id = id;
+         
             First_name = first_name;
             Last_name = last_name;
             Country = country;
@@ -21,7 +25,3 @@ namespace MVC1.Models
         }
     }
 // { "id":20,"first_name":"Juan","last_name":"Evans","email":"jevansj@google.de","country":"Philippines","modified":"2015-07-09","vip":true,"Tel":"073955214"}]'
-public class People
-    {
-    public IList<Person> people;
-    }

@@ -34,6 +34,6 @@ app.MapControllerRoute(
     pattern: "{controller=GuessingGame}/{action=Game}/{id?}");
 app.MapControllerRoute(
     name: "People",
-    pattern: "{controller=People}/{action=Index}/{id?}");
+    pattern: "{controller=People}/{action=Index}/{Tel?}");
 app.UseSession();
 app.Run();

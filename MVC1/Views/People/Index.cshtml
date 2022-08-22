@@ -42,7 +42,7 @@
     <table class="table table-condensed">
     <thead>
 		 <tr>
-        <th>ID</th>
+        
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Country</th>
@@ -50,16 +50,17 @@
       </tr>
     </thead>
     <tbody>
+                   
                     @foreach(var person in Model.people){
         
                     <tr>
 
-                        <td name=@person.Id>@person.Id</td>
+                        
                         <td>@person.First_name</td>
                         <td>@person.Last_name</td>
                         <td>@person.Country</td>
                         <td>@person.Tel</td>
-                         <td class="text-center"><a href="/People/Delete/@person.Id">Delete</a></td>
+                    <td class="text-center"><a href="/People/Delete/@person.Tel">Delete</a></td>
 
                     </tr>
                   
