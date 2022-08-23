@@ -25,3 +25,9 @@ namespace MVC1.Models
         }
     }
 // { "id":20,"first_name":"Juan","last_name":"Evans","email":"jevansj@google.de","country":"Philippines","modified":"2015-07-09","vip":true,"Tel":"073955214"}]'
+public class Student
+    {
+    public int StudentId { get; set; }
+    public string StudentName { get; set; }
+    public string Gender { get; set; }
+    }

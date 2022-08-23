@@ -51,5 +51,10 @@ public class PeopleController : Controller
             {
             return View("Index", PeopleViewModel.Delete(Id));
             }
+        public IActionResult Sort(int Sort)
+            {
+            PeopleViewModel.Sort(Sort);
+            return View("Index", PeopleViewModel.people);
+            }
         }
     }

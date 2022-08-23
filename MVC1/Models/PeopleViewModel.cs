@@ -45,5 +45,16 @@ namespace MVC1.Models
                 p2 = PeopleViewModel.people;
             return p2;
         }
-    }
+
+        internal static void Sort(int sort)
+            {
+
+            if (sort == 1)
+                PeopleViewModel.people.people = PeopleViewModel.people.people.OrderBy(x => x.First_name).ToList();
+            if (sort == 2)
+                PeopleViewModel.people.people = PeopleViewModel.people.people.OrderBy(x => x.Last_name).ToList();
+            }
+
+ 
+        }
     }
