@@ -1,4 +1,5 @@
-﻿  <div class="row align-items-end">
+﻿
+ <div class="row align-items-end ">
     <table class="table table-condensed">
     <thead>
 		 <tr>
@@ -10,13 +11,12 @@
       </tr>
     </thead>
     <tbody>
-                   
-
-                @foreach (var Person in Model.people)
+               
+                 @foreach (var Person in Model.people)
 {
     <partial name="_Person" model="Person"  />
 }
-               
+            
      
     </tbody>
   </table>

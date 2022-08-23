@@ -8,24 +8,25 @@ namespace MVC1.Models
         public static string[] ?filePaths;
         public static People people;
         public static string Jsontext { get; set; }
+        public static int MaxId { get; set; }
 
-        internal static People Delete(string id)
+        internal static People Delete(int id)
         {
-            PeopleViewModel.people.people = PeopleViewModel.people.people.Where(people => people.Tel != id).ToList();
+            PeopleViewModel.people.people = PeopleViewModel.people.people.Where(people => people.Id != id).ToList();
             return PeopleViewModel.people;
         }
 
         internal static People GetPeople()
-            {
-   
-            
-                using (StreamReader sr = new StreamReader(filePaths[0]))
-                    {
-           
-                people = JsonConvert.DeserializeObject<People>(sr.ReadToEnd());
-                
-                    }
+        {
 
+
+            using (StreamReader sr = new StreamReader(filePaths[0]))
+            {
+
+                people = JsonConvert.DeserializeObject<People>(sr.ReadToEnd());
+
+            }
+            MaxId = people.people.Count;
             return people;
             }
         internal static People GetPeopleList()
@@ -58,6 +59,21 @@ namespace MVC1.Models
                 PeopleViewModel.people.people = PeopleViewModel.people.people.OrderBy(x => x.Last_name).ToList();
             }
 
- 
+        internal static People SearchById(int id)
+        {
+            People p2 = new People();
+            if (id!=0)
+            {
+
+                People people = PeopleViewModel.GetPeopleList();
+                List<Person> people2 = (List<Person>)people.people;
+                p2.people = people2.Where(people => people.Id==id).ToList();
+            }
+            else 
+                p2 = PeopleViewModel.people;
+            if(p2.people.Count==0)
+                p2 = PeopleViewModel.people;
+            return p2;
         }
+    }
     }

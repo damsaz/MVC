@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVC1.Models;
+using System.Reflection.Metadata;
 
 namespace MVC1.Controllers
     {
@@ -18,13 +19,26 @@ namespace MVC1.Controllers
             }
         public IActionResult Index()
             {
+            PeopleViewModel.GetPeople();
             return View();
             }
-        public JsonResult Load()
+        public PartialViewResult Load()
             {
-            PeopleViewModel.GetPeople();
-            List<Person> people2 = (List<Person>)PeopleViewModel.people.people;
-            return  new JsonResult(Ok(people2));
+            
+            return PartialView("_Personlist", PeopleViewModel.people);
+            
             }
+        [HttpPost]
+        public PartialViewResult Details(int id)
+        {
+            
+            return PartialView("_Personlist", PeopleViewModel.SearchById(id));
+
         }
+        public PartialViewResult Delete(int Id)
+        {
+            return PartialView("_Personlist", PeopleViewModel.Delete(Id));
+
+        }
+    }
     }

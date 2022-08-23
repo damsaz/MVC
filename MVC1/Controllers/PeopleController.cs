@@ -47,9 +47,10 @@ public class PeopleController : Controller
             return View("Index", PeopleViewModel.people);
             }
       
-        public IActionResult Delete(String Id)
+        public PartialViewResult Delete(int Id)
             {
-            return View("Index", PeopleViewModel.Delete(Id));
+            return PartialView("_Personlist", PeopleViewModel.Delete(Id));
+            
             }
         public IActionResult Sort(int Sort)
             {

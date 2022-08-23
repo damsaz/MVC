@@ -1,8 +1,27 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@section Scripts{
+    <script>
+        $('#containera').on('click', '._Delete', function (e) {
+
+            var idClicked = e.target.id;
+           
+
+            $.ajax({
+                type: "Post",
+                url: "@Url.Action("Delete")",
+
+                data: { id: idClicked },
+
+
+                success: function (result) {
+                    $("#containera").html(result)
+                },
+                error: function (req, status, error) { console.log(status) }
+            });
+        });
+
+
+    </script>
+   }
 <div class=""container"">
  
 
@@ -22,7 +41,7 @@
   <input class="btn btn-primary" id="submit" type="submit" value="Search">}
     
        
-    </div>
+   
   </div>
 <div class="container mt-3">
   <div id="Add_someone" class="collapse">
@@ -38,8 +57,9 @@
 </div>
 
 
-  </div>
-  <partial name="Shared/_Personlist.cshtml">
+    </div><div id="containera">  
+  <partial name="_Personlist">
+    </div>
         <div class="col-md-10">
           @using (Html.BeginForm("Sort","People")){
             @Html.Label("ByFnmae", "By First name")
