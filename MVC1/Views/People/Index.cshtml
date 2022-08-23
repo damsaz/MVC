@@ -18,7 +18,7 @@
     </div>
     <div class="col">
        <p>You can change or remove someone</p>     @using(@Html.BeginForm("Search","People")){
-  <input type="text" class=" inputtext " name="SearchName" value=@ViewBag.PlayerGuess placeholder="Search by name"  style="width:auto">
+  <input type="text" class=" inputtext " name="SearchName"  placeholder="Search by name"  style="width:auto">
   <input class="btn btn-primary" id="submit" type="submit" value="Search">}
     
        
@@ -28,10 +28,10 @@
   <div id="Add_someone" class="collapse">
         <p>You can add someone</p>     
         @using(@Html.BeginForm("Add","People")){
-  <input type="text" class=" inputtext " name="First_name" value=@ViewBag.PlayerGuess placeholder="First name"  style="width:auto">
-   <input type="text" class=" inputtext " name="Last_name" value=@ViewBag.PlayerGuess placeholder="Last name"  style="width:auto">
-   <input type="text" class=" inputtext " name="Country" value=@ViewBag.PlayerGuess placeholder="Country"  style="width:auto">
-   <input type="text" class=" inputtext " name="Tel" value=@ViewBag.PlayerGuess placeholder="Tel"  style="width:auto">
+  <input type="text" class=" inputtext " name="First_name"  placeholder="First name"  style="width:auto">
+   <input type="text" class=" inputtext " name="Last_name"  placeholder="Last name"  style="width:auto">
+   <input type="text" class=" inputtext " name="Country"  placeholder="Country"  style="width:auto">
+   <input type="text" class=" inputtext " name="Tel"  placeholder="Tel"  style="width:auto">
   <input class="btn btn-primary" id="submit" type="submit" value="Add">}
     
   </div>
@@ -39,37 +39,7 @@
 
 
   </div>
-  <div class="row align-items-end">
-    <table class="table table-condensed">
-    <thead>
-		 <tr>
-        
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Country</th>
-        <th>Tel</th>
-      </tr>
-    </thead>
-    <tbody>
-                   
-                    @foreach(var person in Model.people){
-        
-                    <tr>
-
-                        
-                        <td>@person.First_name</td>
-                        <td>@person.Last_name</td>
-                        <td>@person.Country</td>
-                        <td>@person.Tel</td>
-                    <td class="text-center"><a href="/People/Delete/@person.Tel">Delete</a></td>
-
-                    </tr>
-                  
-                }
-     
-    </tbody>
-  </table>
-  </div>
+  <partial name="Shared/_Personlist.cshtml">
         <div class="col-md-10">
           @using (Html.BeginForm("Sort","People")){
             @Html.Label("ByFnmae", "By First name")
