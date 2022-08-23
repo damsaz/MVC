@@ -35,5 +35,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "People",
     pattern: "{controller=People}/{action=Index}/{Tel?}");
+app.MapControllerRoute(
+    name: "PeopelAjax",
+    pattern: "{controller=PeopelAjax}/{action=Index}/{Tel?}");
 app.UseSession();
 app.Run();

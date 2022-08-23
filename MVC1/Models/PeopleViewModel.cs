@@ -7,6 +7,7 @@ namespace MVC1.Models
     
         public static string[] ?filePaths;
         public static People people;
+        public static string Jsontext { get; set; }
 
         internal static People Delete(string id)
         {
@@ -20,7 +21,9 @@ namespace MVC1.Models
             
                 using (StreamReader sr = new StreamReader(filePaths[0]))
                     {
-                     people = JsonConvert.DeserializeObject<People>(sr.ReadToEnd());
+           
+                people = JsonConvert.DeserializeObject<People>(sr.ReadToEnd());
+                
                     }
 
             return people;
