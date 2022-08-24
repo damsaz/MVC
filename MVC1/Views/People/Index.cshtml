@@ -1,4 +1,5 @@
-﻿@section Scripts{
+﻿@model MVC1.Models.People
+@section Scripts{
     <script>
         $('#containera').on('click', '._Delete', function (e) {
 
@@ -46,16 +47,20 @@
 <div class="container mt-3">
   <div id="Add_someone" class="collapse">
         <p>You can add someone</p>     
-        @using(@Html.BeginForm("Add","People")){
-  <input type="text" class=" inputtext " name="First_name"  placeholder="First name"  style="width:auto">
-   <input type="text" class=" inputtext " name="Last_name"  placeholder="Last name"  style="width:auto">
-   <input type="text" class=" inputtext " name="Country"  placeholder="Country"  style="width:auto">
-   <input type="text" class=" inputtext " name="Tel"  placeholder="Tel"  style="width:auto">
-  <input class="btn btn-primary" id="submit" type="submit" value="Add">}
+         @using(@Html.BeginForm("Add","People")){
+  <input asp-for=First_name type="text" class=" inputtext " name="First_name"   placeholder="First name"  style="width:auto">
+  
+   <input  asp-for="Last_name" type="text" class=" inputtext " name="Last_name"  placeholder="Last name"  style="width:auto">
+   <input  asp-for="Country" type="text" class=" inputtext " name="Country"  placeholder="Country"  style="width:auto">
+   <input  asp-for="Tel"type="text" class=" inputtext " name="Tel"  placeholder="Tel"  style="width:auto">
+  <input class="btn btn-primary" id="submit" type="submit" value="Add">}  
     
   </div>
 </div>
-
+<span style="color:red" asp-validation-for="First_name"></span>
+<span style="color:red"asp-validation-for="Last_name"></span>
+<span style="color:red" asp-validation-for="Country"></span>
+<span style="color:red" asp-validation-for="Tel"></span>
 
     </div><div id="containera">  
   <partial name="_Personlist">
