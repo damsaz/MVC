@@ -16,6 +16,15 @@ namespace MVC1.Models
         [Required]
         public string Tel;
 
+        public Person()
+            {
+            First_name = "No results found";
+            Last_name = "";
+            Country = "";
+            Tel = "";
+            Id = 0;
+            }
+
         public Person( string first_name, string last_name, string country, string tel, int id)
             {
 

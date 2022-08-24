@@ -69,9 +69,11 @@ namespace MVC1.Models
                 PeopleViewModel people = PeopleManager.GetPeopleList();
                 List<Person> people2 = (List<Person>)people.people;
                 p2.people = people2.Where(people => people.Id==id).ToList();
-            }
-            if(p2.people.Count==0)
-                p2 = PeopleManager.people;
+                if (p2.people.Count == 0)
+                    p2 = PeopleManager.people;
+                }
+            else
+               p2= PeopleManager.people;
             return p2;
         }
     }

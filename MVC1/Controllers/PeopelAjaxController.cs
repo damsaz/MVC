@@ -34,7 +34,7 @@ namespace MVC1.Controllers
             if (PeopleManager.SearchById(id).people.Count == 1)
                 return PartialView("_Person", PeopleManager.SearchById(id).people[0]);
             else
-                return PartialView("_Person");
+                return PartialView("_Person",new Person());
 
         }
         public PartialViewResult Delete(int Id)

@@ -61,6 +61,7 @@
 
                 success: function(result) {
                     $("#containera").html(result)
+                    alert("The record with ID "+ value+" is deleted")
                 },
                 error: function(req, status, error) { console.log(status) }
             });
