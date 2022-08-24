@@ -14,30 +14,32 @@ namespace MVC1.Controllers
             {
 
             Environment = _environment;
-            PeopleViewModel.filePaths = Directory.GetFiles(Path.Combine(this.Environment.WebRootPath, "jsonfile\\"));
+            PeopleManager.filePaths = Directory.GetFiles(Path.Combine(this.Environment.WebRootPath, "jsonfile\\"));
 
             }
         public IActionResult Index()
             {
-            PeopleViewModel.GetPeople();
+            PeopleManager.GetPeople();
             return View();
             }
         public PartialViewResult Load()
             {
             
-            return PartialView("_Personlist", PeopleViewModel.people);
+            return PartialView("_Personlist", PeopleManager.people);
             
             }
         [HttpPost]
         public PartialViewResult Details(int id)
         {
-            
-            return PartialView("_Person", PeopleViewModel.SearchById(id).people[0]);
+            if (PeopleManager.SearchById(id).people.Count == 1)
+                return PartialView("_Person", PeopleManager.SearchById(id).people[0]);
+            else
+                return PartialView("_Person");
 
         }
         public PartialViewResult Delete(int Id)
         {
-            return PartialView("_Personlist", PeopleViewModel.Delete(Id));
+            return PartialView("_Personlist", PeopleManager.Delete(Id));
 
         }
     }

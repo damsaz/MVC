@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MVC1.Models;
+using System.ComponentModel.DataAnnotations;
 
-namespace MVC1.Models
-{
-    public class People
+namespace MVC1.ViewModels
     {
+    public class PeopleViewModel
+        {
         [Required]
         public int Id;
         [Required]
@@ -15,5 +16,5 @@ namespace MVC1.Models
         [Required]
         public string Tel;
         public IList<Person> people;
+        }
     }
-}

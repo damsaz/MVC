@@ -21,16 +21,16 @@
         $(document).on('click', '#Details', function() {
                         var tempdel1 = ' <div class="row align-items-end ">\
                     <table class="table table-condensed">\
-                    < thead >\
+                    <thead>\
                     <tr>\
-                    < th > Id < /th>\
-                    < th > Firstname < /th>\
-                    < th > Lastname < /th>\
-                    < th > Country < /th>\
-                    < th > Tel < /th>\
-                    < /tr>\
-                    < /thead>\
-                    < tbody >';
+                    <th> Id </th>\
+                    <th> Firstname </th>\
+                    <th> Lastname </th>\
+                    <th> Country </th>\
+                    <th> Tel </th>\
+                    </tr>\
+                    </thead>\
+                    <tbody >';
                 var tempdel2 =  ' </tbody>\
                                   </table>\
                                   </div>';
@@ -43,7 +43,7 @@
     
 
                         success: function(result) {
-                    $("#containera").html(tempdel1+result+)
+                    $("#containera").html(tempdel1+result+tempdel2)
                 },
                 error: function(req, status, error) { console.log(status) }
             });

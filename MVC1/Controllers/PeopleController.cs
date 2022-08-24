@@ -6,13 +6,14 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using MVC1.Controllers;
 using System;
+using MVC1.ViewModels;
 
 namespace MVC1.Controllers
     {
 
 
-    
-public class PeopleController : Controller
+
+    public class PeopleController : Controller
         {
         private Microsoft.AspNetCore.Hosting.IHostingEnvironment Environment;
         
@@ -22,7 +23,7 @@ public class PeopleController : Controller
             {
 
             Environment = _environment;
-            PeopleViewModel.filePaths = Directory.GetFiles(Path.Combine(this.Environment.WebRootPath, "jsonfile\\"));
+            PeopleManager.filePaths = Directory.GetFiles(Path.Combine(this.Environment.WebRootPath, "jsonfile\\"));
 
             }
 
@@ -30,13 +31,13 @@ public class PeopleController : Controller
             {
 
 
-            var people= PeopleViewModel.GetPeople();
+            var people= PeopleManager.GetPeople();
             return View(people);
             }
         [HttpPost]
         public IActionResult Search(String SearchName)
             {
-            return View("Index", PeopleViewModel.Search(SearchName));
+            return View("Index", PeopleManager.Search(SearchName));
             }
         public IActionResult Add(String Tel,String First_name,String Last_name,String Country)
             {
@@ -44,18 +45,18 @@ public class PeopleController : Controller
             if (ModelState.IsValid) {
                 CreatePersonViewModel.Create(Tel, First_name, Last_name, Country);
             }
-            return View("Index", PeopleViewModel.people);
+            return View("Index", PeopleManager.people);
             }
       
         public PartialViewResult Delete(int Id)
             {
-            return PartialView("_Personlist", PeopleViewModel.Delete(Id));
+            return PartialView("_Personlist", PeopleManager.Delete(Id));
             
             }
         public IActionResult Sort(int Sort)
             {
-            PeopleViewModel.Sort(Sort);
-            return View("Index", PeopleViewModel.people);
+            PeopleManager.Sort(Sort);
+            return View("Index", PeopleManager.people);
             }
         }
     }
