@@ -8,6 +8,8 @@ namespace MVC1.Models
         public static string[] ?filePaths;
         public static People people;
 
+        public static int MaxId { get; internal set; }
+
         internal static People Delete(string id)
         {
             PeopleViewModel.people.people = PeopleViewModel.people.people.Where(people => people.Tel != id).ToList();
@@ -22,7 +24,7 @@ namespace MVC1.Models
                     {
                      people = JsonConvert.DeserializeObject<People>(sr.ReadToEnd());
                     }
-
+            MaxId = people.people.Count;
             return people;
             }
         internal static People GetPeopleList()
