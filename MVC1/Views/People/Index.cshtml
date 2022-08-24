@@ -1,8 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model MVC1.Models.People
+
 <div class=""container"">
  
 
@@ -28,10 +25,10 @@
   <div id="Add_someone" class="collapse">
         <p>You can add someone</p>     
         @using(@Html.BeginForm("Add","People")){
-  <input type="text" class=" inputtext " name="First_name"  placeholder="First name"  style="width:auto">
-   <input type="text" class=" inputtext " name="Last_name"  placeholder="Last name"  style="width:auto">
-   <input type="text" class=" inputtext " name="Country"  placeholder="Country"  style="width:auto">
-   <input type="text" class=" inputtext " name="Tel"  placeholder="Tel"  style="width:auto">
+  <input asp-for=First_name type="text" class=" inputtext " name="First_name"   placeholder="First name"  style="width:auto">
+   <input  asp-for="Last_name" type="text" class=" inputtext " name="Last_name"  placeholder="Last name"  style="width:auto">
+   <input  asp-for="Country" type="text" class=" inputtext " name="Country"  placeholder="Country"  style="width:auto">
+   <input  asp-for="Tel"type="text" class=" inputtext " name="Tel"  placeholder="Tel"  style="width:auto">
   <input class="btn btn-primary" id="submit" type="submit" value="Add">}
     
   </div>

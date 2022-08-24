@@ -40,7 +40,7 @@ namespace MVC1.Models
             {
 
                 People people = PeopleViewModel.GetPeopleList();
-                List<Person> people2 = (List<Person>)people.people;
+                List<People.Person> people2 = (List<People.Person>)people.people;
                 p2.people = people2.Where(people => people.First_name.ToLower().Contains(searchName.ToLower())).ToList();
             }
             else
