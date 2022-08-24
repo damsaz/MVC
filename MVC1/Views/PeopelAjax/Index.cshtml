@@ -1,6 +1,6 @@
 ﻿@section Scripts{
     <script>
-        $('#containera').on('click', '._Delete', function (e) {
+        $('#containera').on('click', '._Delete', function(e) {
 
             var idClicked = e.target.id;
 
@@ -12,31 +12,45 @@
                 data: { id: idClicked },
 
 
-                success: function (result) {
+                success: function(result) {
                     $("#containera").html(result)
                 },
-                error: function (req, status, error) { console.log(status) }
+                error: function(req, status, error) { console.log(status) }
             });
         });
-        $(document).on('click', '#Details', function () {
-            
+        $(document).on('click', '#Details', function() {
+                        var tempdel1 = ' <div class="row align-items-end ">\
+                    <table class="table table-condensed">\
+                    < thead >\
+                    <tr>\
+                    < th > Id < /th>\
+                    < th > Firstname < /th>\
+                    < th > Lastname < /th>\
+                    < th > Country < /th>\
+                    < th > Tel < /th>\
+                    < /tr>\
+                    < /thead>\
+                    < tbody >';
+                var tempdel2 =  ' </tbody>\
+                                  </table>\
+                                  </div>';
             var value = $("#idbox").val();
             $.ajax({
                 type: "Post",
                 url: "@Url.Action("Details")",
 
                 data: { id: value },
-                        
+    
 
-                success: function (result) {
-                    $("#containera").html(result)
+                        success: function(result) {
+                    $("#containera").html(tempdel1+result+)
                 },
-                error: function (req, status, error) { console.log(status) }
+                error: function(req, status, error) { console.log(status) }
             });
-           
+
 
         });
-        $(document).on('click', '#Delete', function () {
+        $(document).on('click', '#Delete', function() {
             var value = $("#idbox").val();
             $.ajax({
                 type: "Post",
@@ -45,19 +59,19 @@
                 data: { id: value },
 
 
-                success: function (result) {
+                success: function(result) {
                     $("#containera").html(result)
                 },
-                error: function (req, status, error) { console.log(status) }
+                error: function(req, status, error) { console.log(status) }
             });
 
         });
-        $(document).on('click', '#load_data', function () {
-           
+        $(document).on('click', '#load_data', function() {
+
             $.ajax({
                 type: "Post",
                 url: "@Url.Action("Load")",
-       
+
                 // data: {name:"bewhrouz"}
                 success: function(result) {
                     $("#containera").html(result)
@@ -76,20 +90,20 @@
             <div class="col">
 
 
-                <input class="btn btn-dark" id="load_data" type="submit" value="Load" >
-              
+                <input class="btn btn-dark" id="load_data" type="submit" value="Load">
 
-        </div>
-        <div class="col">
-      
+
+            </div>
+            <div class="col">
+
                 <input type="text" class=" inputtext " id="idbox" placeholder="Enter id" style="width:auto">
                 <input class="btn btn-primary" id="Details" type="submit" value="Details">
                 <input class="btn btn-danger" id="Delete" type="submit" value="Delete">
-               
 
+
+            </div>
+
+            <div id="containera">  </div>
         </div>
 
-        <div id="containera">  </div>
     </div>
-
-</div>

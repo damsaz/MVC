@@ -32,7 +32,7 @@ namespace MVC1.Controllers
         public PartialViewResult Details(int id)
         {
             
-            return PartialView("_Personlist", PeopleViewModel.SearchById(id));
+            return PartialView("_Person", PeopleViewModel.SearchById(id).people[0]);
 
         }
         public PartialViewResult Delete(int Id)
