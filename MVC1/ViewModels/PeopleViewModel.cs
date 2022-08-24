@@ -15,6 +15,26 @@ namespace MVC1.ViewModels
         public string Country;
         [Required]
         public string Tel;
-        public IList<Person> people;
+
+        public IList<PeopleViewModel> people;
+      
+    public PeopleViewModel()
+        {
+        First_name = "";
+        Last_name = "";
+        Country = "";
+        Tel = "";
+        Id = 0;
+        }
+
+    public PeopleViewModel(string first_name, string last_name, string country, string tel, int id)
+        {
+
+        First_name = first_name;
+        Last_name = last_name;
+        Country = country;
+        Tel = tel;
+        Id = id;
+        }
         }
     }
