@@ -13,7 +13,7 @@ namespace MVC1.Models
 
         internal static PeopleViewModel Delete(int id)
         {
-            PeopleManager.people.people = PeopleManager.people.people.Where(people => people.Id != id).ToList();
+            PeopleManager.people.PeopleList = PeopleManager.people.PeopleList.Where(people => people.Id != id).ToList();
             return PeopleManager.people;
         }
 
@@ -27,7 +27,7 @@ namespace MVC1.Models
                 people = JsonConvert.DeserializeObject<PeopleViewModel>(sr.ReadToEnd());
 
             }
-            MaxId = people.people.Count;
+            MaxId = people.PeopleList.Count;
             return people;
             }
         internal static PeopleViewModel GetPeopleList()
@@ -43,8 +43,8 @@ namespace MVC1.Models
             {
 
                 PeopleViewModel people = PeopleManager.GetPeopleList();
-                List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.people;
-                p2.people = people2.Where(people => people.First_name.ToLower().Contains(searchName.ToLower())).ToList();
+                List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.PeopleList;
+                p2.PeopleList = people2.Where(people => people.First_name.ToLower().Contains(searchName.ToLower())).ToList();
             }
             else
                 p2 = PeopleManager.people;
@@ -55,9 +55,9 @@ namespace MVC1.Models
             {
 
             if (sort == 1)
-                PeopleManager.people.people = PeopleManager.people.people.OrderBy(x => x.First_name).ToList();
+                PeopleManager.people.PeopleList = PeopleManager.people.PeopleList.OrderBy(x => x.First_name).ToList();
             if (sort == 2)
-                PeopleManager.people.people = PeopleManager.people.people.OrderBy(x => x.Last_name).ToList();
+                PeopleManager.people.PeopleList = PeopleManager.people.PeopleList.OrderBy(x => x.Last_name).ToList();
             }
 
         internal static PeopleViewModel SearchById(int id)
@@ -67,9 +67,9 @@ namespace MVC1.Models
             {
 
                 PeopleViewModel people = PeopleManager.GetPeopleList();
-                List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.people;
-                p2.people = people2.Where(people => people.Id==id).ToList();
-                if (p2.people.Count == 0)
+                List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.PeopleList;
+                p2.PeopleList = people2.Where(people => people.Id==id).ToList();
+                if (p2.PeopleList.Count == 0)
                     p2 = PeopleManager.people;
                 }
             else

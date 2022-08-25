@@ -16,7 +16,7 @@ namespace MVC1.ViewModels
         [Required]
         public string Tel;
 
-        public IList<PeopleViewModel> people;
+        public IList<PeopleViewModel> PeopleList;
       
     public PeopleViewModel()
         {

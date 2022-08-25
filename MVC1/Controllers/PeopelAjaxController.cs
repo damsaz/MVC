@@ -32,8 +32,8 @@ namespace MVC1.Controllers
         [HttpPost]
         public PartialViewResult Details(int id)
         {
-            if (PeopleManager.SearchById(id).people.Count == 1)
-                return PartialView("_Person", PeopleManager.SearchById(id).people[0]);
+            if (PeopleManager.SearchById(id).PeopleList.Count == 1)
+                return PartialView("_Person", PeopleManager.SearchById(id).PeopleList[0]);
             else
                 return PartialView("_Person",new PeopleViewModel());
 
