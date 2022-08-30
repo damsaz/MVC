@@ -6,6 +6,8 @@ namespace MVC1.Controllers
         {
         public IActionResult Index()
             {
+            Data.ApplicationDbContext ss=new Data.ApplicationDbContext();
+            ss.GetPerson();
             return View();
             }
 

@@ -1,5 +1,6 @@
 ﻿using MVC1.ViewModels;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace MVC1.Models
     {
@@ -10,7 +11,7 @@ namespace MVC1.Models
         public static PeopleViewModel people;
         public static string Jsontext { get; set; }
         public static int MaxId { get; set; }
-
+      
         internal static PeopleViewModel Delete(int id)
         {
             PeopleManager.people.people = PeopleManager.people.people.Where(people => people.Id != id).ToList();
@@ -20,11 +21,12 @@ namespace MVC1.Models
         internal static PeopleViewModel GetPeople()
         {
 
-
+            List<Person> peoplelist = new List<Person>();
             using (StreamReader sr = new StreamReader(filePaths[0]))
             {
 
                 people = JsonConvert.DeserializeObject<PeopleViewModel>(sr.ReadToEnd());
+                peoplelist= people.people.ToList(); 
 
             }
             MaxId = people.people.Count;
@@ -32,7 +34,7 @@ namespace MVC1.Models
             }
         internal static PeopleViewModel GetPeopleList()
         {
-
+           
             return people;
         }
 
@@ -76,5 +78,7 @@ namespace MVC1.Models
                p2= PeopleManager.people;
             return p2;
         }
-    }
+
+ 
+        }
     }
