@@ -1,0 +1,19 @@
+﻿
+<div class="container mt-1">
+    <div id="Add_someone" class="collapse">
+        <p>You can add someone</p>
+        @using (@Html.BeginForm("Add", "People"))
+            {
+            <input type="text" class=" inputtext " name="First_name" placeholder="First name" style="width:auto">
+
+            <input  type="text" class=" inputtext " name="Last_name" placeholder="Last name" style="width:auto">
+            <input  type="text" class=" inputtext " name="Country" placeholder="Country" style="width:auto">
+            <input type="text" class=" inputtext " name="Tel" placeholder="Tel" style="width:auto">
+            <input class="btn btn-primary" id="submit" type="submit" value="Add">
+            }
+
+    </div>
+</div>
+
+
+ 

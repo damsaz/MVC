@@ -43,7 +43,7 @@ namespace MVC1.Models
             {
 
                 PeopleViewModel people = PeopleManager.GetPeopleList();
-                List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.people;
+                List<Person> people2 = (List<Person>)people.people;
                 p2.people = people2.Where(people => people.First_name.ToLower().Contains(searchName.ToLower())).ToList();
             }
             else
@@ -67,7 +67,7 @@ namespace MVC1.Models
             {
 
                 PeopleViewModel people = PeopleManager.GetPeopleList();
-                List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.people;
+                List<Person> people2 = (List<Person>)people.people;
                 p2.people = people2.Where(people => people.Id==id).ToList();
                 if (p2.people.Count == 0)
                     p2 = PeopleManager.people;

@@ -23,12 +23,6 @@
 
     </script>
    }
-<div class=""container"">
- 
-
-  
-  
-</div>
 <div class="container">
   <div class="row align-items-start">
     <div class="col">
@@ -40,29 +34,12 @@
        <p>You can change or remove someone</p>     @using(@Html.BeginForm("Search","People")){
   <input type="text" class=" inputtext " name="SearchName"  placeholder="Search by name"  style="width:auto">
   <input class="btn btn-primary" id="submit" type="submit" value="Search">}
-    
-       
-   
-  </div>
-<div class="container mt-3">
-  <div id="Add_someone" class="collapse">
-        <p>You can add someone</p>     
-         @using(@Html.BeginForm("Add","People")){
-  <input asp-for=First_name type="text" class=" inputtext " name="First_name"   placeholder="First name"  style="width:auto">
-  
-   <input  asp-for="Last_name" type="text" class=" inputtext " name="Last_name"  placeholder="Last name"  style="width:auto">
-   <input  asp-for="Country" type="text" class=" inputtext " name="Country"  placeholder="Country"  style="width:auto">
-   <input  asp-for="Tel"type="text" class=" inputtext " name="Tel"  placeholder="Tel"  style="width:auto">
-  <input class="btn btn-primary" id="submit" type="submit" value="Add">}  
-    
-  </div>
-</div>
-<span style="color:red" asp-validation-for="First_name"></span>
-<span style="color:red"asp-validation-for="Last_name"></span>
-<span style="color:red" asp-validation-for="Country"></span>
-<span style="color:red" asp-validation-for="Tel"></span>
 
-    </div><div id="containera">  
+
+          
+  </div>
+        <partial name="_Add">
+<div id="containera">  
   <partial name="_Personlist">
     </div>
         <div class="col-md-10">
@@ -73,4 +50,5 @@
             @Html.RadioButton("Sort", "2") 
           <input  class="btn btn-primary" type="submit" class="btn" value="Sort" />}
             </div>
+</div>
 </div>
