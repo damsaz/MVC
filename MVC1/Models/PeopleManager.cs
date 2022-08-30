@@ -1,4 +1,5 @@
-﻿using MVC1.ViewModels;
+﻿using MVC1.Data;
+using MVC1.ViewModels;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
@@ -20,16 +21,21 @@ namespace MVC1.Models
 
         internal static PeopleViewModel GetPeople()
         {
+          var  db = new ApplicationDbContext();
+            //List<Person> peoplelist = new List<Person>();
+            //using (StreamReader sr = new StreamReader(filePaths[0]))
+            //{
 
-            List<Person> peoplelist = new List<Person>();
-            using (StreamReader sr = new StreamReader(filePaths[0]))
-            {
+            //    people = JsonConvert.DeserializeObject<PeopleViewModel>(sr.ReadToEnd());
+            //    peoplelist= people.people.ToList(); 
 
-                people = JsonConvert.DeserializeObject<PeopleViewModel>(sr.ReadToEnd());
-                peoplelist= people.people.ToList(); 
-
-            }
-            MaxId = people.people.Count;
+            //}
+            //MaxId = people.people.Count;
+            foreach (var person in db.People)
+                {
+                Console.WriteLine(person.Last_name);
+                }
+            people.people = (IList<Person>)db.People;
             return people;
             }
         internal static PeopleViewModel GetPeopleList()
