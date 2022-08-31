@@ -1,7 +1,5 @@
-﻿using MVC1.Data;
-using MVC1.ViewModels;
+﻿using MVC1.ViewModels;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 
 namespace MVC1.Models
     {
@@ -12,7 +10,7 @@ namespace MVC1.Models
         public static PeopleViewModel people;
         public static string Jsontext { get; set; }
         public static int MaxId { get; set; }
-      
+
         internal static PeopleViewModel Delete(int id)
         {
             PeopleManager.people.people = PeopleManager.people.people.Where(people => people.Id != id).ToList();
@@ -40,7 +38,7 @@ namespace MVC1.Models
             }
         internal static PeopleViewModel GetPeopleList()
         {
-           
+
             return people;
         }
 
@@ -51,7 +49,7 @@ namespace MVC1.Models
             {
 
                 PeopleViewModel people = PeopleManager.GetPeopleList();
-                List<Person> people2 = (List<Person>)people.people;
+                List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.people;
                 p2.people = people2.Where(people => people.First_name.ToLower().Contains(searchName.ToLower())).ToList();
             }
             else
@@ -75,7 +73,7 @@ namespace MVC1.Models
             {
 
                 PeopleViewModel people = PeopleManager.GetPeopleList();
-                List<Person> people2 = (List<Person>)people.people;
+                List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.people;
                 p2.people = people2.Where(people => people.Id==id).ToList();
                 if (p2.people.Count == 0)
                     p2 = PeopleManager.people;
@@ -84,7 +82,5 @@ namespace MVC1.Models
                p2= PeopleManager.people;
             return p2;
         }
-
- 
-        }
+    }
     }
