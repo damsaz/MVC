@@ -4,12 +4,12 @@
 
 namespace MVC1.Migrations
 {
-    public partial class Init : Migration
+    public partial class @int : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "People",
+                name: "Person",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -21,11 +21,11 @@ namespace MVC1.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_People", x => x.Id);
+                    table.PrimaryKey("PK_Person", x => x.Id);
                 });
 
             migrationBuilder.InsertData(
-                table: "People",
+                table: "Person",
                 columns: new[] { "Id", "Country", "First_name", "Last_name", "Tel" },
                 values: new object[,]
                 {
@@ -55,7 +55,7 @@ namespace MVC1.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "People");
+                name: "Person");
         }
     }
 }

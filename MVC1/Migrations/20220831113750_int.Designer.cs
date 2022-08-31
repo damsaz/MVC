@@ -10,9 +10,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MVC1.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220830120227_Init")]
-    partial class Init
+    [DbContext(typeof(MVC1Context))]
+    [Migration("20220831113750_int")]
+    partial class @int
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,7 +49,7 @@ namespace MVC1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("People");
+                    b.ToTable("Person");
 
                     b.HasData(
                         new

@@ -1,4 +1,5 @@
-﻿using MVC1.ViewModels;
+﻿using MVC1.Data;
+using MVC1.ViewModels;
 using Newtonsoft.Json;
 
 namespace MVC1.Models
@@ -8,6 +9,8 @@ namespace MVC1.Models
     
         public static string[] ?filePaths;
         public static PeopleViewModel people;
+        internal static MVC1Context context;
+
         public static string Jsontext { get; set; }
         public static int MaxId { get; set; }
 
@@ -19,21 +22,17 @@ namespace MVC1.Models
 
         internal static PeopleViewModel GetPeople()
         {
-          var  db = new ApplicationDbContext();
-            //List<Person> peoplelist = new List<Person>();
-            //using (StreamReader sr = new StreamReader(filePaths[0]))
-            //{
 
-            //    people = JsonConvert.DeserializeObject<PeopleViewModel>(sr.ReadToEnd());
-            //    peoplelist= people.people.ToList(); 
-
-            //}
-            //MaxId = people.people.Count;
-            foreach (var person in db.People)
+            List<Person> peoplelist = new List<Person>();
+            using (StreamReader sr = new StreamReader(filePaths[0]))
                 {
-                Console.WriteLine(person.Last_name);
+
+                people = JsonConvert.DeserializeObject<PeopleViewModel>(sr.ReadToEnd());
+                peoplelist = people.people.ToList();
+
                 }
-            people.people = (IList<Person>)db.People;
+            MaxId = people.people.Count;
+
             return people;
             }
         internal static PeopleViewModel GetPeopleList()
@@ -50,7 +49,7 @@ namespace MVC1.Models
 
                 PeopleViewModel people = PeopleManager.GetPeopleList();
                 List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.people;
-                p2.people = people2.Where(people => people.First_name.ToLower().Contains(searchName.ToLower())).ToList();
+                p2.people = (IList<Person>)people2.Where(people => people.First_name.ToLower().Contains(searchName.ToLower())).ToList();
             }
             else
                 p2 = PeopleManager.people;
@@ -74,7 +73,7 @@ namespace MVC1.Models
 
                 PeopleViewModel people = PeopleManager.GetPeopleList();
                 List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.people;
-                p2.people = people2.Where(people => people.Id==id).ToList();
+                p2.people = (IList<Person>)people2.Where(people => people.Id==id).ToList();
                 if (p2.people.Count == 0)
                     p2 = PeopleManager.people;
                 }
@@ -82,5 +81,7 @@ namespace MVC1.Models
                p2= PeopleManager.people;
             return p2;
         }
-    }
+
+        
+        }
     }
