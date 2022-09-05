@@ -3,7 +3,7 @@ using MVC1.ViewModels;
 using Newtonsoft.Json;
 
 namespace MVC1.Models
-    {
+{
     public class PeopleManager
         {
     
@@ -24,7 +24,7 @@ namespace MVC1.Models
         {
 
             List<Person> peoplelist = new List<Person>();
-            using (StreamReader sr = new StreamReader(filePaths[0]))
+            using (StreamReader sr = new StreamReader(filePaths[3]))
                 {
 
                 people = JsonConvert.DeserializeObject<PeopleViewModel>(sr.ReadToEnd());
@@ -48,7 +48,7 @@ namespace MVC1.Models
             {
 
                 PeopleViewModel people = PeopleManager.GetPeopleList();
-                List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.people;
+                List<Person> people2 = (List<Person>)people.people;
                 p2.people = (IList<Person>)people2.Where(people => people.First_name.ToLower().Contains(searchName.ToLower())).ToList();
             }
             else
@@ -72,7 +72,7 @@ namespace MVC1.Models
             {
 
                 PeopleViewModel people = PeopleManager.GetPeopleList();
-                List<PeopleViewModel> people2 = (List<PeopleViewModel>)people.people;
+                List<Person> people2 = (List<Person>)people.people;
                 p2.people = (IList<Person>)people2.Where(people => people.Id==id).ToList();
                 if (p2.people.Count == 0)
                     p2 = PeopleManager.people;

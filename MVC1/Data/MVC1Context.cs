@@ -11,6 +11,14 @@ namespace MVC1.Data
 {
     public class MVC1Context : DbContext
     {
+        public void AddCascadingObject(object rootEntity) //Place inside DbContext.cs
+            {
+            ChangeTracker.TrackGraph(
+                rootEntity,
+                node =>
+                    node.Entry.State = !node.Entry.IsKeySet ? EntityState.Added : EntityState.Unchanged
+            );
+            }
         public MVC1Context (DbContextOptions<MVC1Context> options)
             : base(options)
         {
@@ -21,7 +29,7 @@ namespace MVC1.Data
 
             }
 
-        public DbSet<MVC1.Models.Person> Person { get; set; }
+        public DbSet<Person> Person { get; set; }
         public List<Person> GetPerson()
             {
             PeopleViewModel people2;
@@ -38,5 +46,6 @@ namespace MVC1.Data
                 }
             return peoplelist;
             }
+
         }
 }

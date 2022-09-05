@@ -1,9 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace MVC1.Models
-    {
+{
 
     public class Person
-        {
+    {
+      
+
+        public Person(string first_name, string last_name, string city, string tel, List<Language> list)
+            {
+            First_name = first_name;
+            Last_name = last_name;
+            City = city;
+            Tel = tel;
+            Languages = list;
+            }
+        public Person()
+            {
+
+            }
+
         [Required]
         public int Id { get; set; }
 
@@ -11,27 +28,11 @@ namespace MVC1.Models
 
         public string Last_name { get; set; }
 
-        public string Country { get; set; }
+        public string City { get; set; }
 
         public string Tel { get; set; }
+        public List<Language> Languages { get; set; }
 
-
-        public Person(string first_name, string last_name, string country, string tel, int id)
-            {
-            First_name = first_name;
-            Last_name = last_name;
-            Country = country;
-            Tel = tel;
-            Id = id;
-            }
-        public Person(int id, string first_name, string last_name, string country, string tel)
-            {
-            Id = id;
-            First_name = first_name;
-            Last_name = last_name;
-            Country = country;
-            Tel = tel;
-            }
-        public Person() { }
-        }
+       
     }
+}

@@ -1,26 +1,13 @@
-﻿using MVC1.Models;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
+using MVC1.Models;
 
 namespace MVC1.ViewModels
-    {
+{
     public class PeopleViewModel
         {
-
-        [Required]
-        public int Id;
-        [Required]
-        public string First_name;
-        [Required]
-        public string Last_name;
-        [Required]
-        public string Country;
-        [Required]
-        public string Tel;
-     
-
+        public int Id { get; set; } 
         public IList<Person> people;
-     
 
         }
     }
