@@ -1,0 +1,19 @@
+﻿@model MVC1.ViewModels.PeopleViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/People/Index.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>PeopleViewModel</h4>
+    <hr />
+    <dl class="row">
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

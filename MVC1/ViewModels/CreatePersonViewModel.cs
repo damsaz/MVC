@@ -11,9 +11,9 @@ namespace MVC1.ViewModels
             people2.people = PeopleManager.people.people.Where(people => people.First_name.ToLower() == first_name.ToLower() && people.Last_name.ToLower() == last_name.ToLower()).ToList();
             if (people2.people.Count == 0)
                 {
-                Person person = new(first_name, last_name, City, tel, new List<Language> {new Language()});
-                PeopleManager.MaxId++;
-                PeopleManager.people.people.Add(person);
+               // Person person = new(first_name, last_name, City, tel);
+               // PeopleManager.MaxId++;
+               // PeopleManager.people.people.Add(person);
                 }
             }
         }
