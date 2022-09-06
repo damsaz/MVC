@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using MVC1.Models;
 using MVC1.ViewModels;
 using Newtonsoft.Json;
@@ -23,13 +25,19 @@ namespace MVC1.Data
             
             modelBuilder.Entity<Person>().HasData(GetPerson());
            modelBuilder.Entity<Person>().HasMany(l=>l.Languages).WithMany(p=>p.people).UsingEntity(J=>J.HasData(GetLangPeop()));
-            
+            modelBuilder.Entity<Person>()
+           .HasOne(p => p.city)
+           .WithMany(b => b.people)
+           .HasForeignKey(p => p.CityName);
+
 
             }
         
 
         public DbSet<Person> Person { get; set; }
         public DbSet<Language> Language { get; set; }
+        public DbSet<City> City { get; set; }
+      
         public List<Person> GetPerson()
             {
             PeopleViewModel people2;
@@ -49,7 +57,7 @@ namespace MVC1.Data
         public List<LanguagePerson> GetLangPeop()
         {
             LanguagePersonVM languagePerso;
-            List<LanguagePerson> peoplelist = new List<LanguagePerson>();
+            List<LanguagePerson> LangPeoplist = new List<LanguagePerson>();
 
             using (StreamReader sr = new StreamReader(@"wwwroot\\jsonfile\\LanguagePerson.json"))
             {
@@ -57,27 +65,59 @@ namespace MVC1.Data
 
 
                 languagePerso = JsonConvert.DeserializeObject<LanguagePersonVM>(sr.ReadToEnd());
-                peoplelist = languagePerso.LanguagePerson.ToList();
+                LangPeoplist = languagePerso.LanguagePerson.ToList();
 
             }
-            return peoplelist;
+            return LangPeoplist;
         }
         public static List<Language> GetLang()
         {
-            LanguageVM languagePerso;
-            List<Language> peoplelist = new List<Language>();
+            LanguageVM language;
+            List<Language> Langlist = new List<Language>();
 
             using (StreamReader sr = new StreamReader(@"wwwroot\\jsonfile\\Language.json"))
             {
 
 
 
-                languagePerso = JsonConvert.DeserializeObject<LanguageVM>(sr.ReadToEnd());
-                peoplelist = languagePerso.Languages.ToList();
+                language = JsonConvert.DeserializeObject<LanguageVM>(sr.ReadToEnd());
+                Langlist = language.Languages.ToList();
 
             }
-            return peoplelist;
+            return Langlist;
         }
-    
-    }
+        public static List<City> GetCity()
+            {
+            CityViewModel Cities;
+            List<City> cityList = new List<City>();
+
+            using (StreamReader sr = new StreamReader(@"wwwroot\\jsonfile\\cities.json"))
+                {
+
+
+
+                Cities = JsonConvert.DeserializeObject<CityViewModel>(sr.ReadToEnd());
+                cityList = Cities.CityList.ToList();
+
+                }
+            return cityList;
+            }
+        public static List<Country> GetCountry()
+            {
+            CountryViewModel CountryVM;
+            List<Country> CountryList = new List<Country>();
+
+            using (StreamReader sr = new StreamReader(@"wwwroot\\jsonfile\\country.json"))
+                {
+
+
+
+                CountryVM = JsonConvert.DeserializeObject<CountryViewModel>(sr.ReadToEnd());
+                CountryList = CountryVM.CountryList.ToList();
+
+                }
+            return CountryList;
+            }
+
+        }
 }

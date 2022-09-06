@@ -43,10 +43,25 @@ namespace MVC1.Models
             }
           
             MaxId = people.people.Count;
-           
+            GetCity();
             return people;
             }
+        public static List<City> GetCity()
+            {
+            CityViewModel Cities;
+            List<City> cityList = new List<City>();
 
+            using (StreamReader sr = new StreamReader(@"wwwroot\\jsonfile\\cities.json"))
+                {
+
+
+
+                Cities = JsonConvert.DeserializeObject<CityViewModel>(sr.ReadToEnd());
+                cityList = Cities.CityList.ToList();
+
+                }
+            return cityList;
+            }
         internal static PeopleViewModel GetPeopleList()
         {
 
