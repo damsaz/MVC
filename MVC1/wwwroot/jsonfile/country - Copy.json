@@ -1,0 +1,12 @@
+{
+  "CountryList": [
+    {
+      "name": "Poland",
+      "CountryId": "PL"
+    },
+    {
+      "name": "United States",
+      "CountryId": "US"
+    },
+  ]
+}
