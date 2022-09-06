@@ -8,5 +8,53 @@
       "name": "United States",
       "CountryId": "US"
     },
+    {
+      "name": "Portugal",
+      "CountryId": "PT"
+    },
+    {
+      "name": "Iran, Islamic Republic Of",
+      "CountryId": "IR"
+    },
+    {
+      "name": "Sweden",
+      "CountryId": "SE"
+    },
+    {
+      "name": "France",
+      "CountryId": "FR"
+    },
+    {
+      "name": "Germany",
+      "CountryId": "DE"
+    },
+    {
+      "name": "Italy",
+      "CountryId": "IT"
+    },
+    {
+      "name": "United Kingdom",
+      "CountryId": "GB"
+    },
+    {
+      "name": "Spain",
+      "CountryId": "ES"
+    },
+    {
+      "name": "Mexico",
+      "CountryId": "MX"
+    },
+    {
+      "name": "Colombia",
+      "CountryId": "CO"
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "CountryId": "BA"
+    },
+    {
+      "name": "Australia",
+      "CountryId": "AU"
+    }
   ]
 }
