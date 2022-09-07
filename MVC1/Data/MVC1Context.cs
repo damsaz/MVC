@@ -22,14 +22,15 @@ namespace MVC1.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
             {
             modelBuilder.Entity<Language>().HasData(GetLang());
-            
+            modelBuilder.Entity<City>().HasData(GetCity());
+            modelBuilder.Entity<Country>().HasData(GetCountry());   
             modelBuilder.Entity<Person>().HasData(GetPerson());
            modelBuilder.Entity<Person>().HasMany(l=>l.Languages).WithMany(p=>p.people).UsingEntity(J=>J.HasData(GetLangPeop()));
             modelBuilder.Entity<Person>()
            .HasOne(p => p.city)
            .WithMany(b => b.people)
-           .HasForeignKey(p => p.CityName);
-
+           .HasForeignKey(p => p.IdCity);
+            modelBuilder.Entity<City>().HasOne(p => p.Country).WithMany(b => b.City).HasForeignKey(p => p.CountryId);
 
             }
         
@@ -37,7 +38,8 @@ namespace MVC1.Data
         public DbSet<Person> Person { get; set; }
         public DbSet<Language> Language { get; set; }
         public DbSet<City> City { get; set; }
-      
+        public DbSet<Country> Country { get; set; }
+
         public List<Person> GetPerson()
             {
             PeopleViewModel people2;

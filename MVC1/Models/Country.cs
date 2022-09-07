@@ -9,6 +9,6 @@ namespace MVC1.Models
         public string CountryId { get; set; }
         public string Name { get; set; }
 
-        public List<CityViewModel> cities;
+        public ICollection<City> City { get; set; }
         }
 }

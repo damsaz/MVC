@@ -50,5 +50,17 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "PeopleEF",
     pattern: "{controller=PeopleEF}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "Cities",
+    pattern: "{controller=Cities}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "Countries",
+    pattern: "{controller=Countries}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "Languages",
+    pattern: "{controller=Languages}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "LP",
+    pattern: "{controller=LP}/{action=Index}/{id?}");
 app.UseSession();
 app.Run();
