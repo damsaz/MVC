@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using MVC1.Data;
 using MVC1.Models;
 using System;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace MVC1.Controllers
     {
@@ -46,15 +48,29 @@ namespace MVC1.Controllers
                 return View();
                 }
             }
-
-        // GET: LPController/Edit/5
-        public ActionResult Edit(int id)
+        [HttpPost]
+        public ActionResult Add(int id ,string Languages)
+        {
+            var person = _context.Person.Include(p => p.Languages).FirstOrDefault(e => e.Id == id);
+            List<Language> lang2 = person.Languages.Where(l => l.Name == Languages).ToList();
+            var lang = _context.Language.FirstOrDefault(l => l.Name == Languages);
+            if (lang2.Count == 0) {
+                person.Languages.Add(lang);
+                _context.SaveChanges();
+            }
+            ViewData["Language"] = new SelectList(_context.Language, "Name", "Name", person.Languages);
+            var person2 = _context.Person.Include(p => p.Languages).FirstOrDefault(e => e.Id == id);
+            return View("Edit", person2);
+        }
+            // GET: LPController/Edit/5
+            public ActionResult Edit(int id)
             {
             var person = _context.Person.Include(p => p.Languages).FirstOrDefault(e => e.Id == id); 
            
            // var person = mVC1Context.Person.Find(id);
            // ViewData["IdLanguage"] = new SelectList(_context.Language, "Name", "Name");
-             //  ViewData["IdLanguage"] = new List(person.Languages, "Name", "Name");
+          //    ViewData["Language"] = new SelectList(_context.Language, "Name", "Name");
+            ViewData["Language"] = new SelectList(_context.Language, "Name", "Name", person.Languages);
             return View(person);
             
             }
@@ -62,7 +78,7 @@ namespace MVC1.Controllers
         // POST: LPController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,First_name,Last_name,IdCity,Tel")] Person person)
+        public  IActionResult Edit(int id, [Bind("Id,First_name,Last_name,IdCity,Tel")] Person person)
             {
             if (id != person.Id)
                 {
@@ -74,7 +90,7 @@ namespace MVC1.Controllers
                 try
                     {
                     _context.Update(person);
-                    await _context.SaveChangesAsync();
+                     _context.SaveChanges();
                     }
                 catch (DbUpdateConcurrencyException)
                     {
@@ -94,15 +110,17 @@ namespace MVC1.Controllers
             }
 
         // GET: LPController/Delete/5
-        public ActionResult Delete([Bind("IdLanguage,Name")] Language Language, int id)
+        public ActionResult Delete( int IdLanguage, int id)
             {
             var person = _context.Person.Include(p => p.Languages).FirstOrDefault(e => e.Id == id);
-            person.Languages.Remove(Language);
+            var lang = _context.Language.FirstOrDefault(l => l.IdLanguage == IdLanguage);
+            person.Languages.Remove(lang);
             
             
 
          _context.SaveChanges();
             var person2 = _context.Person.Include(p => p.Languages).FirstOrDefault(e => e.Id == id);
+            ViewData["Language"] = new SelectList(_context.Language, "Name", "Name", person.Languages);
             return View("Edit", person2);
             }
 

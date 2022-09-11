@@ -27,7 +27,7 @@ namespace MVC1.Models
 
             List<Person> peoplelist = new List<Person>();
             List < LanguagePerson> languagePerson = new List<LanguagePerson>();
-            using (StreamReader sr = new StreamReader(filePaths[4]))
+            using (StreamReader sr = new StreamReader(filePaths[5]))
                 {
 
                 people = JsonConvert.DeserializeObject<PeopleViewModel>(sr.ReadToEnd());

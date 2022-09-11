@@ -19,24 +19,24 @@ namespace MVC1.Controllers
             _context = context;
         }
 
-        // GET: PeopleEF
-        public async Task<IActionResult> Index()
+       
+        public IActionResult Index()
         {
             var mVC1Context = _context.Person.Include(p => p.city);
-            return View(await mVC1Context.ToListAsync());
+            return View( mVC1Context.ToList());
         }
 
-        // GET: PeopleEF/Details/5
-        public async Task<IActionResult> Details(int? id)
+        
+        public  IActionResult Details(int? id)
         {
             if (id == null || _context.Person == null)
             {
                 return NotFound();
             }
 
-            var person = await _context.Person
+            var person =  _context.Person
                 .Include(p => p.city)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefault(m => m.Id == id);
             if (person == null)
             {
                 return NotFound();
@@ -45,54 +45,50 @@ namespace MVC1.Controllers
             return View(person);
         }
 
-        // GET: PeopleEF/Create
+       
         public IActionResult Create()
         {
             ViewData["IdCity"] = new SelectList(_context.City, "IdCity", "IdCity");
             return View();
         }
 
-        // POST: PeopleEF/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,First_name,Last_name,IdCity,Tel")] Person person)
+        public IActionResult Create([Bind("Id,First_name,Last_name,IdCity,Tel")] Person person)
         {
             if (ModelState.IsValid)
             {
                 _context.Add(person);
-                await _context.SaveChangesAsync();
+                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCity"] = new SelectList(_context.City, "IdCity", "IdCity", person.IdCity);
+            ViewData["IdCity"] = new SelectList(_context.City, "CityName", "CityName", _context.City.FirstOrDefault(p => p.IdCity == person.IdCity).CityName);
             return View(person);
         }
 
-        // GET: PeopleEF/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+      
+        public IActionResult Edit(int? id)
         {
             if (id == null || _context.Person == null)
             {
                 return NotFound();
             }
 
-            var person = await _context.Person.FindAsync(id);
+            var person =  _context.Person.Find(id);
             if (person == null)
             {
                 return NotFound();
             }
-            ViewData["IdCity"] = new SelectList(_context.City, "IdCity", "IdCity", person.IdCity);
+            ViewData["IdCity"] = new SelectList(_context.City, "CityName", "CityName", _context.City.FirstOrDefault(p=>p.IdCity== person.IdCity).CityName);
             return View(person);
         }
 
-        // POST: PeopleEF/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,First_name,Last_name,IdCity,Tel")] Person person)
+       
+        public IActionResult Edit(int id,string First_name,string Last_name,string tel)
         {
+            [Bind(Id,First_name,Last_name,IdCity,Tel)] Person person;
             if (id != person.Id)
             {
                 return NotFound();
@@ -103,7 +99,7 @@ namespace MVC1.Controllers
                 try
                 {
                     _context.Update(person);
-                    await _context.SaveChangesAsync();
+                     _context.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -118,21 +114,22 @@ namespace MVC1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCity"] = new SelectList(_context.City, "IdCity", "IdCity", person.IdCity);
+
+            ViewData["IdCity"] = new SelectList(_context.City, "CityName", "CityName", _context.City.FirstOrDefault(p => p.IdCity == person.IdCity).CityName);
             return View(person);
         }
 
-        // GET: PeopleEF/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+       
+        public IActionResult Delete(int? id)
         {
             if (id == null || _context.Person == null)
             {
                 return NotFound();
             }
 
-            var person = await _context.Person
+            var person =  _context.Person
                 .Include(p => p.city)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefault(m => m.Id == id);
             if (person == null)
             {
                 return NotFound();
@@ -141,22 +138,22 @@ namespace MVC1.Controllers
             return View(person);
         }
 
-        // POST: PeopleEF/Delete/5
+        
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+       
+        public IActionResult DeleteConfirmed(int id)
         {
             if (_context.Person == null)
             {
                 return Problem("Entity set 'MVC1Context.Person'  is null.");
             }
-            var person = await _context.Person.FindAsync(id);
+            var person =  _context.Person.Find(id);
             if (person != null)
             {
                 _context.Person.Remove(person);
             }
             
-            await _context.SaveChangesAsync();
+             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 

@@ -7,49 +7,53 @@
 
 <h1>Edit</h1>
 
-<h4>Person</h4>
+<h4>Person Language</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+    <div class="col-md-8">
+        <form asp-action="Add">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="First_name" class="control-label"></label>
-                <input asp-for="First_name" class="form-control" />
+                <input asp-for="First_name" disabled="true" class="form-control" />
                 <span asp-validation-for="First_name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Last_name" class="control-label"></label>
-                <input asp-for="Last_name" class="form-control" />
+                <label asp-for="Last_name"  class="control-label"></label>
+                <input asp-for="Last_name" disabled="true" class="form-control" />
                 <span asp-validation-for="Last_name" class="text-danger"></span>
             </div>
-            <div class="form-group">
 
-                <form asp-action="Delete">
+            <div class="form-group">
                 <label asp-for="Languages" class="control-label"></label>
-                    @using (@Html.BeginForm("Search", "People"))
-                        {
-                       
-                @foreach (var item in Model.Languages)
-                    {
-                            @Html.ActionLink(item.Name, "Delete", new { item.IdLanguage,item.Name, Model.Id })
-                    <input type="submit" value="@item.Name" class="btn btn-danger" />
-                    }
-                        }
-
-                </form>
-                <span asp-validation-for="IdCity" class="text-danger"></span>
+                <select asp-for="Languages" class="form-control" asp-items="ViewBag.Language"></select>
+                <span asp-validation-for="Languages" class="text-danger"></span>
             </div>
+  
             <div class="form-group">
-                <label asp-for="Tel" class="control-label"></label>
-                <input asp-for="Tel" class="form-control" />
-                <span asp-validation-for="Tel" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Add" class="btn btn-primary" />
             </div>
         </form>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+
+
+            <label asp-for="Languages" class="control-label"></label>
+            @using (@Html.BeginForm("Search", "People"))
+            {
+
+                @foreach (var item in Model.Languages)
+                {
+
+                    @Html.ActionLink("Remove: "+item.Name, "Delete", new { item.IdLanguage, Model.Id },new {@class = "btn btn-danger btnma" })
+                }
+            }
+
+
+
+        </div>
     </div>
 </div>
 
@@ -57,8 +61,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-    }
