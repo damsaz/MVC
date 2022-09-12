@@ -13,7 +13,7 @@ namespace MVC1.Models
         public string First_name { get; set; }
 
         public string Last_name { get; set; }
-
+   
         public City city { get; set; }
         public int IdCity { get; set; }
 

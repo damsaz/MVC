@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MVC1.Migrations
 {
     [DbContext(typeof(MVC1Context))]
-    [Migration("20220907075031_1")]
+    [Migration("20220912072725_1")]
     partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

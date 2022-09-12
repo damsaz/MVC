@@ -1,6 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MVC1.Data;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.CodeAnalysis.Options;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
+using Microsoft.CodeAnalysis;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MVC1Context>(options =>
@@ -8,10 +12,21 @@ builder.Services.AddDbContext<MVC1Context>(options =>
 
 builder.Services.AddControllersWithViews();
 
+/*builder.Services.AddDefaultIdentity<ApplicationUser>(options =>options.SignIn.RequireConfirmedAccount=false)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<MVC1Context>();
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // Default Password settings.
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequiredLength = 6;
+    options.Password.RequiredUniqueChars = 1;
+});
 
-
-
-
+*/
 
 builder.Services.AddDistributedMemoryCache();
 

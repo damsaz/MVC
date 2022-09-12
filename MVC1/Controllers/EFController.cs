@@ -10,99 +10,98 @@ using MVC1.Models;
 
 namespace MVC1.Controllers
 {
-    public class CitiesController : Controller
+    public class EFController : Controller
     {
         private readonly MVC1Context _context;
 
-        public CitiesController(MVC1Context context)
+        public EFController(MVC1Context context)
         {
             _context = context;
         }
 
-      
-        public IActionResult Index()
+        
+        public  IActionResult Index()
         {
-            var mVC1Context = _context.City.Include(c => c.Country);
+            var mVC1Context = _context.Person.Include(p => p.city);
             return View( mVC1Context.ToList());
         }
 
-     
+       
         public  IActionResult Details(int? id)
         {
-            if (id == null || _context.City == null)
+            if (id == null || _context.Person == null)
             {
                 return NotFound();
             }
 
-            var city =  _context.City
-                .Include(c => c.Country)
-                .FirstOrDefault(m => m.IdCity == id);
-            if (city == null)
+            var person =  _context.Person
+                .Include(p => p.city)
+                .FirstOrDefault(m => m.Id == id);
+            if (person == null)
             {
                 return NotFound();
             }
 
-            return View(city);
+            return View(person);
         }
 
-     
+    
         public IActionResult Create()
         {
-            ViewData["CountryId"] = new SelectList(_context.Country, "CountryId", "CountryId");
+            ViewData["IdCity"] = new SelectList(_context.City, "IdCity", "IdCity");
             return View();
         }
 
         [HttpPost]
-      
-        public  IActionResult Create([Bind("IdCity,CityName,CountryId")] City city)
+ 
+        public  IActionResult Create([Bind("Id,First_name,Last_name,IdCity,Tel")] Person person)
         {
-            ModelState.Remove("people");
             if (ModelState.IsValid)
             {
-                _context.Add(city);
+                _context.Add(person);
                  _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CountryId"] = new SelectList(_context.Country, "CountryId", "CountryId", city.CountryId);
-            return View(city);
+            ViewData["IdCity"] = new SelectList(_context.City, "IdCity", "IdCity", person.IdCity);
+            return View(person);
         }
 
       
         public  IActionResult Edit(int? id)
         {
-            if (id == null || _context.City == null)
+            if (id == null || _context.Person == null)
             {
                 return NotFound();
             }
 
-            var city =  _context.City.Find(id);
-            if (city == null)
+            var person =  _context.Person.Find(id);
+            if (person == null)
             {
                 return NotFound();
             }
-            ViewData["CountryId"] = new SelectList(_context.Country, "CountryId", "CountryId", city.CountryId);
-            return View(city);
+            ViewData["IdCity"] = new SelectList(_context.City, "IdCity", "IdCity", person.IdCity);
+            return View(person);
         }
 
         [HttpPost]
-    
-        public  IActionResult Edit(int id, [Bind("IdCity,CityName,CountryId")] City city)
+     
+        public  IActionResult Edit(int id, [Bind("Id,First_name,Last_name,IdCity,Tel")] Person person)
         {
-            if (id != city.IdCity)
+            if (id != person.Id)
             {
                 return NotFound();
             }
-            ModelState.Remove("people");
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(city);
+                    _context.Update(person);
                      _context.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CityExists(city.IdCity))
+                    if (!PersonExists(person.Id))
                     {
                         return NotFound();
                     }
@@ -113,51 +112,50 @@ namespace MVC1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CountryId"] = new SelectList(_context.Country, "CountryId", "CountryId", city.CountryId);
-            return View(city);
+            ViewData["IdCity"] = new SelectList(_context.City, "IdCity", "IdCity", person.IdCity);
+            return View(person);
         }
 
-  
+ 
         public  IActionResult Delete(int? id)
         {
-            if (id == null || _context.City == null)
+            if (id == null || _context.Person == null)
             {
                 return NotFound();
             }
 
-            var city =  _context.City
-                .Include(c => c.Country)
-                .FirstOrDefault(m => m.IdCity == id);
-            if (city == null)
+            var person =  _context.Person
+                .Include(p => p.city)
+                .FirstOrDefault(m => m.Id == id);
+            if (person == null)
             {
                 return NotFound();
             }
 
-            return View(city);
+            return View(person);
         }
 
-
         [HttpPost, ActionName("Delete")]
-    
+      
         public  IActionResult DeleteConfirmed(int id)
         {
-            if (_context.City == null)
+            if (_context.Person == null)
             {
-                return Problem("Entity set 'MVC1Context.City'  is null.");
+                return Problem("Entity set 'MVC1Context.Person'  is null.");
             }
-            var city =  _context.City.Find(id);
-            if (city != null)
+            var person =  _context.Person.Find(id);
+            if (person != null)
             {
-                _context.City.Remove(city);
+                _context.Person.Remove(person);
             }
             
              _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CityExists(int id)
+        private bool PersonExists(int id)
         {
-          return (_context.City?.Any(e => e.IdCity == id)).GetValueOrDefault();
+          return (_context.Person?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

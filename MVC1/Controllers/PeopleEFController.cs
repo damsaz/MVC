@@ -54,16 +54,17 @@ namespace MVC1.Controllers
 
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       
         public IActionResult Create([Bind("Id,First_name,Last_name,IdCity,Tel")] Person person)
         {
-            if (ModelState.IsValid)
-            {
+            ModelState.Remove("Languages");
+            ModelState.Remove("City");
+            if (ModelState.IsValid) { 
                 _context.Add(person);
                  _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
-            }
-            ViewData["IdCity"] = new SelectList(_context.City, "CityName", "CityName", _context.City.FirstOrDefault(p => p.IdCity == person.IdCity).CityName);
+                }
+            ViewData["IdCity"] = new SelectList(_context.City, "IdCity", "IdCity", person.IdCity);
             return View(person);
         }
 
@@ -80,40 +81,42 @@ namespace MVC1.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdCity"] = new SelectList(_context.City, "CityName", "CityName", _context.City.FirstOrDefault(p=>p.IdCity== person.IdCity).CityName);
+            ViewData["IdCity"] = new SelectList(_context.City, "CityName", "CityName", _context.City.FirstOrDefault(c=>c.IdCity== person.IdCity).CityName);
             return View(person);
         }
 
         [HttpPost]
        
-        public IActionResult Edit(int id,string First_name,string Last_name,string tel)
+        public IActionResult Edit(int id, [Bind("Id", "First_name","Last_name" , "IdCity", "Tel")] Person person,string city)
         {
-            [Bind(Id,First_name,Last_name,IdCity,Tel)] Person person;
+            person.IdCity=_context.City.FirstOrDefault(c => c.CityName == city).IdCity;
             if (id != person.Id)
             {
                 return NotFound();
             }
-
+            ModelState.Remove("Languages");
+            ModelState.Remove("City");
             if (ModelState.IsValid)
-            {
+                {
                 try
-                {
+                    {
                     _context.Update(person);
-                     _context.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!PersonExists(person.Id))
-                    {
-                        return NotFound();
+                    _context.SaveChanges();
                     }
-                    else
+                catch (DbUpdateConcurrencyException)
                     {
+                    if (!PersonExists(person.Id))
+                        {
+                        return NotFound();
+                        }
+                    else
+                        {
                         throw;
+                        }
                     }
                 }
                 return RedirectToAction(nameof(Index));
-            }
+            
 
             ViewData["IdCity"] = new SelectList(_context.City, "CityName", "CityName", _context.City.FirstOrDefault(p => p.IdCity == person.IdCity).CityName);
             return View(person);

@@ -62,22 +62,20 @@ namespace MVC1.Controllers
             var person2 = _context.Person.Include(p => p.Languages).FirstOrDefault(e => e.Id == id);
             return View("Edit", person2);
         }
-            // GET: LPController/Edit/5
+        
             public ActionResult Edit(int id)
             {
             var person = _context.Person.Include(p => p.Languages).FirstOrDefault(e => e.Id == id); 
            
-           // var person = mVC1Context.Person.Find(id);
-           // ViewData["IdLanguage"] = new SelectList(_context.Language, "Name", "Name");
-          //    ViewData["Language"] = new SelectList(_context.Language, "Name", "Name");
+
             ViewData["Language"] = new SelectList(_context.Language, "Name", "Name", person.Languages);
             return View(person);
             
             }
 
-        // POST: LPController/Edit/5
+    
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       
         public  IActionResult Edit(int id, [Bind("Id,First_name,Last_name,IdCity,Tel")] Person person)
             {
             if (id != person.Id)
@@ -109,7 +107,7 @@ namespace MVC1.Controllers
             return View(person);
             }
 
-        // GET: LPController/Delete/5
+      
         public ActionResult Delete( int IdLanguage, int id)
             {
             var person = _context.Person.Include(p => p.Languages).FirstOrDefault(e => e.Id == id);
@@ -124,9 +122,9 @@ namespace MVC1.Controllers
             return View("Edit", person2);
             }
 
-        // POST: LPController/Delete/5
+    
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       
         public ActionResult Delete(int id, IFormCollection collection)
             {
             try
@@ -143,20 +141,20 @@ namespace MVC1.Controllers
             return (_context.Person?.Any(e => e.Id == id)).GetValueOrDefault();
             }
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+   
+        public  IActionResult DeleteConfirmed(int id)
             {
             if (_context.Person == null)
                 {
                 return Problem("Entity set 'MVC1Context.Person'  is null.");
                 }
-            var person = await _context.Person.FindAsync(id);
+            var person =  _context.Person.Find(id);
             if (person != null)
                 {
                 _context.Person.Remove(person);
                 }
 
-            await _context.SaveChangesAsync();
+             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
             }
         }
