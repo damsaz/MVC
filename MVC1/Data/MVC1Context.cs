@@ -4,6 +4,8 @@ using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using MVC1.Models;
@@ -12,8 +14,8 @@ using Newtonsoft.Json;
 
 namespace MVC1.Data
 {
-    public class MVC1Context : DbContext
-    {
+    public class MVC1Context : IdentityDbContext<ApplicationUser>
+        {
         
         public MVC1Context (DbContextOptions<MVC1Context> options)
             : base(options)
@@ -31,9 +33,10 @@ namespace MVC1.Data
            .WithMany(b => b.people)
            .HasForeignKey(p => p.IdCity);
             modelBuilder.Entity<City>().HasOne(p => p.Country).WithMany(b => b.City).HasForeignKey(p => p.CountryId);
+            base.OnModelCreating(modelBuilder);
 
             }
-        
+        private RoleManager<IdentityRole> roleManager;
 
         public DbSet<Person> Person { get; set; }
         public DbSet<Language> Language { get; set; }

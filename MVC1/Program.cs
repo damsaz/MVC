@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using MVC1.Data;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.CodeAnalysis.Options;
@@ -12,21 +12,21 @@ builder.Services.AddDbContext<MVC1Context>(options =>
 
 builder.Services.AddControllersWithViews();
 
-/*builder.Services.AddDefaultIdentity<ApplicationUser>(options =>options.SignIn.RequireConfirmedAccount=false)
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>options.SignIn.RequireConfirmedAccount=false)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<MVC1Context>();
 builder.Services.Configure<IdentityOptions>(options =>
 {
     // Default Password settings.
-    options.Password.RequireDigit = true;
-    options.Password.RequireLowercase = true;
-    options.Password.RequireNonAlphanumeric = true;
-    options.Password.RequireUppercase = true;
-    options.Password.RequiredLength = 6;
-    options.Password.RequiredUniqueChars = 1;
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 1;
+    options.Password.RequiredUniqueChars = 0;
 });
 
-*/
+
 
 builder.Services.AddDistributedMemoryCache();
 
@@ -41,11 +41,15 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+builder.Services.AddRazorPages();
+
 var app = builder.Build();
 app.UseRouting();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",

@@ -1,17 +1,22 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MVC1.Data;
 using MVC1.Models;
 using System;
+using System.Data;
 using System.Linq;
 using System.Xml.Linq;
 
 namespace MVC1.Controllers
     {
+    [Authorize(Roles = "Administrator")]
+
     public class LPController : Controller
         {
+
         private readonly MVC1Context _context;
 
         public LPController(MVC1Context context)
