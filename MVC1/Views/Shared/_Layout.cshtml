@@ -21,9 +21,10 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                    @*    <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
@@ -50,31 +51,45 @@
                          <li class="nav-item">
                           
                              <a class="nav-link text-white" asp-area="" asp-controller="PeopelAjax" asp-action="Index">PeopleAjax</a>
-                        </li>
+                        </li>*@
+                        @if (User.IsInRole("User") || User.IsInRole("Administrator"))
+                            {
                         <li class="nav-item">
 
                             <a class="nav-link text-white" asp-area="" asp-controller="PeopleEF" asp-action="Index">PeopleEF</a>
                         </li>
-                        <li class="nav-item">
+                            }
+                        @if (User.IsInRole("Administrator"))
+                            {
+                            <li class="nav-item">
 
-                            <a class="nav-link text-white" asp-area="" asp-controller="Cities" asp-action="Index">Cities</a>
-                        </li>
-                        <li class="nav-item">
 
-                            <a class="nav-link text-white" asp-area="" asp-controller="Countries" asp-action="Index">Countries</a>
-                        </li>
-                        <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Cities" asp-action="Index">Cities</a>
+                            </li>
+                            <li class="nav-item">
 
-                            <a class="nav-link text-white" asp-area="" asp-controller="Languages" asp-action="Index">Languages</a>
-                        </li>
-                        <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Countries" asp-action="Index">Countries</a>
+                            </li>
+                            <li class="nav-item">
 
-                            <a class="nav-link text-white" asp-area="" asp-controller="LP" asp-action="Index">PeopleLanguages</a>
-                           
-                        </li>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Languages" asp-action="Index">Languages</a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link text-white" asp-area="" asp-controller="LP" asp-action="Index">PeopleLanguages</a>
+
+                            </li>
+
+                            <li class="nav-item">
+
+                                <a class="nav-link text-white" asp-area="" asp-controller="Role" asp-action="Index">RoleManager</a>
+
+                            </li>
+                            }
                         <li class="nav-item">
                             <partial name="_LoginPartial" >
                         </li>
+
                     </ul>
                 </div>
             </div>

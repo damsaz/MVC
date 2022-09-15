@@ -81,5 +81,8 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "LP",
     pattern: "{controller=LP}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "Role",
+    pattern: "{controller=Role}/{action=Index}/{id?}");
 app.UseSession();
 app.Run();

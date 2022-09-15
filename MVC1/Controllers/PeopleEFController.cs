@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +11,10 @@ using MVC1.Data;
 using MVC1.Models;
 
 namespace MVC1.Controllers
-{
+    {
+    
+    [Authorize(Roles = "Administrator,User")]
+ 
     public class PeopleEFController : Controller
     {
         private readonly MVC1Context _context;
@@ -122,7 +127,7 @@ namespace MVC1.Controllers
             return View(person);
         }
 
-       
+        [Authorize(Roles = "Administrator")]
         public IActionResult Delete(int? id)
         {
             if (id == null || _context.Person == null)

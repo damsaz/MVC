@@ -34,15 +34,53 @@ namespace MVC1.Data
            .HasForeignKey(p => p.IdCity);
             modelBuilder.Entity<City>().HasOne(p => p.Country).WithMany(b => b.City).HasForeignKey(p => p.CountryId);
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<IdentityRole>().HasData(new IdentityRole { 
+                Id = RoleaUser,
+                Name="User",
+                NormalizedName= "User"
+
+                });
+            modelBuilder.Entity<IdentityRole>().HasData(new IdentityRole
+                {
+                Id = Roleadmin,
+                Name = "Administrator",
+                NormalizedName = "Administrator"
+
+                });
+            
+            modelBuilder.Entity<ApplicationUser>().HasData(new ApplicationUser
+                {
+
+                Id = userid,
+                Email = "bhroz@bhroz.com",
+                NormalizedEmail = "bhroz@bhroz.com",
+                UserName= "bhroz@bhroz.com",
+                NormalizedUserName= "bhroz@bhroz.com",
+                FirstName="Damsaz",
+                LastName="behroz",
+                BirthDay=DateTime.Today,
+                PasswordHash= hasher.HashPassword(null,"DAMSAZ"),
+                
+
+                });
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string> {
+                    RoleId = Roleadmin,
+                    UserId = userid
+
+                });
+          
 
             }
-        private RoleManager<IdentityRole> roleManager;
-
+        
+        PasswordHasher<ApplicationUser> hasher = new PasswordHasher<ApplicationUser>();
         public DbSet<Person> Person { get; set; }
         public DbSet<Language> Language { get; set; }
         public DbSet<City> City { get; set; }
         public DbSet<Country> Country { get; set; }
-
+        string Roleadmin=Guid.NewGuid().ToString();
+        string RoleaUser = Guid.NewGuid().ToString();
+        string userid = Guid.NewGuid().ToString();
+        
         public List<Person> GetPerson()
             {
             PeopleViewModel people2;

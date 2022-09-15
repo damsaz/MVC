@@ -96,6 +96,27 @@ namespace MVC1.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "79622611-cf1b-4315-ada8-bca5b06f56a3",
+                            AccessFailedCount = 0,
+                            BirthDay = new DateTime(2022, 9, 14, 0, 0, 0, 0, DateTimeKind.Local),
+                            ConcurrencyStamp = "bcfeec4b-b27c-4036-baf6-8f86e777fa96",
+                            Email = "bhroz@bhroz.com",
+                            EmailConfirmed = false,
+                            FirstName = "Damsaz",
+                            LastName = "behroz",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "bhroz@bhroz.com",
+                            NormalizedUserName = "bhroz@bhroz.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAED5/67skP8C1dj7tyffWwnrzbFd/3A8x29dnmLessCs3lziTJcyUFR+5JSy0ZqcqYw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "5061857a-6dcc-4b80-be53-644373f834f2",
+                            TwoFactorEnabled = false,
+                            UserName = "bhroz@bhroz.com"
+                        });
                 });
 
             modelBuilder.Entity("LanguagePerson", b =>
@@ -285,6 +306,22 @@ namespace MVC1.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "51a8da7c-f25e-49b4-ada9-67f8f4819a6e",
+                            ConcurrencyStamp = "a8e407a3-b5fb-4780-a17d-bbf09fcbbaf2",
+                            Name = "User",
+                            NormalizedName = "User"
+                        },
+                        new
+                        {
+                            Id = "5e487a9c-15e3-4d88-a52e-92f550741892",
+                            ConcurrencyStamp = "fdb6dae6-7546-4226-8ce8-54c43b1322ed",
+                            Name = "Administrator",
+                            NormalizedName = "Administrator"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -374,6 +411,13 @@ namespace MVC1.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "79622611-cf1b-4315-ada8-bca5b06f56a3",
+                            RoleId = "5e487a9c-15e3-4d88-a52e-92f550741892"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

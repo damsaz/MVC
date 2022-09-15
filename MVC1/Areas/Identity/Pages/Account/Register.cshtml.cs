@@ -137,10 +137,14 @@ namespace MVC1.Areas.Identity.Pages.Account
                 user.BirthDay = Input.BirthDay;
                 user.FirstName = Input.FirstName;
                 user.LastName = Input.LastName;
+                IdentityRole identityRole = new IdentityRole();
+                identityRole.Name = "User";
+                identityRole.NormalizedName = "User";
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                
                 var result = await _userManager.CreateAsync(user, Input.Password);
-                //   roleManager.//AddUserToRole(model.UserName, "User");
+               
                 var result2 = await _userManager.AddToRoleAsync(user, "User");
                 if (result.Succeeded)
                 {

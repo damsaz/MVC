@@ -1,0 +1,66 @@
+﻿@model IEnumerable<IdentityRole>
+<div class="container mt-3">
+    <div id="Add_someone">
+       
+        @using (@Html.BeginForm("Add", "Role"))
+            {
+            <label placeholder="Role Name"  class="control-label"></label>
+            <input type="text" class=" inputtext " name="Name" placeholder="Role Name" style="width:auto">
+            <input class="btn btn-primary" id="submit" type="submit" value="Add">
+            }
+
+    </div>
+    <br>
+<table class="table">
+    <thead>
+        <tr>
+          
+        </tr>
+        <tr>
+            <th>
+                <a>Role </a>@Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                   @Html.ActionLink("Remove", "Delete", new { item.Id },new {@class = "btn btn-danger btnma" })
+                    
+                </td>
+            </tr>
+            }
+    </tbody>
+</table>
+
+    <div class="col-md-8">
+        <form asp-action="AddUserRole">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+ 
+            
+
+            <div class="form-group">
+                <label  class="control-label"></label>
+                <select name="User" class="form-control" asp-items="ViewBag.user"></select>
+                
+            </div>
+            <div class="form-group">
+                <label class="control-label"></label>
+                <select name="Role" class="form-control" asp-items="ViewBag.Roles"></select>
+              
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    @Html.ActionLink("Show People And Role", "Show")
+</div>

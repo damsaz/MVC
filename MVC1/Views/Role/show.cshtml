@@ -1,0 +1,38 @@
+﻿@model List<UserRole>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               User Id
+            </th>
+            <th>
+               User Name
+            </th>
+            <th>
+                Roles
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+                <td>
+                    <a>Remove </a>
+                    @foreach (var Role in item.Roles)
+                        {
+
+                        <a asp-action="DeleteRoleUser" asp-route-Role="@Role" asp-route-UserId=@item.UserId class="btn btn-danger">@Role </a>
+                        }
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+
