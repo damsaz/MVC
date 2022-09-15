@@ -1,13 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MVC1.Controllers
     {
     public class HomeController : Controller
         {
-        public IActionResult Index()
+
+            readonly RoleManager<IdentityRole> roleManager;
+            readonly UserManager<ApplicationUser> userManager;
+            public HomeController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
+                {
+                this.roleManager = roleManager;
+                this.userManager = userManager;
+
+                }
+            public IActionResult Index()
             {
-          //  Data.ApplicationDbContext ss=new Data.ApplicationDbContext();
-           // ss.GetPerson();
+            //  Data.ApplicationDbContext ss=new Data.ApplicationDbContext();
+            // ss.GetPerson();
+            if (!String.IsNullOrEmpty(User.Identity.Name)) { 
+            var user = userManager.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+          
+            ViewData["welcomemess"] = "welcome:" +user.FirstName+" "+ user.LastName;
+          
+                }
             return View();
             }
 
