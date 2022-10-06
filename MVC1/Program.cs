@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis.Options;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.CodeAnalysis;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MVC1Context>(options =>
@@ -27,7 +28,10 @@ builder.Services.Configure<IdentityOptions>(options =>
 });
 
 
-
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options =>
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
+);
 builder.Services.AddDistributedMemoryCache();
 
 //builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -69,6 +73,9 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "PeopleEF",
     pattern: "{controller=PeopleEF}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "react",
+    pattern: "{controller=React}/{action=Index}/{id?}");
 app.MapControllerRoute(
     name: "Cities",
     pattern: "{controller=Cities}/{action=Index}/{id?}");

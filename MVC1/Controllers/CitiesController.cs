@@ -12,7 +12,7 @@ using MVC1.Models;
 
 namespace MVC1.Controllers
 {
-    [Authorize(Roles = "Administrator")]
+    //[Authorize(Roles = "Administrator")]
     public class CitiesController : Controller
     {
         private readonly MVC1Context _context;

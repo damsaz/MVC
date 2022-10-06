@@ -1,60 +1,290 @@
-{
-  "CountryList": [
-    {
-      "name": "Poland",
-      "CountryId": "PL"
+[
+  {
+    "id": 3,
+    "first_name": "Mildred",
+    "last_name": "Fuller",
+    "city": {
+      "idCity": 3,
+      "cityName": "Beacon",
+      "countryId": "US",
+      "people": [
+        null,
+        {
+          "id": 1001,
+          "first_name": "Kungen",
+          "last_name": "Williamson",
+          "city": null,
+          "idCity": 3,
+          "tel": "343242",
+          "languages": null
+        }
+      ]
     },
-    {
-      "name": "United States",
-      "CountryId": "US"
+    "idCity": 3,
+    "tel": "07378539",
+    "languages": null
+  },
+  {
+    "id": 4,
+    "first_name": "Russell",
+    "last_name": "Robinson",
+    "city": {
+      "idCity": 4,
+      "cityName": "Caldelas",
+      "countryId": "PT",
+      "people": [ null ]
     },
-    {
-      "name": "Portugal",
-      "CountryId": "PT"
+    "idCity": 4,
+    "tel": "07323539",
+    "languages": null
+  },
+  {
+    "id": 5,
+    "first_name": "Laura",
+    "last_name": "Harper",
+    "city": {
+      "idCity": 5,
+      "cityName": "Tehran",
+      "countryId": "IR",
+      "people": [ null ]
     },
-    {
-      "name": "Iran, Islamic Republic Of",
-      "CountryId": "IR"
+    "idCity": 5,
+    "tel": "07395659",
+    "languages": null
+  },
+  {
+    "id": 6,
+    "first_name": "Larry",
+    "last_name": "Sanders",
+    "city": {
+      "idCity": 6,
+      "cityName": "Mantorp",
+      "countryId": "SE",
+      "people": [ null ]
     },
-    {
-      "name": "Sweden",
-      "CountryId": "SE"
+    "idCity": 6,
+    "tel": "07395539",
+    "languages": null
+  },
+  {
+    "id": 7,
+    "first_name": "Michael",
+    "last_name": "Rice",
+    "city": {
+      "idCity": 7,
+      "cityName": "Saint-Maximin",
+      "countryId": "FR",
+      "people": [ null ]
     },
-    {
-      "name": "France",
-      "CountryId": "FR"
+    "idCity": 7,
+    "tel": "073955546",
+    "languages": null
+  },
+  {
+    "id": 8,
+    "first_name": "Sara",
+    "last_name": "Harris",
+    "city": {
+      "idCity": 8,
+      "cityName": "Nickerson",
+      "countryId": "US",
+      "people": [ null ]
     },
-    {
-      "name": "Germany",
-      "CountryId": "DE"
+    "idCity": 8,
+    "tel": "07395556",
+    "languages": null
+  },
+  {
+    "id": 9,
+    "first_name": "Phyllis",
+    "last_name": "Webb",
+    "city": {
+      "idCity": 9,
+      "cityName": "Dippach",
+      "countryId": "DE",
+      "people": [ null ]
     },
-    {
-      "name": "Italy",
-      "CountryId": "IT"
+    "idCity": 9,
+    "tel": "073955576",
+    "languages": null
+  },
+  {
+    "id": 10,
+    "first_name": "Roger",
+    "last_name": "Alvarez",
+    "city": {
+      "idCity": 10,
+      "cityName": "Floresta",
+      "countryId": "IT",
+      "people": [ null ]
     },
-    {
-      "name": "United Kingdom",
-      "CountryId": "GB"
+    "idCity": 10,
+    "tel": "073955321",
+    "languages": null
+  },
+  {
+    "id": 11,
+    "first_name": "Maria",
+    "last_name": "Carpenter",
+    "city": {
+      "idCity": 11,
+      "cityName": "Alpine",
+      "countryId": "US",
+      "people": [ null ]
     },
-    {
-      "name": "Spain",
-      "CountryId": "ES"
+    "idCity": 11,
+    "tel": "0739551234",
+    "languages": null
+  },
+  {
+    "id": 12,
+    "first_name": "Lori",
+    "last_name": "Edwards",
+    "city": {
+      "idCity": 12,
+      "cityName": "Crissey",
+      "countryId": "FR",
+      "people": [ null ]
     },
-    {
-      "name": "Mexico",
-      "CountryId": "MX"
+    "idCity": 12,
+    "tel": "073955353",
+    "languages": null
+  },
+  {
+    "id": 13,
+    "first_name": "Phillip",
+    "last_name": "Mitchell",
+    "city": {
+      "idCity": 13,
+      "cityName": "Dundee",
+      "countryId": "GB",
+      "people": [ null ]
     },
-    {
-      "name": "Colombia",
-      "CountryId": "CO"
+    "idCity": 13,
+    "tel": "0739553321",
+    "languages": null
+  },
+  {
+    "id": 14,
+    "first_name": "Craig",
+    "last_name": "Lopez",
+    "city": {
+      "idCity": 14,
+      "cityName": "Aiguaviva",
+      "countryId": "ES",
+      "people": [ null ]
     },
-    {
-      "name": "Bosnia and Herzegovina",
-      "CountryId": "BA"
+    "idCity": 14,
+    "tel": "0739551249",
+    "languages": null
+  },
+  {
+    "id": 15,
+    "first_name": "Marie",
+    "last_name": "George",
+    "city": {
+      "idCity": 15,
+      "cityName": "Tecate",
+      "countryId": "MX",
+      "people": [ null ]
     },
-    {
-      "name": "Australia",
-      "CountryId": "AU"
-    }
-  ]
-}
+    "idCity": 15,
+    "tel": "073955234",
+    "languages": null
+  },
+  {
+    "id": 16,
+    "first_name": "Jean",
+    "last_name": "Duncan",
+    "city": {
+      "idCity": 16,
+      "cityName": "Amapa",
+      "countryId": "MX",
+      "people": [ null ]
+    },
+    "idCity": 16,
+    "tel": "07395541",
+    "languages": null
+  },
+  {
+    "id": 17,
+    "first_name": "Kimberly",
+    "last_name": "Butler",
+    "city": {
+      "idCity": 17,
+      "cityName": "Arauca",
+      "countryId": "CO",
+      "people": [ null ]
+    },
+    "idCity": 17,
+    "tel": "073955412",
+    "languages": null
+  },
+  {
+    "id": 18,
+    "first_name": "Heather",
+    "last_name": "Ramirez",
+    "city": {
+      "idCity": 18,
+      "cityName": "Derventa",
+      "countryId": "BA",
+      "people": [ null ]
+    },
+    "idCity": 18,
+    "tel": "073951234",
+    "languages": null
+  },
+  {
+    "id": 19,
+    "first_name": "Jason",
+    "last_name": "Sanders",
+    "city": {
+      "idCity": 19,
+      "cityName": "Schignano",
+      "countryId": "IT",
+      "people": [ null ]
+    },
+    "idCity": 19,
+    "tel": "073955214",
+    "languages": null
+  },
+  {
+    "id": 20,
+    "first_name": "Juan",
+    "last_name": "Evans",
+    "city": {
+      "idCity": 20,
+      "cityName": "Raceview",
+      "countryId": "AU",
+      "people": [ null ]
+    },
+    "idCity": 20,
+    "tel": "073955214",
+    "languages": null
+  },
+  {
+    "id": 1001,
+    "first_name": "Kungen",
+    "last_name": "Williamson",
+    "city": {
+      "idCity": 3,
+      "cityName": "Beacon",
+      "countryId": "US",
+      "people": [
+        {
+          "id": 3,
+          "first_name": "Mildred",
+          "last_name": "Fuller",
+          "city": null,
+          "idCity": 3,
+          "tel": "07378539",
+          "languages": null
+        },
+        null
+      ]
+    },
+    "idCity": 3,
+    "tel": "343242",
+    "languages": null
+  }
+]

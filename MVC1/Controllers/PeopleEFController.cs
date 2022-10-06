@@ -13,7 +13,7 @@ using MVC1.Models;
 namespace MVC1.Controllers
     {
     
-    [Authorize(Roles = "Administrator,User")]
+   // [Authorize(Roles = "Administrator,User")]
  
     public class PeopleEFController : Controller
     {
