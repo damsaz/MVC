@@ -4,6 +4,7 @@ import Users from './Users';
 import '../App.css';
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 let api_url = '/React';
 // App component 
 const ListEF = () => {
@@ -11,6 +12,7 @@ const ListEF = () => {
     let [users, setUsers] = useState([]);
     let [isLoaded, setIsLoaded] = useState(false);
     let [err, setErr] = useState(null);
+    console.log(api_url);
     useEffect(() => {
         const getUsers = () => {
             fetch(api_url)
@@ -86,3 +88,4 @@ const Header = () => {
         </thead>
     );
 };
+

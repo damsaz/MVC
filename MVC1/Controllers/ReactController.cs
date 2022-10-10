@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using MVC1.Data;
 using MVC1.Models;
 using Newtonsoft.Json.Linq;
+using NuGet.Protocol;
 
 namespace MVC1.Controllers
     {
@@ -106,39 +107,15 @@ namespace MVC1.Controllers
 
         [HttpPost]
 
-        public IActionResult Edit(int id, [Bind("Id", "First_name", "Last_name", "IdCity", "Tel")] Person person, string city)
+        public IEnumerable Edit([Bind("Id,First_name,Last_name,city,Tel")] Person person,string cityName)
             {
-            person.IdCity = _context.City.FirstOrDefault(c => c.CityName == city).IdCity;
-            if (id != person.Id)
-                {
-                return NotFound();
-                }
-            ModelState.Remove("Languages");
-            ModelState.Remove("City");
-            if (ModelState.IsValid)
-                {
-                try
-                    {
-                    _context.Update(person);
-                    _context.SaveChanges();
-                    }
-                catch (DbUpdateConcurrencyException)
-                    {
-                    if (!PersonExists(person.Id))
-                        {
-                        return NotFound();
-                        }
-                    else
-                        {
-                        throw;
-                        }
-                    }
-                }
-            return RedirectToAction(nameof(Index));
-
-
-            ViewData["IdCity"] = new SelectList(_context.City, "CityName", "CityName", _context.City.FirstOrDefault(p => p.IdCity == person.IdCity).CityName);
-            return View(person);
+            yield return person;
+            }
+        [HttpGet]
+        public IEnumerable Cityname()
+            {
+            return  _context.City.ToJson();
+         
             }
 
         public string Delete(int? id)
