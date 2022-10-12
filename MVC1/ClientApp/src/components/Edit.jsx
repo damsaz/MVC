@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import City from './Data';
+import data from './Data';
 let api_url = '/React/';
 let api_url2 = '/React/Edit/';
 let api_url3 = '/React/Cityname/';
@@ -16,6 +16,8 @@ const Edit = () => {
     // Initialize state first
     let [users, setUsers] = useState([]);
     let [isLoaded, setIsLoaded] = useState(false);
+    let [country, setcountry] = useState();
+    let [cities, setCities] = useState([]);
     let [err, setErr] = useState(null);
     const params = useParams();
     const [personInfo, setpersonInfo] = useState({
@@ -26,8 +28,16 @@ const Edit = () => {
         Nationality: "",
         EmailAdress: ""
     });
-    console.log(Data());
+    if (!country)
+    axios.get("/React/CountryList/").then((response) => {
+        setcountry( response.data);
+
+    });
+  
     const [validated, setValidated] = useState();
+    const handleChange = (event) => {
+        console.log(event.target.name);
+    }
     const handleSubmit = (event) => {
         const form = event.currentTarget
         const ss = "aa"
@@ -62,6 +72,7 @@ const Edit = () => {
         // setContactInfo({ FirstName: "", SecondName: "", Age: "", Nationality: "", EmailAdress: ""}); //reset form values after submit 
     };
     useEffect(() => {
+
         const getUsers = () => {
             fetch(api_url)
                 .then(res => {
@@ -86,6 +97,7 @@ const Edit = () => {
                     })
         };
         getUsers()
+        
     }, [])
 
 
@@ -94,7 +106,15 @@ const Edit = () => {
     } else if (!isLoaded) {
         return <div> Loading... </div>
     } else {
-      console.log(  users[0].tel);
+  
+        
+        console.log(cities.length)
+       axios.get(api_url3 + users[0].city.countryId + "?").then((response) => {
+         setCities(response.data);
+       });
+        
+        console.log(cities.values)
+
         return (
             <>
                 <div className="container">
@@ -107,7 +127,7 @@ const Edit = () => {
                                     <Form.Control
                                         required
                                         type="text"
-                                      
+                                        onChange={handleChange}
                                         placeholder={users[0].first_name}
                                         name="First_name" />
                                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -150,14 +170,39 @@ const Edit = () => {
 
                             <Form.Group as={Row} controlId="validationCustom03">
                                 <Form.Label>Nationality</Form.Label>
-                                    <Form.Control type="text"  placeholder={users[0].city.countryId} required name="Nationality" />
+                                    <Form.Select type="text" defaultValue="Choose..." 
+                                        value={country} required name="countryId">
+                                        <option value="{users[0].city.countryId}" >{users[0].city.countryId}</option>
+                                        {country.map((data) => { 
+                                            return (
+                                                <option value="{data.countryId}" >{data.name}</option>
+
+                                            );
+
+                                        })}
+                                     
+                                       
+
+
+
+                                    </Form.Select>
                                 <Form.Control.Feedback type="invalid">
                                     Please provide a valid Nationality.
                                 </Form.Control.Feedback>
-                            </Form.Group>
+                                </Form.Group>
+
                             <Form.Group as={Row} controlId="validationCustom04">
                                 <Form.Label>City</Form.Label>
-                                    <Form.Control type="text" placeholder={users[0].city.cityName} required name="cityName" />
+                                    <Form.Select type="text" value={cities} required name="cityName">
+                        
+                                        <option value="{cities.IdCity}" >{cities.CityName}</option>
+                                           
+                                           
+                                       
+                                    </Form.Select>
+                                    
+                                        
+                                    
                                 <Form.Control.Feedback type="invalid">
                                         Please provide a valid City.
                                 </Form.Control.Feedback>
@@ -179,23 +224,20 @@ const Edit = () => {
 export default Edit;
 
 
+function  Data () {
 
+    
 
-function Data() {
-
-    const [cities, setCities] = useState([]);
-
-       
+    let data2
+  
+        axios.get("/React/CountryList/").then((response) => {
+            return response.data;
            
-
-            React.useEffect(() => {
-                axios.get(api_url3).then((response) => {
-                    setCities(response.data);
-                });
-            }, []);
+        });
+    const response = axios.get("/React/CountryList/");
+    console.log(response.data)
+    return response.data; 
 
 
-
-
-    return { cities }
 } 
+

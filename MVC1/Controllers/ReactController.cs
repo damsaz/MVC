@@ -112,12 +112,18 @@ namespace MVC1.Controllers
             yield return person;
             }
         [HttpGet]
-        public IEnumerable Cityname()
+        public IEnumerable Cityname(string id)
             {
-            return  _context.City.ToJson();
-         
-            }
+            return _context.City.FirstOrDefault(c => c.CountryId == id).ToJson();
 
+
+            }
+        public IEnumerable CountryList()
+            {
+            return _context.Country;
+
+
+            }
         public string Delete(int? id)
             {
             if (id == null || _context.Person == null)

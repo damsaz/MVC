@@ -1,33 +1,21 @@
 ﻿import { useEffect, useState } from "react";
-let api_url = '/React/Cityname/';
-export type City = { cityId: number, name: string, countryId: number }
+import axios from 'axios';
+var data;
 
 
-
-
- function Data() {
+ function Data(Ccode) {
 
     const [cities, setCities] = useState([]);
  
 
     useEffect(() => {
-         function getData() {
-            const responce = fetch(
-                api_url,
-                { method: "GET" }
-            );
-            //console.log(responce)
-            const data =  responce.json()
-            //get cities
-            const cities = data.cities.$values
-            setCities(cities)
-
-        }
-        getData();
+        axios.get("/React/CountryList/").then((response) => {
+            data=response.data;
+        });
     }, []);
 
 
 
-    return { cities }
+     return (data )
 } 
-export default Data
+export default data;
