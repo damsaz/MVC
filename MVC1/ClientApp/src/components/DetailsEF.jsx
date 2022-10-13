@@ -6,11 +6,14 @@ import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-
+import Button from 'react-bootstrap/Button';
 // App component 
 const ListEF = () => {
     // Initialize state first
     const params = useParams();
+    const handleChange = (event) => {
+        console.log(event.target.value);
+    }
     console.log(params);
     let api_url = '/React/Details/' + params.id;
     console.log(api_url);
@@ -70,6 +73,7 @@ const ListEF = () => {
                                         Tel={data.tel}
 
                                         LinkEdit={"/Edit/" + data.id}
+                                        LinkDelete={"/Delete/" + data.id}
                                        
                                     /> 
                                 );
@@ -77,7 +81,9 @@ const ListEF = () => {
                              
 
                             })}
-                           
+                            <td>
+                                <Button type="submit" on={handleChange} className="btn btn-danger">Delete</Button>
+                            </td>
                         </tbody>
                     </Table>
                 </div>
@@ -106,13 +112,15 @@ const Header = () => {
                 <th>Nationality</th>
                 <th>Tel</th>
                 <th>Edit</th>
+                <th>Delete</th>
                 
 
             </tr>
         </thead>
     );
 };
-const Tbody = ({ FirstName, SecondName, City, Country, Tel, LinkEdit, LinkDelete }) => {
+const Tbody = ({ FirstName, SecondName, City, Country, Tel, LinkEdit }) => {
+
     if (!FirstName) return <div />;
     return (
 
@@ -135,6 +143,7 @@ const Tbody = ({ FirstName, SecondName, City, Country, Tel, LinkEdit, LinkDelete
             <td>
                 <Link to={LinkEdit}>Edit</Link>
             </td>
+      
          
 
         </tr>

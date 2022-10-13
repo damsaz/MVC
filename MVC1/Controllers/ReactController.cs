@@ -107,20 +107,48 @@ namespace MVC1.Controllers
 
         [HttpPost]
 
-        public IEnumerable Edit([Bind("Id,First_name,Last_name,city,Tel")] Person person,string cityName)
+        public IEnumerable Edit(int id,[Bind("Id,First_name,Last_name,IdCity,Tel")] Person person,string Languages)
             {
+
+            ModelState.Remove("Languages");
+            ModelState.Remove("City");
+            if (ModelState.IsValid)
+                {
+                try
+                    {
+                    _context.Update(person);
+                    _context.SaveChanges();
+                    }
+                catch (DbUpdateConcurrencyException)
+                    {
+                    if (!PersonExists(person.Id))
+                        {
+                      
+                        }
+                    else
+                        {
+                        throw;
+                        }
+                    }
+                }
+          
+
             yield return person;
             }
         [HttpGet]
-        public IEnumerable Cityname(string id)
+        public IEnumerable Cityname()
             {
-            return _context.City.FirstOrDefault(c => c.CountryId == id).ToJson();
-
-
+            return _context.City;
             }
         public IEnumerable CountryList()
             {
-            return _context.Country;
+            return _context.Country.Include(c => c.City);
+
+
+            }
+        public IEnumerable LList()
+            {
+            return _context.Language;
 
 
             }

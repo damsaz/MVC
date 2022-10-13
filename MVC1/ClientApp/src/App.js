@@ -13,6 +13,7 @@ import Login from './components/Account/Login';
 import Details from './components/Details';
 import DetailsEF from './components/DetailsEF';
 import Edit from './components/Edit';
+import Delete from './components/Delete';
 import Layout from './components/Layout/Layout';
 //const UserContext = React.createContext({ name: '', auth: false });
 import UserInfoP from "./components/UserContext";
@@ -54,6 +55,9 @@ function App() {
                         </Route>
                         <Route path="/Edit" element={<Edit />}>
                             <Route path=":id" element={<Edit />} />
+                        </Route>
+                        <Route path="/Delete" element={<Delete />}>
+                            <Route path=":id" element={<Delete />} />
                         </Route>
                         <Route path="*" element={<Error404 />} />
                         <Route path="Account/Login" element={<Login />} />

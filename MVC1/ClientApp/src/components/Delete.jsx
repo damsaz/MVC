@@ -12,7 +12,7 @@ let api_url = '/React/';
 let api_url2 = '/React/Edit/';
 let api_url3 = '/React/Cityname/';
 // App component 
-const Edit = () => {
+const Delete = () => {
     // Initialize state first
     let [users, setUsers] = useState([]);
     let [isLoaded, setIsLoaded] = useState(false);
@@ -214,7 +214,7 @@ const Edit = () => {
                                 </Form.Group>
 
 
-                            <Button type="submit">Submit form</Button>
+                                <Button type="submit" className="btn btn-danger">Delete</Button>
                         </Col>
                         <Col></Col>
                     </Row>
@@ -225,7 +225,7 @@ const Edit = () => {
         )
     }
 }
-export default Edit;
+export default Delete;
 
 
 function  Data () {
