@@ -30,6 +30,9 @@ function Header() {
                             <li className="nav-item">
                                 <Link to="ListEF" className="nav-link text-white">User list EF</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="AddUserEF" className="nav-link text-white">AddUserEF</Link>
+                            </li>
                         <LoginHeader />
                     </ul>
                 </div>

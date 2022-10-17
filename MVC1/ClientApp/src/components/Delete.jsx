@@ -8,11 +8,14 @@ import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import data from './Data';
+import { useNavigate } from "react-router-dom";
 let api_url = '/React/';
-let api_url2 = '/React/Edit/';
+let api_url2 = '/React/Delete/';
 let api_url3 = '/React/Cityname/';
+
 // App component 
 const Delete = () => {
+    const navigate = useNavigate();
     // Initialize state first
     let [users, setUsers] = useState([]);
     let [isLoaded, setIsLoaded] = useState(false);
@@ -62,6 +65,7 @@ const Delete = () => {
                     'Content-Type': `multipart/form-data; boundary=${form._boundary}`,
                 },
             });
+            return navigate("/ListEF/");
            // addPerson(personInfo);
         }
         setValidated(true)
@@ -69,14 +73,7 @@ const Delete = () => {
     };
     useEffect(() => {
        
-            axios.get("/React/Cityname/").then((response) => {
-                setCities(response.data);
 
-            });
-        axios.get("/React/LList/").then((response) => {
-            setLanuage(response.data);
-
-        });
         const getUsers = () => {
             fetch(api_url)
                 .then(res => {
@@ -107,12 +104,12 @@ const Delete = () => {
 
     if (err) {
         return <div> {err.message} </div>
-    } else if (!isLoaded || !cities ||!Lanuage) {
+    } else if (!isLoaded ) {
         return <div> Loading... </div>
     } else {
   
         
-        console.log(cities.values)
+        
 
         return (
             <>
@@ -127,7 +124,7 @@ const Delete = () => {
                                         required
                                         type="text"
                                         onChange={handleChange}
-                                        placeholder={users[0].first_name}
+                                        value={users[0].first_name}
                                         name="First_name" />
                                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 </Form.Group>
@@ -147,7 +144,7 @@ const Delete = () => {
                                     required
                                         type="text"
                                        
-                                        placeholder={users[0].last_name}
+                                        value={users[0].last_name}
                                         name="Last_name" />
                                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                             </Form.Group>
@@ -157,7 +154,7 @@ const Delete = () => {
 
                                 <Form.Control
                                     type="number"
-                                        placeholder={users[0].tel}
+                                        value={users[0].tel}
                                         name="Tel"
                                        
                                     required />
@@ -171,13 +168,7 @@ const Delete = () => {
                                     <Form.Select type="text" required name="IdCity">
                         
                                         <option value={users[0].city.idCity}>{users[0].city.cityName}</option>
-                                        {cities.map((data) => {
-                                            return (
-                                                <option value={data.idCity} >{data.cityName}</option>
-
-                                            );
-
-                                        })}
+                                      
                                            
                                        
                                     </Form.Select>
@@ -189,29 +180,7 @@ const Delete = () => {
                                 </Form.Control.Feedback>
 
                             </Form.Group>
-                                <Form.Group as={Row} controlId="validationCustom04">
-                                    <Form.Label>Lanuage</Form.Label>
-                                    <Form.Select type="text" required name="Languages">
-
-                                      
-                                        {Lanuage.map((data) => {
-                                            return (
-                                                <option value={data.idLanguage} >{data.name}</option>
-
-                                            );
-
-                                        })}
-
-
-                                    </Form.Select>
-
-
-
-                                    <Form.Control.Feedback type="invalid">
-                                        Please provide a valid Lanuage.
-                                    </Form.Control.Feedback>
-
-                                </Form.Group>
+                       
 
 
                                 <Button type="submit" className="btn btn-danger">Delete</Button>
@@ -228,20 +197,4 @@ const Delete = () => {
 export default Delete;
 
 
-function  Data () {
-
-    
-
-    let data2
-  
-        axios.get("/React/CountryList/").then((response) => {
-            return response.data;
-           
-        });
-    const response = axios.get("/React/CountryList/");
-    console.log(response.data)
-    return response.data; 
-
-
-} 
 

@@ -81,9 +81,7 @@ const ListEF = () => {
                              
 
                             })}
-                            <td>
-                                <Button type="submit" on={handleChange} className="btn btn-danger">Delete</Button>
-                            </td>
+                
                         </tbody>
                     </Table>
                 </div>
@@ -119,7 +117,7 @@ const Header = () => {
         </thead>
     );
 };
-const Tbody = ({ FirstName, SecondName, City, Country, Tel, LinkEdit }) => {
+const Tbody = ({ FirstName, SecondName, City, Country, Tel, LinkEdit, LinkDelete }) => {
 
     if (!FirstName) return <div />;
     return (
@@ -144,7 +142,9 @@ const Tbody = ({ FirstName, SecondName, City, Country, Tel, LinkEdit }) => {
                 <Link to={LinkEdit}>Edit</Link>
             </td>
       
-         
+            <td>
+                <Link className="btn btn-danger" to={LinkDelete}>Delete</Link> 
+            </td>
 
         </tr>
 

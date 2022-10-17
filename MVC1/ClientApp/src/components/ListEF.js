@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect, useReducer } from 'react';
 import User from './User';
 import Users from './Users';
 import '../App.css';
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ascend, descend, prop, sort } from "ramda";
+
 
 let api_url = '/React';
 // App component 
 const ListEF = () => {
     // Initialize state first
     let [users, setUsers] = useState([]);
+    
     let [isLoaded, setIsLoaded] = useState(false);
     let [err, setErr] = useState(null);
-    console.log(api_url);
+   
     useEffect(() => {
         const getUsers = () => {
             fetch(api_url)
@@ -40,23 +43,44 @@ const ListEF = () => {
         getUsers()
     }, [])
 
-
+    const [sorted, sortDispatch] = useSortedTable(users, "first_name");
     if (err) {
         return <div> {err.message} </div>
-    } else if (!isLoaded) {
+    } else if (!isLoaded || !sorted) {
         return <div> Loading... </div>
     } else {
+        console.log(sorted);
         return (
-                  <>
+            <>
+                
       <div className="stock-container">
-      <HomePageHeader />
+
+                    <HomePageHeader  />
                 <Table striped bordered hover variant="dark">
-                <Header />
+                     
+                        <thead>
+                            <tr>
+
+                                <SortTh
+                                    data={sorted}
+                                    sortKey="first_name"
+                                    label="First Name"
+                                    dispatch={sortDispatch}
+                                />
+                                <th>Second Name</th>
+                                <th>City</th>
+                                <th>Nationality</th>
+                                <th>Tel</th>
+                                <th>View</th>
+
+                            </tr>
+                        </thead>
                       
                         <tbody>
-                            <Users people={users} />
+                            <Users people={sorted} />
                         </tbody>
                     </Table>
+                   
                   </div>
               </>
        
@@ -73,19 +97,65 @@ const HomePageHeader = () => {
         </header>
     );
 };
-const Header = () => {
-    return (
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Second Name</th>
-                <th>City</th>
-                <th>Nationality</th>
-                <th>Tel</th>
-                <th>View</th>
 
-            </tr>
-        </thead>
+function sortedTableReducer(oldState, newState) {
+    const { isDescending, key, table } = { ...oldState, ...newState };
+    const direction = (isDescending) ? descend : ascend;
+    const sortFunc = sort(direction(prop(key)));
+    return { isDescending, key, table: sortFunc(table) };
+}
+
+function useSortedTable(table, key, isDescending = true) {
+    const initialState = { isDescending, key, table };
+    const [state, dispatch] = useReducer(sortedTableReducer, initialState);
+    useEffect(
+        function callDispatchOnceToTriggerInitialSort() {
+            dispatch({});
+        },
+        []
     );
-};
+    return [state, dispatch];
+}
 
+
+function SortTh({ label, sortKey, data, dispatch }) {
+    function toggleDirAndSetKey() {
+        dispatch({ key: sortKey });
+        dispatch({ isDescending: !data.isDescending });
+    }
+    function setKeyOrToggleDir() {
+        if (data.key === sortKey) {
+            dispatch({ isDescending: !data.isDescending });
+        } else {
+            dispatch({ key: sortKey });
+        }
+    }
+    return (
+        <th>
+            <button onClick={setKeyOrToggleDir}>
+                {label}
+            </button>
+            <button
+                onClick={toggleDirAndSetKey}
+                style={{ opacity: (data.key === sortKey) ? "1" : "0" }}
+            >
+                {(data.isDescending)
+                    ? (
+                        <span role="img" aria-label="descending">
+                            ↓
+                        </span>
+                    ) : (
+                        <span role="img" aria-label="ascending">
+                            ↑
+                        </span>
+                    )
+                }
+            </button>
+        </th>
+    );
+}
+
+const { format: dateFormat } = new Intl.DateTimeFormat(
+    "en-US",
+    { day: "2-digit", month: "short", year: "numeric" }
+);

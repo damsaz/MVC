@@ -4,6 +4,7 @@ import UsersList from './components/UsersList';
 import List from './components/List';
 import ListEF from './components/ListEF';
 import AddUser from './components/AddUser';
+import AddUserEF from './components/AddUserEF';
 //import { useCookies } from 'react-cookie';
 import UserVeiw from './components/UserVeiw';
 import Welcome from './components/Welcome';
@@ -46,6 +47,7 @@ function App() {
                         <Route path="/UserVeiw" element={<UserVeiw />} />
                         <Route path="/List" element={<List people={Users} />} />
                         <Route path="/ListEF" element={<ListEF />} />
+                        <Route path="/AddUserEF" element={<AddUserEF />} />
                         <Route path="/AddUser" element={<AddUser addPerson={addPerson} />} />
                         <Route path="/Details" element={<Details />} >
                             <Route path=":id" element={<Details />} />
