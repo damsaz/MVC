@@ -5,6 +5,7 @@ import '../App.css';
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ascend, descend, prop, sort } from "ramda";
+import data from './Data';
 
 
 let api_url = '/React';
@@ -44,6 +45,8 @@ const ListEF = () => {
     }, [])
 
     const [sorted, sortDispatch] = useSortedTable(users, "first_name");
+    if (sorted.table.length == 0)
+        sorted.table=users
     if (err) {
         return <div> {err.message} </div>
     } else if (!isLoaded || !sorted) {
@@ -60,7 +63,7 @@ const ListEF = () => {
                      
                         <thead>
                             <tr>
-
+                                
                                 <SortTh
                                     data={sorted}
                                     sortKey="first_name"
@@ -132,9 +135,9 @@ function SortTh({ label, sortKey, data, dispatch }) {
     }
     return (
         <th>
-            <button onClick={setKeyOrToggleDir}>
+            <a onClick={setKeyOrToggleDir}>
                 {label}
-            </button>
+            </a>
             <button
                 onClick={toggleDirAndSetKey}
                 style={{ opacity: (data.key === sortKey) ? "1" : "0" }}

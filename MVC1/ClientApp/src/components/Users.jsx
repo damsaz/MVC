@@ -11,7 +11,7 @@ export default function USer({people}) {
         <>
                 
                  
-            {people.map((data, key) => {
+            {people.table.map((data, key) => {
                 return (
                   <Tbody
                     
