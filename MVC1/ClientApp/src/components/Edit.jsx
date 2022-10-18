@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import data from './Data';
-let api_url = '/React/';
+
 let api_url2 = '/React/Edit/';
 let api_url3 = '/React/Cityname/';
 // App component 
@@ -28,7 +28,7 @@ const Edit = () => {
         Nationality: "",
         EmailAdress: ""
     });
-
+    let api_url = '/React/Details/' + params.id;
   
     const [validated, setValidated] = useState();
     const handleChange = (event) => {

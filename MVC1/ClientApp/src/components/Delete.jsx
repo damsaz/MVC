@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import data from './Data';
 import { useNavigate } from "react-router-dom";
-let api_url = '/React/';
+
 let api_url2 = '/React/Delete/';
 let api_url3 = '/React/Cityname/';
 
@@ -31,7 +31,7 @@ const Delete = () => {
         Nationality: "",
         EmailAdress: ""
     });
-
+    let api_url = '/React/Details/' + params.id;
   
     const [validated, setValidated] = useState();
     const handleChange = (event) => {
@@ -75,7 +75,7 @@ const Delete = () => {
        
 
         const getUsers = () => {
-            fetch(api_url)
+            fetch(api_url )
                 .then(res => {
                     // Unfortunately, fetch doesn't send (404 error)
                     // into the cache itself
